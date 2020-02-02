@@ -4,4 +4,7 @@
 echo ":source ~/.config/vim/vimrc" > ~/.vimrc 
 
 #make .bashrc
-echo "source ~/.config/bash/bashrc" > ~/.bashrc 
+echo ". ~/.config/bash/bashrc" > ~/.bashrc 
+
+#make .xinitrc
+echo ". ~/.config/xinit/xinitrc" > ~/.xinitrc 
