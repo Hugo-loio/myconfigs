@@ -13,4 +13,7 @@ echo ". ~/.config/xinit/xinitrc" > ~/.xinitrc
 echo ". ~/.config/xserver/xserverrc" > ~/.xserverrc 
 
 #make .profile
-cp ~/.config/profile/profile .profile
+cp ~/.config/profile .profile
+
+#make .bash_profile
+cp ~/.config/bash_profile .profile
