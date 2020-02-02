@@ -1,0 +1,200 @@
+"    ____    ____  __   ___  ___   ______        ______ 
+"    \   \  /   / |  | |   \/   | |   _  \      /      |
+"     \   \/   /  |  | |  \  /  | |  |_)  |    |  ,----'
+"      \      /   |  | |  |\/|  | |      /     |  |     
+"       \    /    |  | |  |  |  | |  |\  \----.|  `----.
+"        \__/     |__| |__|  |__| | _| `._____| \______|
+"
+
+
+""""""""""""""""""""""""""""general""""""""""""""""""""""""
+
+"Shows partial commands in the last line of the screen
+set showcmd
+
+"Disable automatic comment in new line
+augroup NoAutomaticComment
+  autocmd!
+  autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+augroup END
+
+"Highlight search results
+set hlsearch
+
+"Highlight while searching
+set incsearch
+
+""""""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
+
+"Displays line number in left margin
+set number
+
+"Displays relative number of other lines in left margin
+set relativenumber
+
+"Always show at least 7 lines bellow and above cursor (when possible)
+set so=7
+
+
+"""""""""""""""""""""""""Indentation""""""""""""""""""""""""""""
+
+"Copies the identation from previous line, when starting new line
+set autoindent
+
+"Automated file type based identation 
+filetype plugin indent on
+
+"Sets width of << and >> characters and controls amount of identation per level
+set shiftwidth=2
+
+"Sets width of TAB character
+set tabstop=8
+
+"Sets the default size of <TAB> key press. Also vim will minimize amout of spaces inserted by <TAB> consecutive key presses using the most TAB characters it can. Notice diference between TAB and <TAB> 
+set softtabstop=2
+
+"Automatically idents whenever file is saved in cpp,C
+augroup IdentWhenWriting
+  autocmd!
+  autocmd BufWritePre *.c,*.cpp,*.cc,*.C,*.h :normal gg=G| `` 
+augroup END
+
+"""""""""""""""""""""""Window Spliting""""""""""""""""""""""""
+
+"New horizontal splits are on the bottom
+set splitbelow
+
+"New vertical splits are on the right
+set splitright
+
+"Smart way to move between splited windows
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+
+"Mapping to easily resize splits
+nnoremap <C-left> :vertical resize -1<CR>
+nnoremap <C-right> :vertical resize +1<CR>
+nnoremap <C-up> :resize +1<CR>
+nnoremap <C-down> :resize -1<CR>
+
+"""""""""""""""""""""Usefull mappings""""""""""""""""""""""""
+
+"Remove annoying open command-line editor mapping to q:
+:nnoremap q: <Nop>
+
+"Maps <C-c> and <C-v> to copy and paste with clipboard
+vnoremap <C-c> "*y :let @+=@*<CR>
+nnoremap <C-p> "+P
+
+"Defines leader key to use in future mappings
+let mapleader = " " 
+
+"Edits vimrc
+nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
+
+"Updates and Sources vimrc
+nnoremap <leader>uv :!sh ~/.vim/update_vimrc.sh<cr>:source $MYVIMRC<cr>
+
+"Comment visually selected text in c and cpp
+augroup autocomment
+  autocmd!
+  autocmd Filetype cpp,c vnoremap <buffer> <leader>c dO/*<ESC>o<ENTER>*/<ESC>==kP
+augroup END
+
+"Runs Makefile in working directory
+nnoremap <leader>m :!make<CR>
+
+"Writes partial command to run executable
+noremap <leader>x :!../bin/
+
+"Manually toggles showing working directory in statusbar on and off
+noremap <silent> <leader>d :call ToggleDir()<CR>
+"Automatically completes { for C and cpp
+augroup autobraces
+  autocmd!
+  autocmd Filetype cpp,c nnoremap <buffer> <leader>{ A{<ENTER>}<ESC>ko
+  autocmd Filetype cpp,c nnoremap <buffer> <leader>} A{<ENTER>}<ESC>ko
+augroup END
+
+"Mappins for making tables in latex
+nnoremap <leader>ls i$<ESC>Ea$<space>&<ESC>W
+nnoremap <leader>lp i$<ESC>Ea<space>\pm<ESC>Ea$<space>&<ESC>W
+
+""""""""""""""""""""""""""Custom Highlight groups""""""""""""""""""""""""
+
+highlight NormalBar cterm=bold ctermfg=White ctermbg=DarkBlue
+highlight InsertBar cterm=bold ctermfg=White ctermbg=DarkRed
+highlight ReplaceBar cterm=bold ctermfg=White ctermbg=DarkMagenta
+highlight VisualBar cterm=bold ctermfg=White ctermbg=DarkGreen
+highlight DarkGreyBar cterm=NONE ctermfg=White ctermbg=235
+highlight LightGreyBar cterm=NONE ctermfg=White ctermbg=59
+
+"""""""""""""""""""""""""Satusline"""""""""""""""""""""""""""
+
+"Shows statuslines regardless of whether you have more than one buffer open
+set laststatus=2
+
+"Manually toggles showing working directory in statusbar on and off
+let g:ShowDir = 0
+function! ToggleDir()
+  if g:ShowDir == 1
+    let g:ShowDir = 0
+  elseif g:ShowDir == 0
+    let g:ShowDir = 1
+  endif
+endfunction
+
+"Checks if there is available space in buffer to show working directory in statusbar or if that option has been manually toggled"
+function! ShowWorkDir()
+  let AvailableSpace = winwidth(0) - 40
+  if (AvailableSpace > 50 || g:ShowDir == 1)
+    return 1
+  endif
+endfunction
+
+"Empties statusline
+set statusline=
+"Specific color highlight for normal modes
+set statusline+=%#NormalBar#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+"Specific color highlight for insert mode
+set statusline+=%#InsertBar#%{(mode()=='i')?'\ \ INSERT\ ':''}
+"Specific color highlight for replace mode
+set statusline+=%#ReplaceBar#%{(mode()=='R')?'\ \ REPLACE\ ':''}
+"Specific color highlight for visual mode
+set statusline+=%#VisualBar#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+"Changes to dark grey background color
+set statusline+=%#DarkGreyBar#
+"Inserts number of buffer
+set statusline+=\ %n\  
+"Inserts [RO] flag when in read-only mode
+set statusline+=%r 
+"Inserts [+] flag when file has been modified
+set statusline+=%m 
+"Inserts spacing
+set statusline+=\  
+"Changes to light grey background color
+set statusline+=%#LightGreyBar# 
+"Inserts spacing
+set statusline+=\  
+"Inserts current working directory
+set statusline+=%{(ShowWorkDir())?getcwd():''}
+"Text now gets added to right side of statusline
+set statusline+=%= 
+"Inserts file name
+set statusline+=\ %t\  
+"Changes to dark grey background color
+set statusline+=%#DarkGreyBar#
+"Inserts spacing
+set statusline+=\  
+"Changes to light grey background color
+set statusline+=%#LightGreyBar# 
+"Inserts line and column number
+set statusline+=\ %3l:%-2c\  
+"Changes to dark grey background color
+set statusline+=%#DarkGreyBar#
+"Inserts percentage of file line
+set statusline+=\ %3p%%\  
+"Inserts type of file
+set statusline+=\%Y\  
