@@ -34,6 +34,8 @@ fi
 
 
 # MY STUFF
+# Start feh for wallpaper
+~/.fehbg &
 
 # change keyboard layout
 setxkbmap pt
