@@ -34,6 +34,9 @@ fi
 
 
 # MY STUFF
+# change display resolution (MUDAR QUANDO DEIXAR DE USAR A VM)
+xrandr --output Virtual1 --mode 1440x900
+
 # Start picom for transparency
 picom -b
 
@@ -42,9 +45,6 @@ picom -b
 
 # change keyboard layout
 setxkbmap pt
-
-# change display resolution (MUDAR QUANDO DEIXAR DE USAR A VM)
-xrandr --output Virtual1 --mode 1440x900
 
 # start bspwm
 exec bspwm
