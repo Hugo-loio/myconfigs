@@ -34,6 +34,9 @@ fi
 
 
 # MY STUFF
+# Start picom for transparency
+picom -b
+
 # Start feh for wallpaper
 ~/.fehbg &
 
