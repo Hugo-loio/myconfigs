@@ -9,9 +9,6 @@ echo ". $XDG_CONFIG_HOME/bash/bashrc" > ~/.bashrc
 #make .xinitrc
 echo ". $XDG_CONFIG_HOME/xinit/xinitrc" > ~/.xinitrc 
 
-#make .xprofile (same as xinitrc)
-echo ". $XDG_CONFIG_HOME/xinit/xinitrc" > ~/.xprofile 
-
 #make .xserverrc
 echo ". $XDG_CONFIG_HOME/xserver/xserverrc" > ~/.xserverrc 
 
@@ -21,16 +18,10 @@ echo ". $XDG_CONFIG_HOME/profile" > ~/.profile
 #make .bash_profile
 echo ". $XDG_CONFIG_HOME/bash_profile" > ~/.bash_profile 
 
+#make .fehgb
+echo ". $XDG_CONFIG_HOME/feh/fehbg" > ~/.fehbg
+chmod +x ~/.fehbg
+
 echo "Update lightdm configs (need root permision to be done)?(y/n)"
 read response
 
-if [ "$response" = "y" ]
-then
-  #make lightdm.conf
-  sudo cp $XDG_CONFIG_HOME/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
-
-  #make lightdm-webkit2-greeter.conf
-  sudo cp $XDG_CONFIG_HOME/lightdm/lightdm-webkit2-greeter.conf /etc/lightdm/lightdm-webkit2-greeter.conf
-else
-  echo "Lightdm configs not updated."
-fi
