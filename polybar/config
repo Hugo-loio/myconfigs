@@ -17,10 +17,8 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
+background = #90000000
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
@@ -31,19 +29,19 @@ alert = #bd2c40
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
+;offset-x = 0%
+;offset-y = 0%
+radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 0
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+border-size = 0
+border-color = #ff000000
 
 padding-left = 0
 padding-right = 2
@@ -63,13 +61,13 @@ tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
+wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
 
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
