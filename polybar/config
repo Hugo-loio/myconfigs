@@ -17,9 +17,13 @@
 ;==========================================================
 
 [colors]
+;cor de fundo
 background = #90000000
-background-alt = #444
+;cor de fundo alternativa (tab atual)
+background-alt = #90FE2E2E
+;cor das principal
 foreground = #dfdfdf
+;cor alternativa das letras
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
