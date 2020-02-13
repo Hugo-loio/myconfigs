@@ -24,6 +24,12 @@ set hlsearch
 "Highlight while searching
 set incsearch
 
+"Avoid clipboard deletion when exiting
+augroup SaveClipboard
+  autocmd!
+  autocmd VimLeave * call system("xclip -o | xclip -selection c")
+augroup END
+
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
 
 "Displays line number in left margin
@@ -92,10 +98,7 @@ nnoremap <C-p> "+P
 let mapleader = " " 
 
 "Edits vimrc
-nnoremap <leader>ev :vsplit ~/.vim/vimrc<cr>
-
-"Updates and Sources vimrc
-nnoremap <leader>uv :!sh ~/.vim/update_vimrc.sh<cr>:source $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $XDG_CONFIG_HOME/vim/vimrc<cr>
 
 "Comment visually selected text in c and cpp
 augroup autocomment
