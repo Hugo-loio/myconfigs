@@ -20,7 +20,8 @@
 ;cor de fundo
 background = #90000000
 ;cor de fundo alternativa (tab atual)
-background-alt = #90FE2E2E
+;background-alt = #90FE2E2E
+background-alt = #9002a802
 ;cor das principal
 foreground = #dfdfdf
 ;cor alternativa das letras
@@ -53,9 +54,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = Inter:pixelsize=11;1
+font-1 = Inter:fontformat=truetype:size=8:antialias=false;0
+font-2 = Linux Libertine:pixelsize=11;1
 
 modules-left = bspwm i3
 modules-center = mpd
@@ -278,7 +279,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = VOL %percentage%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted

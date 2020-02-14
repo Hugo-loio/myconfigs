@@ -1,7 +1,7 @@
 # My config files 
 These are all in a $HOME/.config folder. 
-The script make_dotfiles.sh creates the needed dotfiles outside the .config folder.
-When running make_dotfiles.sh for the firts time please run
+The script make\_dotfiles.sh creates the needed dotfiles outside the .config folder.
+When running make\_dotfiles.sh for the firts time please run
       $export XDG_CONFIG_HOME=$HOME/.config
 
 ## Dependencies

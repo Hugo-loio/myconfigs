@@ -24,11 +24,14 @@ set hlsearch
 "Highlight while searching
 set incsearch
 
-"Avoid clipboard deletion when exiting
+"Avoid clipboard deletion when exiting 
 augroup SaveClipboard
   autocmd!
   autocmd VimLeave * call system("xclip -o | xclip -selection c")
 augroup END
+
+"Enable syntax highlighting
+syntax on
 
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
 
