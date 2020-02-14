@@ -193,7 +193,7 @@ label = %percentage_used%%
 type = internal/date
 interval = 0.1
 
-date = "%d-%m-%Y"
+date = 
 date-alt = "%d-%m-%Y"
 
 time = %H:%M
