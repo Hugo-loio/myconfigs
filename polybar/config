@@ -56,7 +56,7 @@ module-margin-right = 2
 
 font-0 = Inter:pixelsize=11;2
 font-1 = Noto Color Emoji:scale=10;2
-font-2 = Hack:pixelsize=10;1
+font-2 = Hack:pixelsize=10;2
 
 modules-left = bspwm
 modules-center = mpd

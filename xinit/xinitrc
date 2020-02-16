@@ -44,5 +44,8 @@ picom -b
 # change keyboard layout
 setxkbmap pt
 
+# Start udiskie for automatically mounting drives (no notifications for now)
+udiskie --no-notify --tray &
+
 # start bspwm
 exec bspwm

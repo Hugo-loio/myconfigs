@@ -112,6 +112,12 @@ augroup END
 "Runs Makefile in working directory
 nnoremap <leader>m :!make<CR>
 
+"Compiles latex to pdf
+nnoremap <leader>lc :!pdflatex %<CR>
+
+"Opens evince with pdf of current file
+nnoremap <leader>lv :!evince %:r.pdf &<CR><CR>
+
 "Writes partial command to run executable
 noremap <leader>x :!../bin/
 
