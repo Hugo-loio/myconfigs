@@ -5,4 +5,4 @@
 #   exit 1
 #fi
 
-sudo cp $XDG_CONFIG_HOME/systemd/logind.conf /etc/systemd/logind.conf
+sudo cp $XDG_CONFIG_HOME/xorg/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
