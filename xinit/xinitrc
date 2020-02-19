@@ -45,7 +45,7 @@ picom -b
 setxkbmap pt
 
 # Start udiskie for automatically mounting drives (no notifications for now)
-udiskie --no-notify --tray &
+udiskie --tray &
 
 # start bspwm
 exec bspwm
