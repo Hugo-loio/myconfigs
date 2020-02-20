@@ -2,7 +2,6 @@
 
 sxhkd &
 nm-applet &
-dunst &
 
 $HOME/.config/polybar/launch.sh
 

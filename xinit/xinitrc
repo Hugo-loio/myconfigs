@@ -47,5 +47,11 @@ setxkbmap pt
 # Start udiskie for automatically mounting drives (no notifications for now)
 udiskie --tray &
 
+# Start notification server
+dunst &
+
+# Disable tapping and scrolling in touchpad while typing
+syndaemon -i 0.5 -t -K -R -d
+
 # start bspwm
 exec bspwm
