@@ -29,6 +29,7 @@ foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+theme_color = #dfdfdf
 
 [bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -57,9 +58,10 @@ module-margin-right = 2
 font-0 = Inter:pixelsize=11;2
 font-1 = Noto Color Emoji:scale=10;2
 font-2 = Hack:pixelsize=10;2
+font-3 = Font Awesome 5 Free:style=solid:pixelsize=11;2
 
 modules-left = bspwm
-modules-center = mpd
+modules-center = 
 modules-right = memory cpu filesystem xbacklight alsa xkeyboard battery date
 
 tray-position = right
@@ -103,7 +105,8 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %mountpoint%: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -145,8 +148,10 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <ramp> <bar>
-label = BL %percentage%% 
+format = <label> <bar>
+;label =  %percentage%% 
+label =   
+label-foreground = ${colors.theme_color}
 
 bar-width = 10
 bar-indicator = |
@@ -154,7 +159,7 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.foreground}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -167,25 +172,19 @@ ramp-4 = 🌕
 output = eDP1
 enable-scroll = true
 
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.theme_color}
 format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "RAM "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.theme_color}
 format-underline = #4bffdc
 label = %percentage_used%%
 
@@ -211,28 +210,23 @@ label-volume-foreground = ${root.foreground}
 
 ;format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = 🔇 muted
+label-muted =  
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
+bar-volume-fill-foreground = ${colors.foreground}
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+ramp-volume-0 = 
+ramp-volume-1 =  
+ramp-volume-2 =  
+ramp-volume-foreground = ${colors.theme_color}
 
 [module/battery]
 type = internal/battery
@@ -240,29 +234,33 @@ battery = BAT0
 adapter = AC
 full-at = 100
 
-format-charging = <label-charging>
+format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-0 =  
+ramp-capacity-1 =  
+ramp-capacity-2 =  
+ramp-capacity-3 =  
+ramp-capacity-4 =  
+ramp-capacity-foreground = ${colors.theme_color}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-0 =   
+animation-charging-1 =   
+animation-charging-2 =   
+animation-charging-3 =   
+animation-charging-4 =   
+animation-charging-foreground = ${colors.theme_color}
 animation-charging-framerate = 750
 
-label-charging = ⚡%percentage%%
-label-discharging = 🔋%percentage%%
+label-charging = %percentage%%
+label-discharging = %percentage%%
 
 animation-discharging-0 = 
 animation-discharging-1 = 

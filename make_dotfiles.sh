@@ -22,13 +22,13 @@ echo ". $XDG_CONFIG_HOME/bash_profile" > $HOME/.bash_profile
 echo ". $XDG_CONFIG_HOME/feh/fehbg" > $HOME/.fehbg
 chmod +x ~/.fehbg
 
-#make .stalonetrayrc
-#file=$HOME/.stalonetrayrc
+#make .gtkrc-2.0
+#file=$HOME/.gtkrc-2.0
 #if [ ! -f $file ]; 
 #then
-#  echo "Symlink for stalonetray will be created"
-#  ln -s $XDG_CONFIG_HOME/stalonetray/stalonetrayrc $HOME/.stalonetrayrc 
+#  echo "Symlink for gtkrc-2.0 will be created"
+#  ln -s $XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0  $file
 #else
-#  echo "Symlink for stalonetray already exists"
+#  echo "Symlink for gtkrc-2.0 already exists"
 #fi
 
