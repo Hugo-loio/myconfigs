@@ -4,7 +4,7 @@
 picom -b
 
 # Start feh for wallpaper
-~/.fehbg &
+feh --randomize --bg-scale $HOME/Pictures/wallpapers/* &
 
 # Lauch sxhkd
 sxhkd &

@@ -2,9 +2,6 @@
 
 echo "This script will use root permisions" 
 
-# Acpid
-sudo cp -r $XDG_CONFIG_HOME/acpid/* /etc/acpi/
-
 #Systemd
 sudo cp $XDG_CONFIG_HOME/systemd/logind.conf /etc/systemd/logind.conf
 
