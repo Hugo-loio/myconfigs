@@ -35,23 +35,17 @@ fi
 
 # MY STUFF
 
-# Start picom for transparency
-picom -b
-
-# Start feh for wallpaper
-~/.fehbg &
-
 # change keyboard layout
 setxkbmap pt
-
-# Start udiskie for automatically mounting drives (no notifications for now)
-udiskie --tray &
-
-# Start notification server
-dunst &
 
 # Disable tapping and scrolling in touchpad while typing
 syndaemon -i 0.5 -t -K -R -d
 
-# start bspwm
-exec bspwm
+# Starting WM/DE chosen
+session=${1:-bspwm}
+
+case $session in
+    bspwm ) exec bspwm        ;;
+    mate  ) exec mate-session ;;
+    *) echo "Unknown session" ;;
+esac
