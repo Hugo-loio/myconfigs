@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# Screenshot
+Print
+	mate-screenshot -a
+
 # terminal emulator
 super + Return
 	$TERMINAL
@@ -45,13 +49,17 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pamixer -t
 
+# Toggle touchpad
+XF86TouchpadToggle
+	touchpad_toggle
+
 #
 # bspwm hotkeys
 #
 
 # quit/restart bspwm
 super + alt + {q,r}
-	bspc {quit,wm -r}
+	bspwmctl {quit,restart}
 
 # close and kill
 super + {_,shift + }BackSpace

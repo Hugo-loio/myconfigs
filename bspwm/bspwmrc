@@ -12,14 +12,14 @@ sxhkd &
 # Lauch polybar
 $HOME/.config/polybar/launch.sh
 
-# Start udiskie for automatically mounting drives (no notifications for now)
-udiskie --tray &
+# Start network manager applet
+nm-applet &
 
 # Start bluetooth tray applet
 blueman-applet &
 
-# Start network manager applet
-nm-applet &
+# Start udiskie for automatically mounting drives (no notifications for now)
+udiskie --tray &
 
 # Start notification server
 dunst &

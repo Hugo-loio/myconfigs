@@ -60,7 +60,7 @@ font-1 = Noto Color Emoji:scale=10;2
 font-2 = Hack:pixelsize=10;2
 font-3 = Font Awesome 5 Free:style=solid:pixelsize=11;2
 
-modules-left = bspwm
+modules-left = bspwm xwindow
 modules-center = 
 modules-right = memory cpu filesystem xbacklight alsa xkeyboard battery date
 
