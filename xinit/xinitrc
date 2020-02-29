@@ -41,6 +41,9 @@ setxkbmap pt
 # Disable tapping and scrolling in touchpad while typing
 syndaemon -i 0.5 -t -K -R -d
 
+# Fix issue where android-studio opens as blank window
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Starting WM/DE chosen
 session=${1:-bspwm}
 

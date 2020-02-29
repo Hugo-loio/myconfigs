@@ -20,7 +20,7 @@
 ;cor de fundo
 background = #90000000
 ;cor de fundo alternativa (tab atual)
-;background-alt = #90FE2E2E
+;background-alt = #90FFFF00
 background-alt = #9002a802
 ;cor das principal
 foreground = #dfdfdf
