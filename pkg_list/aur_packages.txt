@@ -1,2 +1,5 @@
+android-studio 3.6.0.21-1
 betterlockscreen 3.0.1-4
 polybar 3.4.2-1
+simple-mtpfs 0.3.0-1
+yay 9.4.5-1
