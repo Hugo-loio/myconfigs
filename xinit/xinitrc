@@ -49,6 +49,7 @@ session=${1:-bspwm}
 
 case $session in
     bspwm ) exec bspwm        ;;
-    mate  ) exec mate-session ;;
+    xfce  ) exec startxfce4   ;;
+    lxde  ) exec startlxde    ;;
     *) echo "Unknown session" ;;
 esac
