@@ -25,7 +25,7 @@ udiskie --tray &
 dunst &
 
 # Start power manager
-xfce-power-manager &
+xfce4-power-manager &
 
 
 

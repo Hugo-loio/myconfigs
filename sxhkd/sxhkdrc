@@ -22,6 +22,10 @@ super + Escape
 super + b
 	$BROWSER
 
+# lauch firefox in private mode
+super + p
+	firefox -private-window
+
 # lauch ranger
 super + r
 	$TERMINAL -e ranger
