@@ -1,7 +1,8 @@
 #!/bin/sh
 
 #make .vimrc
-echo ":source $XDG_CONFIG_HOME/vim/vimrc" > $HOME/.vimrc 
+#TODO ask for permition to delete .vimrc if it exists
+ln -s $XDG_CONFIG_HOME/vim/vimrc $HOME/.vimrc
 
 #make .bashrc
 echo ". $XDG_CONFIG_HOME/bash/bashrc" > $HOME/.bashrc 
