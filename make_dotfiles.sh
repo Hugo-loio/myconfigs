@@ -1,38 +1,55 @@
 #!/bin/sh
+repo="$HOME/myconfigs"
 
-#make .vimrc
-#TODO ask for permition to delete .vimrc if it exists
-ln -s $XDG_CONFIG_HOME/vim/vimrc $HOME/.vimrc
+home_dotfiles="xterm/Xresources profile xinit/xinitrc xinit/xserverrc \
+  bash/bash_profile bash/bashrc vim/vimrc" 
 
-#make .Xresources
-ln -s $XDG_CONFIG_HOME/xterm/Xresources $HOME/.Xresources
+config_folder="alacritty/alacritty.yml dunst/dunstrc bspwm/bspwmrc \
+  fontconfig/font.conf picom/picom.conf polybar/config polybar/launch.sh \
+  ranger/commands.py ranger/commands_full.py ranger/rc.conf ranger/rifle.conf
+  ranger/scope.sh sxhkd/sxhkdrc"
 
-#make .bashrc
-echo ". $XDG_CONFIG_HOME/bash/bashrc" > $HOME/.bashrc 
+echo "This script will replace your configs with the ones on this repo. Do you wish to proced?(y/n)"
+while [ true ] ; do
+  read answer 
+  if [ -z $answer ] ; then 
+    continue
+  fi
+  if [ $answer == "y" ] || [ $answer == "Y" ] ; then
+    break
+  fi
+  if [ $answer == "n" ] || [ $answer == "N" ] ; then
+    exit
+  fi
+done
 
-#make .xinitrc
-echo ". $XDG_CONFIG_HOME/xinit/xinitrc" > $HOME/.xinitrc 
+for dot in $home_dotfiles;do
+  file=$HOME/"."$(basename $dot)
+  if [ -f $file ];then
+    echo "Replaced" $file
+    rm $file
+  else
+    echo "Creating" $file
+  fi
+  ln -s $repo/$dot $file
+done
 
-#make .xserverrc
-echo ". $XDG_CONFIG_HOME/xserver/xserverrc" > $HOME/.xserverrc 
+for conf in $config_folder;do
+  dir=$XDG_CONFIG_HOME"/"$(echo $conf | awk -F / '{print $1}')
+  file=$XDG_CONFIG_HOME/$conf
+  
+  if [ ! -d $dir ] ; then
+    mkdir $dir
+    echo "Created directory" $dir
+  fi
 
-#make .profile
-echo ". $XDG_CONFIG_HOME/profile" > $HOME/.profile 
+  if [ -f $file ];then
+    echo "Replaced" $file
+    rm $file
+  else
+    echo "Created" $file
+  fi
+  ln -s $repo/$conf $file
+done
 
-#make .bash_profile
-echo ". $XDG_CONFIG_HOME/bash_profile" > $HOME/.bash_profile 
-
-#make .fehgb
-echo ". $XDG_CONFIG_HOME/feh/fehbg" > $HOME/.fehbg
-chmod +x ~/.fehbg
-
-#make .gtkrc-2.0
-#file=$HOME/.gtkrc-2.0
-#if [ ! -f $file ]; 
-#then
-#  echo "Symlink for gtkrc-2.0 will be created"
-#  ln -s $XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0  $file
-#else
-#  echo "Symlink for gtkrc-2.0 already exists"
-#fi
 

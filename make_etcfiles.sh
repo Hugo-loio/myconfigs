@@ -1,9 +1,10 @@
 #!/bin/sh
+repo="$HOME/myconfigs"
 
 echo "This script will use root permisions" 
 
 #Xorg
-sudo cp $XDG_CONFIG_HOME/xorg/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
+sudo cp $repo/xorg/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
 
 
 
