@@ -11,3 +11,5 @@ PS1='[\u@\h \W]\$ '
 # Enable vi mode
 set -o vi
 
+# XTerm transparency
+[ -n "$XTERM_VERSION" ] && transset-df -m 0.9 --id "$WINDOWID" >/dev/null

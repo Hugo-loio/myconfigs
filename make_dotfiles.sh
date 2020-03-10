@@ -4,6 +4,9 @@
 #TODO ask for permition to delete .vimrc if it exists
 ln -s $XDG_CONFIG_HOME/vim/vimrc $HOME/.vimrc
 
+#make .Xresources
+ln -s $XDG_CONFIG_HOME/xterm/Xresources $HOME/.Xresources
+
 #make .bashrc
 echo ". $XDG_CONFIG_HOME/bash/bashrc" > $HOME/.bashrc 
 
