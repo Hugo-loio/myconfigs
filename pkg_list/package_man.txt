@@ -1,5 +1,0 @@
-This file is supposed to contain information about what each package I have installed does
-
-MAIN REPOSITORIES
-
-AUR
