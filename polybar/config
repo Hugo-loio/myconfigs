@@ -21,7 +21,7 @@
 background = #90000000
 ;cor de fundo alternativa (tab atual)
 ;background-alt = #90FFFF00
-background-alt = #9002a802
+background-alt = #9002a802 
 ;cor das principal
 foreground = #dfdfdf
 ;cor alternativa das letras
