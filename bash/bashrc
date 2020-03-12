@@ -6,7 +6,9 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+
+#Configures the shell prompt
+PS1=💩'[\u@\h: \w]$'
 
 # Enable vi mode
 set -o vi

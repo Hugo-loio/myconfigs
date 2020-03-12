@@ -1,13 +1,13 @@
 #!/bin/sh
 repo="$HOME/myconfigs"
 
-home_dotfiles="xterm/Xresources profile xinit/xinitrc xinit/xserverrc \
+home_dotfiles="profile xinit/xinitrc xinit/xserverrc \
   bash/bash_profile bash/bashrc vim/vimrc" 
 
-config_folder="alacritty/alacritty.yml dunst/dunstrc bspwm/bspwmrc \
+config_folder="dunst/dunstrc bspwm/bspwmrc \
   fontconfig/font.conf picom/picom.conf polybar/config polybar/launch.sh \
   ranger/commands.py ranger/commands_full.py ranger/rc.conf ranger/rifle.conf
-  ranger/scope.sh sxhkd/sxhkdrc"
+  ranger/scope.sh sxhkd/sxhkdrc kitty/kitty.conf"
 
 echo "This script will replace your configs with the ones on this repo. Do you wish to proced?(y/n)"
 while [ true ] ; do
