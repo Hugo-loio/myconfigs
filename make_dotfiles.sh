@@ -15,10 +15,10 @@ while [ true ] ; do
   if [ -z $answer ] ; then 
     continue
   fi
-  if [ $answer == "y" ] || [ $answer == "Y" ] ; then
+  if [ "$answer" = "y" ] || [ "$answer" = "Y" ] ; then
     break
   fi
-  if [ $answer == "n" ] || [ $answer == "N" ] ; then
+  if [ "$answer" = "n" ] || [ "$answer" = "N" ] ; then
     exit
   fi
 done
