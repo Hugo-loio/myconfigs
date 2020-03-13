@@ -2,7 +2,7 @@
 These are meant to be symlinked to their rightfull location on the system. 
 
 ## Getting the configs
-The script make\_dotfiles.sh creates all the necessary symlinks automatically (replacing all existing config files). Please take the following percautions before running the script.
+The script make\_dotfiles.sh creates all the necessary symlinks automatically (replacing all existing config files). Please take the following precautions before running the script.
 
 If this repo wasn't cloned into ~/myconfigs/ please change the variable $repo in make\_dotfiles.sh to the correct folder before running it.
 
