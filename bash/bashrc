@@ -5,13 +5,19 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# ls aliases
 alias ls='ls --color=auto'
+alias la='ls -la'
+# vim aliases
 alias v='vim'
 alias vi='vim'
+# git aliases
 alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
 alias gst='git status'
+# checkbashisms alias
+alias cb='checkbashisms'
 
 #Configures the shell prompt
 PS1='\[\033[00m\][\[\033[32m\]\u@\h\[\033[00m\]: \[\033[36m\]\w\[\033[00m\]]$ '
