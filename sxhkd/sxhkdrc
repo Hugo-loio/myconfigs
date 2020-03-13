@@ -14,10 +14,6 @@ super + Return
 super + @space
 	dmenu_run
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
-
 # lauch browser
 super + b
 	$BROWSER
@@ -29,29 +25,18 @@ super + p
 # lauch ranger
 super + r
 	$TERMINAL -e ranger
+
 #
 # Function keys for my laptop
 #
 
-# Increase brightness
-XF86MonBrightnessUp
-	xbacklight -inc 5
+# Increase/Decrease brightness
+XF86MonBrightness{Up,Down}
+	xbacklight {-inc 5,-dec 5}
 
-# Decrease brightness
-XF86MonBrightnessDown
-	xbacklight -dec 5
-
-# Increase volume
-XF86AudioRaiseVolume
-	pamixer -i 5
-
-# Decrease volume
-XF86AudioLowerVolume
-	pamixer -d 5
-
-# Toggle mute volume
-XF86AudioMute
-	pamixer -t
+# Increase/Decrease/Mute volume
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	pamixer {-i 5,-d 5,-t}
 
 # Toggle touchpad
 XF86TouchpadToggle
@@ -73,14 +58,6 @@ super + {_,shift + }BackSpace
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
-# swap the current node and the biggest node
-super + g
-	bspc node -s biggest
-
 #
 # state/flags
 #
@@ -88,10 +65,6 @@ super + g
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
 
 #
 # focus/swap
@@ -101,20 +74,16 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-# super + {p,b,comma,period}
-#	bspc node -f @{parent,brother,first,second}
-
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+super + Tab + {shift,_}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-{super,alt} + Tab
+alt + Tab + {_,shift}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
@@ -140,11 +109,11 @@ super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
+super + Escape
 	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
+super + shift + Escape
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
