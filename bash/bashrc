@@ -11,7 +11,7 @@ alias vi='vim'
 alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
-alias gt='git status'
+alias gst='git status'
 
 #Configures the shell prompt
 PS1='\[\033[00m\][\[\033[32m\]\u@\h\[\033[00m\]: \[\033[36m\]\w\[\033[00m\]]$ '
