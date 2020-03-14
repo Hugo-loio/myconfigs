@@ -52,7 +52,8 @@ super + alt + {q,r}
 
 # close and kill
 super + {_,shift + }BackSpace
-	bspc node -{c,k}
+	bspc node -{c,k}; \
+	bspwm_rm_empty_desktops
 
 # alternate between the tiled and monocle layout
 super + m
@@ -80,21 +81,25 @@ super + {_,shift + }c
 
 # focus the next/previous desktop in the current monitor
 super + Tab + {shift,_}
-	bspc desktop -f {prev,next}.local
+	bspc desktop -f {prev,next}.local; \
+	bspwm_rm_empty_desktops
 
 # focus the last node/desktop
 alt + Tab + {_,shift}
-	bspc {node,desktop} -f last
+	bspc {node,desktop} -f last; \
+	bspwm_rm_empty_desktops
 
 # focus the older or newer node in the focus history
 super + {o,i}
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
-	bspc wm -h on
+	bspc wm -h on; \
+	bspwm_rm_empty_desktops
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+super + {_,ctrl + ,shift + ,shift + ctrl + }{0-9,d}
+	bspwm_dynamic_desktops {--cd,--cdm,--mn,--mnm} {0-9,100}; \
+	bspwm_rm_empty_desktops
 
 #
 # preselect
@@ -103,10 +108,6 @@ super + {_,shift + }{1-9,0}
 # preselect the direction
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + Escape
