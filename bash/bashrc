@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# change cd to automatically ls
+function cd {
+  builtin cd "$@" && ls --color=auto 
+}
 # ls aliases
 alias ls='ls --color=auto'
 alias la='ls -la'
@@ -20,7 +24,7 @@ alias gst='git status'
 alias cb='checkbashisms'
 
 #Configures the shell prompt
-PS1='\[\033[00m\][\[\033[32m\]\u@\h\[\033[00m\]: \[\033[36m\]\w\[\033[00m\]]$ '
+PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\n\e[37m$ '
 
 # Enable vi mode
 set -o vi
