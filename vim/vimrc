@@ -30,6 +30,12 @@ augroup SaveClipboard
   autocmd VimLeave * call system("xclip -o | xclip -selection c")
 augroup END
 
+"When editing latex files, rm .aux and .log files on exit
+augroup DeletePdflatexFiles
+  autocmd!
+  autocmd VimLeave *.tex :!rm %:p:r.aux %:p:r.log %:p:r.pdf
+augroup END
+
 "Enable syntax highlighting
 syntax on
 
@@ -101,7 +107,7 @@ nnoremap <C-p> "+P
 let mapleader = " " 
 
 "Edits vimrc
-nnoremap <leader>ev :vsplit $XDG_CONFIG_HOME/vim/vimrc<cr>
+nnoremap <leader>ev :!$TERMINAL -e vim $HOME/.vimrc &<cr><cr>
 
 "Comment visually selected text in c and cpp
 augroup autocomment
@@ -113,16 +119,17 @@ augroup END
 nnoremap <leader>m :!make<CR>
 
 "Compiles latex to pdf
-nnoremap <leader>lc :!pdflatex %<CR>
+nnoremap <leader>lc :!pdflatex -output-directory %:p:h %<CR>
 
 "Opens evince with pdf of current file
-nnoremap <leader>lv :!evince %:r.pdf &<CR><CR>
+nnoremap <leader>lv :!evince %:p:r.pdf &<CR><CR>
 
 "Writes partial command to run executable
 noremap <leader>x :!../bin/
 
 "Manually toggles showing working directory in statusbar on and off
 noremap <silent> <leader>d :call ToggleDir()<CR>
+
 "Automatically completes { for C and cpp
 augroup autobraces
   autocmd!
