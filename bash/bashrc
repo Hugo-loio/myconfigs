@@ -25,7 +25,7 @@ alias gd='git diff'
 alias cb='checkbashisms'
 
 #Configures the shell prompt
-PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\e[37m \n$ '
+PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\e[00m \n$ '
 
 # Enable vi mode
 set -o vi
