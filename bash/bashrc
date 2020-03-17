@@ -20,11 +20,12 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push'
 alias gst='git status'
+alias gd='git diff'
 # checkbashisms alias
 alias cb='checkbashisms'
 
 #Configures the shell prompt
-PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\n\e[37m$ '
+PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\e[37m \n$ '
 
 # Enable vi mode
 set -o vi
