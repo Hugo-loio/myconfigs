@@ -23,6 +23,8 @@ alias gst='git status'
 alias gd='git diff'
 # checkbashisms alias
 alias cb='checkbashisms'
+# vim keys with info
+alias info='info --vi-keys'
 
 #Configures the shell prompt
 PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\e[00m \n$ '
