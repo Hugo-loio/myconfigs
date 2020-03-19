@@ -3,4 +3,8 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+
+straightback &
+
 [[ -f ~/.profile ]] && . ~/.profile
+
