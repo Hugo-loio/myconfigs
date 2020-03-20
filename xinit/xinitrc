@@ -49,6 +49,9 @@ session=${1:-bspwm}
 
 straightback &
 
+# Make default cursor diferent from x
+xsetroot -cursor_name left_ptr &
+
 case $session in
     bspwm ) exec bspwm        ;;
     xfce  ) exec startxfce4   ;;
