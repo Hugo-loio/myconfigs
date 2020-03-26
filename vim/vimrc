@@ -126,6 +126,7 @@ augroup	autoexecute
   autocmd Filetype make,cpp,c nnoremap <leader>x :!bin/
   "Open pdf with evince
   autocmd Filetype tex nnoremap <leader>x :!evince %:p:r.pdf &<CR><CR>:redraw!<CR>
+  autocmd Filetype python nnoremap <leader>x :!python %<CR>
 augroup End
 
 "Manually toggles showing working directory in statusbar on and off
