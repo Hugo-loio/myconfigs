@@ -7,6 +7,7 @@
 "
 
 """"""""""""""""""""""""Plugins"""""""""""""""""""""""""
+
 "Check if vim-plug is installed, if not install it and used plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -24,6 +25,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
 """"""""""""""""""""""""General""""""""""""""""""""""""
 
 "Shows partial commands in the last line of the screen
@@ -169,6 +171,8 @@ nnoremap <leader><space> /<++><CR>c4l
 "Replace <++> from with line read from file"
 nnoremap <leader>s :read! vim_line_output %:r.txt<CR>v$h"ay<ESC>ddk/<++><CR>d4l"aP
 
+"Delete swap files
+nnoremap <leader>ds :! rm -i $HOME/.cache/vim/swap/*.swp<CR>
 """"""""""""""""""""""""""Snipets"""""""""""""""""""""""""""""""""
 
 "Latex
