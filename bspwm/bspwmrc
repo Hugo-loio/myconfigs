@@ -12,9 +12,6 @@ sxhkd &
 # Start network manager applet
 nm-applet &
 
-# Start bluetooth tray applet
-blueman-applet &
-
 # Start udiskie for automatically mounting drives (no notifications for now)
 udiskie --tray &
 
