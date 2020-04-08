@@ -16,8 +16,14 @@ endif
 
 "List all the plugins be managed by vim-plug
 call plug#begin('~/.vim/plugged')
+Plug 'SirVer/ultisnips'
 call plug#end()
 
+"Ultisnips variables
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 """"""""""""""""""""""""General""""""""""""""""""""""""
 
 "Shows partial commands in the last line of the screen
