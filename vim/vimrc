@@ -6,8 +6,19 @@
 "        \__/     |__| |__|  |__| | _| `._____| \______|
 "
 
+""""""""""""""""""""""""Plugins"""""""""""""""""""""""""
+"Check if vim-plug is installed, if not install it and used plugins
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-""""""""""""""""""""""""""""general""""""""""""""""""""""""
+"List all the plugins be managed by vim-plug
+call plug#begin('~/.vim/plugged')
+call plug#end()
+
+""""""""""""""""""""""""General""""""""""""""""""""""""
 
 "Shows partial commands in the last line of the screen
 set showcmd
@@ -112,6 +123,9 @@ nnoremap <leader>ev :!$TERMINAL -e vim $HOME/.vimrc &<cr><cr>
 "Sources vimrc from within vim
 nnoremap <leader>uv :source ~/.vimrc<CR>
 
+"Open another terminal in working directory
+nnoremap <leader>t :!$TERMINAL -d $(pwd) &<CR><CR>
+
 "Group to automatically comment visual selection
 augroup autocomment
   autocmd!
@@ -154,6 +168,8 @@ nnoremap <leader>s :read! vim_line_output %:r.txt<CR>v$h"ay<ESC>ddk/<++><CR>d4l"
 "Latex
 augroup latexsnipets
   autocmd!
+  "Begin and end environment
+  autocmd Filetype tex ia bg \begin{<++>}<CR>\end{<++>}
   "Bold text
   autocmd Filetype tex inoremap .tb \textbf{}<ESC>i
   "Normal text math mode
