@@ -1,0 +1,37 @@
+snippet "\\?b(egin)?" "General environment" br
+\begin{${1:<++>}}
+\end{$1}
+endsnippet
+
+snippet "tab(le)?" "Table environment" br
+\begin{table}[${1:H}]
+	\centering
+	\begin{tabular}{${3:c}}
+	  $0
+	\end{tabular}
+	\caption{${4:<++>}}
+	\label{tab:${5:<++>}}
+\end{table}
+endsnippet
+
+snippet "fig(ure)?" "Figure environment" br
+\begin{figure}[${1:H}]
+	\centering
+	\includegraphics[width=${2:0.8}\columnwidth]{${3:<++>}}
+	\caption{${4:<++>}}
+	\label{fig:${5:<++>}}
+\end{figure}
+endsnippet
+
+snippet tb "Bold text"
+\textbf{${0:<++>}}
+endsnippet
+
+snippet tn "Normal text in math mode"
+\textnormal{${0:<++>}}
+endsnippet
+
+
+snippet ti "Italic text"
+\textit{${0:<++>}}
+endsnippet

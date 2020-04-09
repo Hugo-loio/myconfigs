@@ -166,27 +166,13 @@ nnoremap <leader>ls i$<ESC>Ea$<space>&<ESC>W
 nnoremap <leader>lp i$<ESC>Ea<space>\pm<ESC>Ea$<space>&<ESC>W
 
 "Mapping for search and changing next <++> expression
-nnoremap <leader><space> /<++><CR>c4l
+nnoremap <leader><space> /<++><CR>d4l<ESC>:noh<CR>i
 
 "Replace <++> from with line read from file"
 nnoremap <leader>s :read! vim_line_output %:r.txt<CR>v$h"ay<ESC>ddk/<++><CR>d4l"aP
 
 "Delete swap files
 nnoremap <leader>ds :! rm -i $HOME/.cache/vim/swap/*.swp<CR>
-""""""""""""""""""""""""""Snipets"""""""""""""""""""""""""""""""""
-
-"Latex
-augroup latexsnipets
-  autocmd!
-  "Begin and end environment
-  autocmd Filetype tex ia bg \begin{<++>}<CR>\end{<++>}
-  "Bold text
-  autocmd Filetype tex inoremap .tb \textbf{}<ESC>i
-  "Normal text math mode
-  autocmd Filetype tex inoremap .tn \textnormal{}<ESC>i
-  "Table
-  autocmd Filetype tex inoremap .tab \begin{table}[<++>]<CR>\centering<CR>\begin{tabular}{<++>}<CR>\end{tabular}<CR>\label{<++>}<CR>\caption{<++>}<CR>\end{table}<ESC>6k0
-augroup END
 
 """"""""""""""""""""""""""Custom Highlight groups""""""""""""""""""""""""
 
