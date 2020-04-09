@@ -58,6 +58,12 @@ augroup END
 "Enable syntax highlighting
 syntax on
 
+"Save and load folds when entering and exiting vim
+augroup remember_folds
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent loadview 
+augroup END
+
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
 
 "Displays line number in left margin
