@@ -93,10 +93,10 @@ set tabstop=8
 "Sets the default size of <TAB> key press. Also vim will minimize amout of spaces inserted by <TAB> consecutive key presses using the most TAB characters it can. Notice diference between TAB and <TAB> 
 set softtabstop=2
 
-"Automatically idents whenever file is saved in cpp,C
+"Automatically idents whenever file is saved in cpp,C,latex
 augroup IdentWhenWriting
   autocmd!
-  autocmd BufWritePre *.c,*.cpp,*.cc,*.C,*.h :normal gg=G| `` 
+  autocmd BufWritePre *.c,*.cpp,*.cc,*.C,*.h,*.tex :normal gg=G| `` 
 augroup END
 
 """""""""""""""""""""""Window Spliting""""""""""""""""""""""""
@@ -174,11 +174,14 @@ nnoremap <leader>lp i$<ESC>Ea<space>\pm<ESC>Ea$<space>&<ESC>W
 "Mapping for search and changing next <++> expression
 nnoremap <leader><space> /<++><CR>d4l<ESC>:noh<CR>i
 
-"Replace <++> from with line read from file"
+"Replace <++> with line read from file"
 nnoremap <leader>s :read! vim_line_output %:r.txt<CR>v$h"ay<ESC>ddk/<++><CR>d4l"aP
 
 "Delete swap files
 nnoremap <leader>ds :! rm -i $HOME/.cache/vim/swap/*.swp<CR>
+
+"Redraw screen
+nnoremap <leader>r :redraw!<CR>
 
 """"""""""""""""""""""""""Custom Highlight groups""""""""""""""""""""""""
 
