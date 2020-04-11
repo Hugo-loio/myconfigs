@@ -10,7 +10,7 @@ snippet "tab(le)?" "Table environment" br
 	  $0
 	\end{tabular}
 	\caption{${4:<++>}}
-	\label{tab:${5:<++>}}
+	\label{tab_${5:<++>}}
 \end{table}
 endsnippet
 
@@ -19,7 +19,7 @@ snippet "fig(ure)?" "Figure environment" br
 	\centering
 	\includegraphics[width=${2:0.8}\columnwidth]{${3:<++>}}
 	\caption{${4:<++>}}
-	\label{fig:${5:<++>}}
+	\label{fig_${5:<++>}}
 \end{figure}
 endsnippet
 
@@ -34,4 +34,12 @@ endsnippet
 
 snippet ti "Italic text"
 \textit{${0:<++>}}
+endsnippet
+
+snippet "\\f(rac)?" "Fraction" r
+\frac{${1:<++>}}{${2:<++>}}
+endsnippet
+
+snippet "\\l(eft)?" "Left and right" r
+\left${1:(}${0:<++>}\right${2:)}
 endsnippet
