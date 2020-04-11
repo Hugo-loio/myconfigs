@@ -26,6 +26,10 @@ super + p
 super + r
 	$TERMINAL -e ranger
 
+#lauch bookfinder script
+super + shift + b
+	bookfinder
+
 #
 # Function keys for my laptop
 #
