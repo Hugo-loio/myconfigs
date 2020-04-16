@@ -90,12 +90,6 @@ super + Tab + {shift,_}
 alt + Tab + {_,shift}
 	bspc {node,desktop} -f last 
 
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
 # focus or send to the given desktop
 super + {_,ctrl + ,shift + ,shift + ctrl + }{0-9,d}
 	bspwm_dynamic_desktops {--cd,--cdm,--mn,--mnm} {0-9,100}
@@ -131,3 +125,15 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Rotate nodes in desktop or rotate groupo of nodes
+super + {_,alt + } {less, greater} 
+	bspc node {@/,@parent} -R {90,-90}
+
+# increase/decrease window gaps
+super + {plus,minus} 
+    bspc config window_gap $(( $(bspc config window_gap) {+,-} 2 ))    
+
+# no/default window gaps
+super + ctrl + {plus,minus} 
+    bspc config window_gap {10,0}    
