@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # Start picom for transparency
-picom -b
+picom --config $XDG_CONFIG_HOME/picom/picom.conf -b
 
 # Random wallpaper
 wpshuffle

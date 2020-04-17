@@ -35,8 +35,8 @@ theme_color = #dfdfdf
 monitor = ${env:monitor}
 width = 100%
 height = 27
-;offset-x = 0%
-;offset-y = 0%
+offset-x = 0%
+offset-y = 0 
 radius = 0.0
 fixed-center = false
 
