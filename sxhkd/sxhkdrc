@@ -135,5 +135,5 @@ super + {plus,minus}
     bspc config window_gap $(( $(bspc config window_gap) {+,-} 2 ))    
 
 # no/default window gaps
-super + ctrl + {plus,minus} 
+super + shift + {plus,minus} 
     bspc config window_gap {10,0}    
