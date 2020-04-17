@@ -35,8 +35,10 @@ bspc config window_gap          10
 #bspc config focused_border_color "#ffff00" #YELLOW
 #bspc config focused_border_color "#ffffff" #WHITE
 #bspc config focused_border_color "#ff0000" #RED
-bspc config focused_border_color "#14ed00" #GREEN
-#bspc config focused_border_color "#f5982f #ORANGE
+#bspc config focused_border_color "#14ed00" #GREEN
+#bspc config focused_border_color "#f5982f" #ORANGE
+#bspc config focused_border_color "#f5982f" #ORANGE
+bspc config focused_border_color "#3065ba" #BlUE
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true

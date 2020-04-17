@@ -17,15 +17,29 @@
 ;==========================================================
 
 [colors]
-;cor de fundo
+;background color
+;green
+;background = #9002a802 
+;black
 background = #90000000
-;cor de fundo alternativa (tab atual)
-;background-alt = #90FFFF00
-background-alt = #9002a802 
-;cor das principal
+;blue
+;background = #903065ba
+;orange
+;background = #90f5982f
+
+;alternative background color (focused desktop)
+;black
+;background-alt = #90000000
+;green
+;background-alt = #9002a802 
+;blue
+background-alt = #3065ba
+
+;main font color
 foreground = #dfdfdf
-;cor alternativa das letras
+;alternative font color
 foreground-alt = #555
+
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
