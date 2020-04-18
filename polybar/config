@@ -31,9 +31,9 @@ background = #90000000
 ;black
 ;background-alt = #90000000
 ;green
-;background-alt = #9002a802 
+background-alt = #9002a802 
 ;blue
-background-alt = #3065ba
+;background-alt = #3065ba
 
 ;main font color
 foreground = #dfdfdf
