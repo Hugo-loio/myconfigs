@@ -15,7 +15,7 @@ super + @space
 	dmenu_run
 
 # lauch browser
-super + b
+super + i
 	$BROWSER
 
 # lauch firefox in private mode
@@ -27,7 +27,7 @@ super + r
 	$TERMINAL -e ranger
 
 #lauch bookfinder script
-super + shift + b
+super + b
 	bookfinder
 
 #
