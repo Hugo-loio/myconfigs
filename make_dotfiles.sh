@@ -9,7 +9,7 @@ home_dotfiles="profile xinit/xinitrc xinit/xserverrc \
 config_folder="dunst/dunstrc bspwm/bspwmrc \
   fontconfig/font.conf picom/picom.conf polybar/config polybar/launch.sh \
   ranger/commands.py ranger/commands_full.py ranger/rc.conf ranger/rifle.conf \
-  ranger/scope.sh sxhkd/sxhkdrc kitty/kitty.conf"
+  ranger/scope.sh sxhkd/sxhkdrc kitty/kitty.conf mpv/input.conf mpv/mpv.conf"
 
 #List of snippets for .vim/UltiSnips directory
 vim_snippets=$(ls $repo/vim/snippets/*.snippets)
