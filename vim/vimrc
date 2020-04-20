@@ -11,18 +11,25 @@
 "Check if vim-plug is installed, if not install it and used plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 "List all the plugins be managed by vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'ervandew/supertab'
 call plug#end()
 
-"Ultisnips variables
+"Make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"Ultisnips keybindings and other settings
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
@@ -64,6 +71,9 @@ augroup remember_folds
   autocmd BufWinEnter *.* silent loadview 
 augroup END
 
+"Default .tex filetype to latex
+let g:tex_flavor = "latex"
+
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
 
 "Displays line number in left margin
@@ -93,10 +103,10 @@ set tabstop=8
 "Sets the default size of <TAB> key press. Also vim will minimize amout of spaces inserted by <TAB> consecutive key presses using the most TAB characters it can. Notice diference between TAB and <TAB> 
 set softtabstop=2
 
-"Automatically idents whenever file is saved in cpp,C,latex
+"Automatically idents whenever file is saved in cpp,C
 augroup IdentWhenWriting
   autocmd!
-  autocmd BufWritePre *.c,*.cpp,*.cc,*.C,*.h,*.tex :normal gg=G| `` 
+  autocmd BufWritePre *.c,*.cpp,*.cc,*.C,*.h :normal mqHmwgg=G | `wzt`q
 augroup END
 
 """""""""""""""""""""""Window Spliting""""""""""""""""""""""""
@@ -126,7 +136,7 @@ nnoremap <C-down> :resize -1<CR>
 
 "Maps <C-c> and <C-v> to copy and paste with clipboard
 vnoremap <C-c> "*y :let @+=@*<CR>
-nnoremap <C-p> "+P
+nnoremap <C-p> "+p
 
 "Defines leader key to use in future mappings
 let mapleader = " " 
@@ -183,6 +193,8 @@ nnoremap <leader>ds :! rm -i $HOME/.cache/vim/swap/*.swp<CR>
 "Redraw screen
 nnoremap <leader>r :redraw!<CR>
 
+"Indent entire file
+nnoremap <leader>i :normal mqHmwgg=G \| `wzt`q<CR>
 """"""""""""""""""""""""""Custom Highlight groups""""""""""""""""""""""""
 
 highlight NormalBar cterm=bold ctermfg=White ctermbg=DarkBlue
