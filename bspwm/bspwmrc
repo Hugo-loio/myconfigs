@@ -46,6 +46,6 @@ bspc config gapless_monocle      true
 bspc config pointer_follows_monitor true
 
 # Rules 
-bspc rule -a Gimp state=floating 
+#bspc rule -a Gimp state=floating 
 # bspc rule -a $BROWSER desktop='^2' follow=on
 #bspc rule -a Screenkey manage=off

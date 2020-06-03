@@ -7,6 +7,7 @@ export BROWSER="firefox"
 export FILE="ranger"
 export MONITOR="eDP1"
 
+rm $HOME/.vim*.tmp
 if systemctl -q is-active graphical.target && [ ! $DISPLAY ] && [ $XDG_VTNR -eq 1 ]; then
   #  echo "Please select WM/DE (default is bspwm)"
   #  read session
