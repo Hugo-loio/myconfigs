@@ -47,5 +47,6 @@ bspc config pointer_follows_monitor true
 
 # Rules 
 #bspc rule -a Gimp state=floating 
+#bspc rule -a 'Android Emulator - Nexus_5X_API_29_x86:5554' state=floating
 # bspc rule -a $BROWSER desktop='^2' follow=on
 #bspc rule -a Screenkey manage=off
