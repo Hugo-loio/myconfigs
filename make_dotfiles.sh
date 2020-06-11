@@ -3,7 +3,7 @@ repo="$HOME/myconfigs"
 
 #List of dotfiles for home directory
 home_dotfiles="profile xinit/xinitrc xinit/xserverrc \
-  bash/bash_profile bash/bashrc vim/vimrc" 
+  bash/bash_profile bash/bashrc vim/vimrc readline/inputrc" 
 
 #List of files for .config directory
 config_folder="dunst/dunstrc bspwm/bspwmrc \
