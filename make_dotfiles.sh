@@ -1,5 +1,5 @@
 #!/bin/sh
-repo="$HOME/myconfigs"
+repo=$(dirname "$0")
 
 #List of dotfiles for home directory
 home_dotfiles="profile xinit/xinitrc xinit/xserverrc \
@@ -37,18 +37,19 @@ create_symlic(){
     echo "Created directory" $dir
   fi
 
-  if [ -f $1 ];then
+  if [ -f $1 ] || [ -h $1 ] ; then
     echo "Replaced" $1
     rm $1
   else
     echo "Created" $1
   fi
-  ln -s $2 $1
+  ln -sr $2 $1
 }
 
 for dot in $home_dotfiles;do
   target=$HOME/"."$(basename $dot)
   source_file=$repo/$dot
+  echo $source_file
   create_symlic $target $source_file
 done
 

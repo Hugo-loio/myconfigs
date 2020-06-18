@@ -1,5 +1,5 @@
 #!/bin/sh
-repo="$HOME/myconfigs"
+repo=$(dirname $0)
 
 echo "This script will use root permisions" 
 
