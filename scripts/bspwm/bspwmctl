@@ -1,0 +1,14 @@
+#!/bin/sh
+
+pkill udiskie
+if [ "$1" = "restart" ] ; then
+  pkill -USR1 -x sxhkd
+  pkill sxhkd
+  pkill bspwm_rm*
+  pkill picom
+  bspc wm -r
+fi
+if [ "$1" = "quit" ] ; then
+  bspc quit
+fi
+

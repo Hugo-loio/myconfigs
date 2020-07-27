@@ -1,0 +1,16 @@
+#!/bin/sh
+
+dir=$(dirname "$1")
+base="${file%.*}"
+
+case "$1" in
+  *Makefile | *.C | *.cc | *.cpp)
+    make || make -C obj/ 
+    ;;
+  *.tex)
+    tempfile=$(mktemp /tmp/latex_vim_compiler.XXXXXX)
+    pdflatex -output-directory "$dir" "$1" > $tempfile 2>&1 || $TERMINAL -e vim $tempfile & 
+    ;;
+  *)
+    echo "\nCompiler not found for this type of file!"
+esac

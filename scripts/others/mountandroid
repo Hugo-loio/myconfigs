@@ -1,0 +1,65 @@
+#!/bin/sh
+# Script for mounting android devices. 
+
+mountdir="$HOME/android_devices"
+if [ -z "$(find $HOME -maxdepth 1 -iname android_devices)" ] ; then
+  echo "Creating mounting folder"
+  mkdir $mountdir
+fi
+
+nooption() {
+  echo "No option selected"
+  exit
+}
+
+unmount() {
+  fusermount -u $mountdir/$1
+  echo "Unmounted device"
+  notify-send "Android Mount" "Device unmounted"
+}
+
+mount() {
+  echo "Mounting device "$1""
+  simple-mtpfs --device $1 $mountdir/$1
+  notify-send "Android Mount" "Device mounted to $mountdir/$1"
+}
+
+devices=$(simple-mtpfs -l 2>/dev/null)
+
+if [ -z "$devices" ]; then
+  notify-send "Android Mount" "Error: No Android device detected"
+  exit
+else
+
+  choice=$(printf "mount\nunmount" | dmenu -i -p "What do you wish to do?")
+
+  [ -z "$choice" ] && nooption
+
+  if [ "$choice" = "mount" ] ; then
+    mount_device=$(echo "$devices" | dmenu -i -p "Choose android device" | cut -d : -f 1)
+    [ -z "$mount_device" ] && nooption
+    connected=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | awk -F / '{print $5}')
+    for c in $connected;do
+      if [ "$c" = "$mount_device" ] ; then
+	unmount $mount_device
+      fi
+    done
+    if [ -z "$(find $mountdir -mount -iname "$mount_device")" ] ; then
+      mkdir $mountdir/$mount_device  
+    fi
+    mount $mount_device
+  fi
+
+  if [ "$choice" = "unmount" ] ; then
+    unmount_device=$(echo "$devices" | dmenu -i -p "Choose android device" | cut -d : -f 1)
+    [ -z "$unmount_device" ] && nooption
+    connected=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | awk -F / '{print $5}')
+    for c in $connected;do
+      if [ "$c" = "$unmount_device" ] ; then
+	unmount $unmount_device
+	rm -r $mountdir/$c
+      fi
+    done
+  fi
+fi 
+

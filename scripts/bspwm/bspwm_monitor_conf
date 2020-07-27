@@ -1,0 +1,35 @@
+#!/bin/sh
+
+make_desktops(){
+  #Makes 1 desktop in monitor $1, unless there already desktops on that monitor
+  desktop_count=$(bspc query -m "$1" -D --names | wc -l)
+  if [ $desktop_count -eq 1 ];then
+    notify-send "Monitor '$1'" "Making desktop"
+    bspc monitor "$1" -d "$1""-""1"
+  fi
+}
+
+#list connected monitors on xrandr
+monitors=$(xrandr | grep -w connected | awk {'print $1'})
+
+if [ $(echo "$monitors" | wc -w) -ne 1 ] ; then
+  echo "multiple monitors"
+  last="$MONITOR"
+  #Set primary monitor
+  xrandr --output "$MONITOR" --primary --auto 
+  make_desktops $MONITOR
+  #Loop for external monitors
+  for monitor in $monitors ; do
+    if [ ! "$monitor" = "$MONITOR" ] ; then
+      xrandr --output "$monitor" --right-of "$last" --auto 
+      last="$monitor"
+      make_desktops $monitor
+    fi 
+  done
+else
+  echo "single monitor"
+  #Set primary monitor
+  xrandr --output "$MONITOR" --auto   
+  make_desktops $MONITOR
+fi
+

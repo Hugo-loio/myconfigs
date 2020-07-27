@@ -1,0 +1,20 @@
+#!/bin/sh
+#This is a daemon that removes empty desktops and reorders they names apropriatly
+
+bspc subscribe node_add node_remove node_transfer desktop_focus | while read line
+do
+  #Removes empty desktops
+  for i in $(bspc query -D -d '.!focused.!occupied' --names); do
+    bspc desktop "$i" -r
+  done
+  #Renames desktop names to order correctly
+  for m in $(bspc query -M --names); do
+    counter=1
+    for d in $(bspc query -D -m $m --names);do
+      if [ $(echo $d | awk -F "-" {'print $2'}) -ne $counter ];then
+	bspc desktop $d -n "$m""-""$counter"
+      fi
+      counter=$(($counter+1))
+    done
+  done
+done

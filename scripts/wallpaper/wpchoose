@@ -1,0 +1,6 @@
+#!/bin/sh
+
+prompt="Choose Wallpaper"
+option=$(ls $HOME/Pictures/wallpapers | sed 's/ /\n/' | dmenu -p "Choose Wallpaper")
+feh --no-fehbg --bg-scale $HOME/Pictures/wallpapers/$option 
+

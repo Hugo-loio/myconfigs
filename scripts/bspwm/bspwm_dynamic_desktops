@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# Check if scrit is ran with two arguments
+[ "$#" -eq 2 ] || { echo 'Must be run with two arguments.'; exit 1; }
+
+# Checks if second argument is valid
+case "$2" in
+  [!0-9])
+    echo "The second argument must be a valid number"
+    exit 1
+    ;;
+esac
+
+create_desktop(){
+  # $2 - monitor name ;  $1 - desktop number
+  desktop=""$2""-""$1""
+  #Create desktop if it doesn't already exist
+  if [ ! "$(bspc query -D -d "$desktop" --names)" = "$desktop" ];then
+    bspc monitor "$2" -a "$desktop"
+  fi
+}
+
+desktop_node_control() {
+  monitor=""
+  case "$1" in
+    same_monitor)
+      monitor="$(bspc query -M -m focused --names)"
+      create_desktop $2 $monitor 
+      ;;
+    other_monitor)
+      active_monitor="$(bspc query -M -m focused --names)"
+      other_monitors="$(bspc query -M --names | grep -v "$active_monitor")"
+      monitors_count=$(echo $other_monitors | wc -w)
+      #If no other monitor is available do nothing
+      if [ $monitors_count -eq 0 ];then
+	exit
+      else
+	#If another monitor (only one) is available send to unfocused one 
+	if [ $monitors_count -eq 1 ];then
+	  create_desktop $2 $other_monitors 
+	  monitor="$other_monitors"
+	else
+	  #If two or more other monitors are available send monitor choice to dmenu (NEVER BEEN TESTED) 
+	  monitor=$(echo $other_monitors | dmenu -i -p "Choose monitor")
+	  [ -z "$monitor" ] && exit
+	  create_desktop $2 $monitor 
+	fi
+      fi
+      ;;
+  esac
+  if [ "$3" = "desktop" ];then
+    bspc desktop -f "$monitor""-""$2"
+  else 
+    if [ "$3" = "node" ];then 
+      bspc node -d "$monitor""-""$2"
+    fi
+  fi
+}
+
+
+case "$1" in
+  --cd)
+    #change to desktop in current monitor
+    desktop_node_control "same_monitor" $2 "desktop"
+    ;;
+  --cdm)
+    #change to desktop in diferent monitor (if more than one option open dmenu) 
+    desktop_node_control "other_monitor" $2 "desktop"
+    ;;
+  --mn)
+    #move focused node to desktop in current monitor
+    desktop_node_control "same_monitor" $2 "node"
+    ;;
+  --mnm)
+    #move focused node to desktop in diferent monitor (if more than one option open dmenu)
+    desktop_node_control "other_monitor" $2 "node"
+    ;;
+esac

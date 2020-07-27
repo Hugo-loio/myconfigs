@@ -1,0 +1,31 @@
+#!/bin/sh
+#This scripts reads entry marked with <, from a file with a table like structure, and marks next number (left to right and up to down) with a <
+#Does nothing if no < is found
+
+file=$1
+[ -z "$file" ] && exit
+
+line_number=$(grep -n "<" $file | cut -f1 -d:)
+[ -z "$line_number" ] && exit
+
+line=$(grep -n "<" $file | cut -f2 -d:)
+
+max_column=$(echo $line | wc -w)
+column_number=$(echo $line | awk -F "<" '{print $1}' | wc -w)
+#echo "$line_number $column_number"
+
+new_column=$(($column_number + 1))
+new_line=$line_number
+if [ "$new_column" -gt "$max_column" ]; then
+  new_column=1
+  new_line=$(($line_number+1))
+fi
+#echo "$new_line $new_column"
+
+awk -v l=$line_number -v c=$column_number -v nl=$new_line -v nc=$new_column '{if(NR==l) {gsub("<","",$c)}; if(NR==nl) {gsub(".*","&<",$nc)}; print}' $1 > temp.txt
+
+cp temp.txt $1
+rm temp.txt
+
+awk -v l=$line_number -v c=$column_number '{if(NR==l) print $c}' $1
+

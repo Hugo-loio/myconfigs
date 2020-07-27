@@ -1,0 +1,13 @@
+#!/bin/sh
+
+status=$(synclient -l | grep -c 'TouchpadOff.*=.*[02]')
+pkill syndaemon
+synclient TouchpadOff=$status
+
+if [ $status -eq 1 ] ; then
+  notify-send "Touchpad Status" "Disabled"
+else
+  notify-send "Touchpad Status" "Enabled"
+  #Disable tapping and scrolling in touchpad while typing
+  syndaemon -i 0.5 -t -K -R -d
+fi
