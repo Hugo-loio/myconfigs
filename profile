@@ -1,11 +1,15 @@
+#!bin/sh
+
 XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CONFIG_HOME
-export PATH="$PATH:$HOME/scripts"
+export PATH="$PATH:$HOME/.local/bin"
 export EDITOR="vim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
 export FILE="ranger"
 export MONITOR="eDP1"
+
+extra_scripts_folder=""
 
 rm $HOME/.vim*.tmp
 if systemctl -q is-active graphical.target && [ ! $DISPLAY ] && [ $XDG_VTNR -eq 1 ]; then
