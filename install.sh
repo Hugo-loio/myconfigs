@@ -72,12 +72,12 @@ echo "\nInstalling scripts..."
 ./$repo/scripts/make_scripts.sh
 
 echo "\nInstalling system configs..."
-echo "\nThis part will need root permisions" 
+echo "This part will need root permisions\n" 
 
 sudo ./$repo/xorg/make_xorgconf.sh
 
 echo "\nInstalling dependencies..."
-echo "\nThis part will need root permisions" 
+echo "This part will need root permisions\n" 
 sudo pacman -S --needed $(cat $repo/dependencies/main_repo_dependencies.txt)
 if [ -z "$(which yay 2>/dev/null)" ] ; then
   mkdir $repo/yay
