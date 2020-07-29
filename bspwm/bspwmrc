@@ -6,12 +6,6 @@ picom --config $XDG_CONFIG_HOME/picom/picom.conf -b
 # Lauch sxhkd
 sxhkd &
 
-# Start network manager applet
-nm-applet &
-
-# Start udiskie for automatically mounting drives (no notifications for now)
-udiskie --tray &
-
 # Start notification server
 dunst &
 
@@ -28,6 +22,12 @@ bspwm_monitor_conf
 
 # Lauch polybar
 $HOME/.config/polybar/launch.sh
+
+# Start network manager applet
+nm-applet &
+
+# Start udiskie for automatically mounting drives (no notifications for now)
+udiskie --tray &
 
 # Daemon that removes empty desktops and reorders they names apropriatly 
 bspwm_rm_empty_desktops &

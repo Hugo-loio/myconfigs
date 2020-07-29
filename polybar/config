@@ -78,7 +78,7 @@ modules-left = bspwm xwindow
 modules-center = 
 modules-right = memory cpu filesystem xbacklight alsa xkeyboard battery date
 
-tray-position = right
+tray-position = ${env:tray}
 tray-padding = 0
 tray-background = ${root.background}
 

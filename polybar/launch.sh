@@ -10,7 +10,13 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 if type "xrandr"; then
   for m in $(xrandr --query | grep -w "connected" | cut -d " " -f 1); do
     notify-send "Monitor $m" "Making polybar"
-    monitor=$m polybar mybar &
+    t=""
+    if [ -z $(xrandr | grep "$m" | grep "primary") ] ; then
+      t=""
+    else
+      t="right"
+    fi
+    monitor=$m tray=$t polybar mybar &
   done
 else
   polybar mybar &
