@@ -87,4 +87,10 @@ if [ -z "$(which yay 2>/dev/null)" ] ; then
 fi
   yay -S --needed $(cat $repo/dependencies/aur_dependencies.txt)
 
-echo "\nDone"
+echo "\nCreating cache folder..."
+
+if [ ! -d $HOME/.local/share/hugoconf ] ; then
+  mkdir -p $HOME/.local/share/hugoconf
+fi
+
+echo "Done"

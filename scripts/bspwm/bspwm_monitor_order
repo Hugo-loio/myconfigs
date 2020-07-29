@@ -1,0 +1,20 @@
+#!/bin/sh
+#This script allows the user to choose the order of the monitors from left to right
+
+file=$CACHE/monitor_order.txt
+file_temp=$CACHE/monitor_order_temp.txt
+
+if [ "$mode" = "default" ] ; then
+  xrandr | grep connected | cut -d" " -f1 > $file
+else
+  options=$(xrandr | grep connected | cut -d" " -f1)
+  while [ ! -z "$options" ]
+  do
+    choice=$(echo "$options" | dmenu -i -p "Choose monitor order from left to right")
+    [ -z "$choice" ] && rm $file_temp && exit
+    options=$(echo "$options" | grep -v $choice)
+    echo $choice >> $file_temp
+  done
+  cat $file_temp > $file
+  bspwm_monitor_conf
+fi

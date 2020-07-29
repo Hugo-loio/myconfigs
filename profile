@@ -7,7 +7,7 @@ export EDITOR="vim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
 export FILE="ranger"
-export MONITOR=$(xrandr | grep primary | cut -d" " -f1)
+export CACHE="$HOME/.local/share/hugoconf"
 
 rm $HOME/.vim*.tmp
 if systemctl -q is-active graphical.target && [ ! $DISPLAY ] && [ $XDG_VTNR -eq 1 ]; then

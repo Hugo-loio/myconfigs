@@ -9,29 +9,25 @@ make_desktops(){
   fi
 }
 
-#list connected monitors on xrandr
-monitors=$(xrandr | grep -w connected | awk {'print $1'})
+#monitor_order.txt contains all monitors sorted from left to right
+monitors=$(cat $CACHE/monitor_order.txt)
+last=""
 
-if [ $(echo "$monitors" | wc -w) -ne 1 ] ; then
-  echo "multiple monitors"
-  last="$MONITOR"
-  #Set primary monitor
-  xrandr --output "$MONITOR" --primary --auto 
-  make_desktops $MONITOR
-  #Loop for external monitors
-  for monitor in $monitors ; do
-    if [ ! "$monitor" = "$MONITOR" ] ; then
+for monitor in $monitors ; do
+  cn_monitor=$(xrandr | grep -w connected | grep -w "$monitor" | awk {'print $1'})
+  if [ ! -z $cn_monitor ] ; then
+    if [ -z $last ] ; then
+      #Left monitor
+      last="$monitor"
+      xrandr --output "$monitor" --primary --auto
+      make_desktops $monitor
+    else
       xrandr --output "$monitor" --right-of "$last" --auto 
       last="$monitor"
       make_desktops $monitor
-    fi 
-  done
-else
-  echo "single monitor"
-  #Set primary monitor
-  xrandr --output "$MONITOR" --auto   
-  make_desktops $MONITOR
-fi
+    fi
+  fi
+done
 
 dc_monitors=$(xrandr | grep -w disconnected | awk {'print $1'})
 for monitor in $dc_monitors ; do

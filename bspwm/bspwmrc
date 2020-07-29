@@ -1,8 +1,5 @@
 #! /bin/sh
 
-# Lauch polybar
-$HOME/.config/polybar/launch.sh
-
 # Start picom for transparency
 picom --config $XDG_CONFIG_HOME/picom/picom.conf -b
 
@@ -21,8 +18,16 @@ dunst &
 # Start power manager
 xfce4-power-manager &
 
+# Checks if monitor list exists
+if [ -z "$(find $CACHE/monitor_order.txt 2>/dev/null)" ] ; then
+  mode="default" bspwm_monitor_order
+fi
+
 # Initializes desktops in all conected monitors
 bspwm_monitor_conf
+
+# Lauch polybar
+$HOME/.config/polybar/launch.sh
 
 # Daemon that removes empty desktops and reorders they names apropriatly 
 bspwm_rm_empty_desktops &
