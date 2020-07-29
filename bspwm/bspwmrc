@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# Lauch polybar
+$HOME/.config/polybar/launch.sh
+
 # Start picom for transparency
 picom --config $XDG_CONFIG_HOME/picom/picom.conf -b
 
@@ -20,9 +23,6 @@ dunst &
 
 # Start power manager
 xfce4-power-manager &
-
-# Lauch polybar
-$HOME/.config/polybar/launch.sh
 
 # Initializes desktops in all conected monitors
 bspwm_monitor_conf
