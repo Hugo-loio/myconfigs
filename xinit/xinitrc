@@ -52,6 +52,9 @@ straightback &
 # Make default cursor diferent from x
 xsetroot -cursor_name left_ptr &
 
+# Random wallpaper
+wpshuffle
+
 case $session in
     bspwm ) exec bspwm        ;;
     xfce  ) exec startxfce4   ;;

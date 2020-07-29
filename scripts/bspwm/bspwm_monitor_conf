@@ -33,3 +33,7 @@ else
   make_desktops $MONITOR
 fi
 
+dc_monitors=$(xrandr | grep -w disconnected | awk {'print $1'})
+for monitor in $dc_monitors ; do
+  xrandr --output "$monitor" --off 
+done
