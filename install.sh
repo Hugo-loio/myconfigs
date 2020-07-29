@@ -1,6 +1,8 @@
 #!/bin/sh
 repo=$(dirname "$0")
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 #List of dotfiles for home directory
 home_dotfiles="profile xinit/xinitrc xinit/xserverrc \
   bash/bash_profile bash/bashrc vim/vimrc readline/inputrc" 
@@ -73,5 +75,16 @@ echo "\nInstalling system configs..."
 echo "\nThis part will need root permisions" 
 
 sudo ./$repo/xorg/make_xorgconf.sh
+
+echo "\nInstalling dependencies..."
+echo "\nThis part will need root permisions" 
+sudo pacman -S --needed $(cat $repo/dependencies/main_repo_dependencies.txt)
+if [ -z "$(which yay 2>/dev/null)" ] ; then
+  mkdir $repo/yay
+  git clone https://aur.archlinux.org/yay.git $repo/yay
+  (cd $repo/yay && makepkg -sic)
+  rm -rf $repo/yay
+fi
+  yay -S --needed $(cat $repo/dependencies/aur_dependencies.txt)
 
 echo "\nDone"
