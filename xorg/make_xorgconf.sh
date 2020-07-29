@@ -1,8 +1,6 @@
 #!/bin/sh
 repo=$(dirname $0)
 
-echo "This script will use root permisions" 
-
 #1st arg: target file ; 2nd arg: source file
 create_symlic(){
   if [ -f $1 ] || [ -h $1 ] ; then
