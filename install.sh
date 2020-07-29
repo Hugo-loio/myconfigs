@@ -34,7 +34,6 @@ create_symlic(){
   dir=$(dirname $1)
   if [ ! -d $dir ] ; then
     mkdir -p $dir
-    echo "Created directory" $dir
   fi
 
   if [ -f $1 ] || [ -h $1 ] ; then
@@ -46,10 +45,11 @@ create_symlic(){
   ln -sr $2 $1
 }
 
+echo "\nInstalling user configs..."
+
 for dot in $home_dotfiles;do
   target=$HOME/"."$(basename $dot)
   source_file=$repo/$dot
-  echo $source_file
   create_symlic $target $source_file
 done
 
@@ -65,3 +65,13 @@ for snip in $vim_snippets;do
   create_symlic $target $source_file
 done
 
+echo "\nInstalling scripts..."
+
+./$repo/scripts/make_scripts.sh
+
+echo "\nInstalling system configs..."
+echo "\nThis part will need root permisions" 
+
+sudo ./$repo/xorg/make_xorgconf.sh
+
+echo "\nDone"
