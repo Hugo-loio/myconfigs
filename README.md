@@ -8,13 +8,13 @@ I wouldn't advise you to blindly install these. Although there is no malware in 
 
 # Dependencies
 
-In the directory `dependencies/` there are two text files (one for aur and another for main repo) which list all the dependencies necessary for the configs.
+In the directory `dependencies/` there are two text files (one for AUR and another for main repo) which list all the dependencies necessary for the configs.
 
-TODO: a list will all the dependencies and their porpuse
+TODO: a list will all the dependencies and their purpose.
 
 # Extra stuff
 
 I have an [extraconfigs](https://github.com/Hugo-loio/extraconfigs) repo which complements the configs in this repo. 
 
-I have made the separation because over at [extraconfigs](https://github.com/Hugo-loio/extraconfigs) is where I place more personal configs, scripts and packages. Still, a couple of things there might be of use to a some people so feel free to check it out.
+I have made the separation because over at [extraconfigs](https://github.com/Hugo-loio/extraconfigs) is where I place more personal configs, scripts, and packages. Still, a couple of things there might be of use to some people so feel free to check it out.
 
