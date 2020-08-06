@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'ervandew/supertab'
+Plug 'chrisbra/Colorizer'
 call plug#end()
 
 "Make YCM compatible with UltiSnips (using supertab)
@@ -199,6 +200,10 @@ nnoremap <leader>r :redraw!<CR>
 
 "Indent entire file
 nnoremap <leader>i :normal mqHmwgg=G \| `wzt`q<CR>
+
+"Toggle color colorized
+nnoremap <leader>c :ColorToggle<CR>
+
 """"""""""""""""""""""""""Custom Highlight groups""""""""""""""""""""""""
 
 highlight NormalBar cterm=bold ctermfg=White ctermbg=DarkBlue
