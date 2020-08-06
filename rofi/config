@@ -3,16 +3,24 @@ rofi.lines:                          15
 rofi.columns:                        3
 rofi.font:                           mono 12
 !Border width
-rofi.bw:                             3
+!rofi.bw:                             10
 rofi.location:                       0
-rofi.padding:                        5
+!rofi.padding:                        5
 rofi.fixed-num-lines:                true
 rofi.show-icons:                     true
-rofi.terminal:                       $TERMINAL
-! "Theme to use to look for icons" Set from: Default
-! rofi.icon-theme:                     
 ! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
 rofi.matching:                       normal
-! "New style theme file" Set from: Default
+rofi.sidebar-mode:                   false
 rofi.theme:                          .config/rofi/theme.rasi
 
+/* Unbinding keybindings with Super in conflict with bspwm
+rofi.kb-select-1:                    
+rofi.kb-select-2:                    
+rofi.kb-select-3:                    
+rofi.kb-select-4:                    
+rofi.kb-select-5:                    
+rofi.kb-select-6:                    
+rofi.kb-select-7:                    
+rofi.kb-select-8:                    
+rofi.kb-select-9:                    
+rofi.kb-select-10:                    

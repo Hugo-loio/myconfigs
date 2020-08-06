@@ -1,10 +1,10 @@
 /* global settings and color variables */
 * {
-	color0: #284229CC; /*Background*/
-	color1: #507d51; /*Backgroud 2*/
+	color0: #263238CC; /*Background*/
+	color1: #546E7A; /*Backgroud 2*/
 	color2: #FFFFFF; /*Foreground*/
 	color3: #C3E88D; /*Active*/
-	color4: #0cc731; /*Accent*/
+	color4: #82AAFF; /*Accent*/
 	color5: #FF5370; /*Urgent*/
 
 	spacing: 0;
