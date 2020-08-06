@@ -12,7 +12,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	rofi -show run
 
 # lauch browser
 super + i

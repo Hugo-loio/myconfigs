@@ -1,0 +1,18 @@
+rofi.width:                          50
+rofi.lines:                          15
+rofi.columns:                        3
+rofi.font:                           mono 12
+!Border width
+rofi.bw:                             3
+rofi.location:                       0
+rofi.padding:                        5
+rofi.fixed-num-lines:                true
+rofi.show-icons:                     true
+rofi.terminal:                       $TERMINAL
+! "Theme to use to look for icons" Set from: Default
+! rofi.icon-theme:                     
+! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
+rofi.matching:                       normal
+! "New style theme file" Set from: Default
+rofi.theme:                          .config/rofi/theme.rasi
+

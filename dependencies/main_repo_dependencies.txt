@@ -50,6 +50,7 @@ picom
 pulseaudio-alsa
 pulseaudio-bluetooth
 ranger
+rofi
 root
 subversion
 sxhkd
