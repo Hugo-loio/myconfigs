@@ -11,7 +11,7 @@ do
   for m in $(bspc query -M --names); do
     counter=1
     for d in $(bspc query -D -m $m --names);do
-      if [ $(echo $d | awk -F "-" {'print $2'}) -ne $counter ];then
+      if [ $(echo $d | awk -F "-" {'print $NF'}) -ne $counter ];then
 	bspc desktop $d -n "$m""-""$counter"
       fi
       counter=$(($counter+1))
