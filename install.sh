@@ -87,12 +87,20 @@ if [ -z "$(which yay 2>/dev/null)" ] ; then
   (cd $repo/yay && makepkg -sic)
   rm -rf $repo/yay
 fi
-  yay -S --needed $(cat $repo/dependencies/aur_dependencies.txt)
+yay -S --needed $(cat $repo/dependencies/aur_dependencies.txt)
 
 echo "\nCreating cache folder..."
 
 if [ ! -d $HOME/.local/share/hugoconf ] ; then
   mkdir -p $HOME/.local/share/hugoconf
 fi
+
+echo "\nCreating other usefull folders..."
+folders="Documents Pictures/wallpapers Desktop Movies Downloads"
+for f in $folders ; do
+  if [ ! -d $HOME/$f ] ; then
+    mkdir -p $HOME/$f
+  fi
+done
 
 echo "Done"
