@@ -5,14 +5,15 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 #List of dotfiles for home directory
 home_dotfiles="profile xinit/xinitrc xinit/xserverrc \
-  bash/bash_profile bash/bashrc vim/vimrc readline/inputrc" 
+  bash/bash_profile bash/bashrc vim/vimrc readline/inputrc \
+  gtk-2.0/gtkrc-2.0" 
 
 #List of files for .config directory
 config_folder="dunst/dunstrc bspwm/bspwmrc \
   fontconfig/fonts.conf picom/picom.conf polybar/config polybar/launch.sh \
   ranger/commands.py ranger/commands_full.py ranger/rc.conf ranger/rifle.conf \
   ranger/scope.sh sxhkd/sxhkdrc kitty/kitty.conf mpv/input.conf mpv/mpv.conf \
-  rofi/config rofi/theme.rasi"
+  rofi/config rofi/theme.rasi gtk-3.0/settings.ini"
 
 #List of snippets for .vim/UltiSnips directory
 vim_snippets=$(ls $repo/vim/snippets/*.snippets)
