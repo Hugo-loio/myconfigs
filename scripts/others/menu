@@ -1,0 +1,32 @@
+#!/bin/sh
+
+menu_items="Settings\nTools\nSound\nGames\nInternet\nTerminal"
+
+settings=""
+
+games="Steam\n"
+
+tools="Calculator\nGimp"
+
+entertainment="Spotify\nNetflix"
+
+choice1=$(echo $menu_items | rofi -dmenu)
+
+case $choice1 in
+  "Settings")
+    ;;
+  "Tools")
+    ;;
+  "Sound")
+    pavucontrol
+    ;;
+  "Games")
+    ;;
+  "Internet")
+    $BROWSER
+    ;;
+  "Terminal")
+    $TERMINAL
+    ;;
+esac
+

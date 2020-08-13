@@ -77,17 +77,18 @@ echo "\nInstalling system configs..."
 echo "This part will need root permisions\n" 
 
 sudo ./$repo/xorg/make_xorgconf.sh
+sudo ./$repo/vconsole/make_conf.sh
 
-echo "\nInstalling dependencies..."
+echo "\nInstalling packages..."
 echo "This part will need root permisions\n" 
-sudo pacman -S --needed $(cat $repo/dependencies/main_repo_dependencies.txt)
+sudo pacman -S --needed $(cat $repo/packages/main_repo_packages.txt)
 if [ -z "$(which yay 2>/dev/null)" ] ; then
   mkdir $repo/yay
   git clone https://aur.archlinux.org/yay.git $repo/yay
   (cd $repo/yay && makepkg -sic)
   rm -rf $repo/yay
 fi
-yay -S --needed $(cat $repo/dependencies/aur_dependencies.txt)
+yay -S --needed $(cat $repo/packages/aur_packages.txt)
 
 echo "\nCreating cache folder..."
 
@@ -96,11 +97,16 @@ if [ ! -d $HOME/.local/share/hugoconf ] ; then
 fi
 
 echo "\nCreating other usefull folders..."
-folders="Documents Pictures/wallpapers Desktop Movies Downloads"
+folders="Documents/books Pictures/wallpapers Desktop Movies Downloads"
 for f in $folders ; do
   if [ ! -d $HOME/$f ] ; then
     mkdir -p $HOME/$f
   fi
 done
+
+echo "\nEnabling services with systemd..."
+#Cups for printing
+sudo systemctl enable org.cups.cupsd.service
+sudo systemctl start org.cups.cupsd.service
 
 echo "Done"

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do
+  notify-send "Postura" "Costas direitas"
+  sleep 20m
+done

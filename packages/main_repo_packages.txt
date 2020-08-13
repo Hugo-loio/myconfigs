@@ -8,8 +8,10 @@ bluez
 bluez-plugins
 bluez-utils
 bspwm
+checkbashisms
 cups
 dash
+discord
 dmenu
 dosfstools
 dunst
@@ -20,6 +22,7 @@ ffmpegthumbnailer
 firefox
 flashplugin
 gimp
+gimp
 git
 grub
 grub-customizer
@@ -27,6 +30,10 @@ gucharmap
 gvim
 inter-font
 kitty
+lib32-llvm
+lib32-mesa
+lib32-vulkan-icd-loader
+libreoffice-still
 libva-utils
 linux
 linux-firmware
@@ -49,12 +56,18 @@ pcmanfm
 picom
 pulseaudio-alsa
 pulseaudio-bluetooth
+python-matplotlib
 ranger
 rofi
 root
+steam
 subversion
 sxhkd
+terminus-font
+texlive-lang
+texlive-most
 tlp
+transmission-gtk
 trash-cli
 ttf-font-awesome
 ttf-hack
@@ -74,3 +87,4 @@ xorg-xbacklight
 xorg-xev
 xorg-xinit
 xorg-xsetroot
+youtube-dl

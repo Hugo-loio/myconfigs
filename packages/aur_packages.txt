@@ -1,5 +1,8 @@
 betterlockscreen
+brother-mfc-j5730dw
 dashbinsh
 polybar
 simple-mtpfs
+spotify
 transset-df
+windscribe-cli
