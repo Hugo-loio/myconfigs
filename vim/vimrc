@@ -41,6 +41,9 @@ set encoding=utf-8
 
 """"""""""""""""""""""""General""""""""""""""""""""""""
 
+"Defines leader key to use in future mappings
+let mapleader = " " 
+
 "Shows partial commands in the last line of the screen
 set showcmd
 
@@ -94,28 +97,28 @@ set so=7
 
 """""""""""""""""""""""""Indentation""""""""""""""""""""""""""""
 
-"Copies the identation from previous line, when starting new line
+"Copies the indentation from previous line, when starting new line
 set autoindent
 
-"Automated file type based identation 
+"Automated file type based indentation 
 filetype plugin indent on
 
-"Sets width of << and >> characters and controls amount of identation per level
+"Sets width of << and >> characters and controls amount of indentation per level
 set shiftwidth=2
 
 "Sets width of TAB character
 set tabstop=8
 
-"Sets the default size of <TAB> key press. Also vim will minimize amout of spaces inserted by <TAB> consecutive key presses using the most TAB characters it can. Notice diference between TAB and <TAB> 
+"Sets the default size of <TAB> key press. Also vim will minimize amount of spaces inserted by <TAB> consecutive key presses using the most TAB characters it can. Notice difference between TAB and <TAB> 
 set softtabstop=2
 
-"Automatically idents whenever file is saved in cpp,C
+"Automatically indents whenever file is saved in cpp,C
 augroup IdentWhenWriting
   autocmd!
   autocmd BufWritePre *.c,*.cpp,*.cc,*.C,*.h :normal mqHmwgg=G | `wzt`q
 augroup END
 
-"""""""""""""""""""""""Window Spliting""""""""""""""""""""""""
+"""""""""""""""""""""""Window Splitting""""""""""""""""""""""""
 
 "New horizontal splits are on the bottom
 set splitbelow
@@ -123,7 +126,7 @@ set splitbelow
 "New vertical splits are on the right
 set splitright
 
-"Smart way to move between splited windows
+"Smart way to move between split windows
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
@@ -135,17 +138,27 @@ nnoremap <C-right> :vertical resize +1<CR>
 nnoremap <C-up> :resize +1<CR>
 nnoremap <C-down> :resize -1<CR>
 
-"""""""""""""""""""""Usefull mappings""""""""""""""""""""""""
+""""""""""""""""""""""""Spelling""""""""""""""""""""""""""""""
+
+"Set default spelling language
+setlocal spelllang=en_us
+
+"Toggle spellcheck
+nnoremap <leader>ls :setlocal spell!<CR>
+
+"Set spelling languages to Portuguese or English
+nnoremap <leader>lp :setlocal spelllang=pt_pt<CR>
+nnoremap <leader>le :setlocal spelllang=en_us<CR>
+
+
+"""""""""""""""""""""Useful mappings""""""""""""""""""""""""
 
 "Remove annoying open command-line editor mapping to q:
-:nnoremap q: <Nop>
+nnoremap q: <Nop>
 
 "Maps <C-c> and <C-v> to copy and paste with clipboard
 vnoremap <C-c> "*y :let @+=@*<CR>
 nnoremap <C-p> "+p
-
-"Defines leader key to use in future mappings
-let mapleader = " " 
 
 "Edits vimrc
 nnoremap <leader>ev :!$TERMINAL -e vim $HOME/.vimrc &<cr><cr>
@@ -182,10 +195,6 @@ augroup autobraces
   autocmd Filetype cpp,c nnoremap <buffer> <leader>{ A{<ENTER>}<ESC>ko
   autocmd Filetype cpp,c nnoremap <buffer> <leader>} A{<ENTER>}<ESC>ko
 augroup END
-
-"Mappins for making tables in latex
-nnoremap <leader>ls i$<ESC>Ea$<space>&<ESC>W
-nnoremap <leader>lp i$<ESC>Ea<space>\pm<ESC>Ea$<space>&<ESC>W
 
 "Mapping for search and changing next <++> expression
 nnoremap <leader><space> /<++><CR>d4l<ESC>:noh<CR>i
