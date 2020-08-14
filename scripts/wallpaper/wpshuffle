@@ -1,5 +1,4 @@
 #!/bin/sh
 WALL=$(find "$HOME/Pictures/wallpapers/" -type f | sort -R | tail -1)
 feh --no-fehbg --bg-scale "$WALL"
-
-
+betterlockscreen -u $WALL

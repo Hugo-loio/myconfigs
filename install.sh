@@ -15,6 +15,9 @@ config_folder="dunst/dunstrc bspwm/bspwmrc \
   ranger/scope.sh sxhkd/sxhkdrc kitty/kitty.conf mpv/input.conf mpv/mpv.conf \
   rofi/config rofi/theme.rasi gtk-3.0/settings.ini"
 
+#List of files for .config directory with no subdirectory
+config_folder_no_subdir="betterlockscreen/betterlockscreenrc"
+
 #List of snippets for .vim/UltiSnips directory
 vim_snippets=$(ls $repo/vim/snippets/*.snippets)
 
@@ -59,6 +62,12 @@ done
 
 for conf in $config_folder;do
   target=$XDG_CONFIG_HOME/$conf
+  source_file=$repo/$conf
+  create_symlic $target $source_file
+done
+
+for conf in $config_folder_no_subdir;do
+  target=$XDG_CONFIG_HOME/$(basename $conf)
   source_file=$repo/$conf
   create_symlic $target $source_file
 done
@@ -108,5 +117,9 @@ echo "\nEnabling services with systemd..."
 #Cups for printing
 sudo systemctl enable org.cups.cupsd.service
 sudo systemctl start org.cups.cupsd.service
+
+#Screen saver
+sudo systemctl enable betterlockscreen@USER
+sudo systemctl start betterlockscreen@USER
 
 echo "Done"
