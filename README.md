@@ -1,20 +1,21 @@
 # My config files 
 These are my config files for archlinux. They include scripts, user config files, and system config files.
 
+The configs are personal. This means that some of the content on this repo will not be useful (or it won't be compatible) for most people.
+
+I am also not responsible for any breakages I might cause in case I upstream wrong code. Having said that, I would never purposefully upstream malware to this repository.
+
+Therefore, I don't recommend that you blindly install these configs on your system. Instead, try them out in a virtual environment or copy (or take inspiration on) specific chunks of source code.
+
 # Getting the configs
-There is an install.sh script in the root of the repository. This script will symlink all files in the repository to their respective config files, therefore replacing other config files in the system. It will also install all dependencies. The script will prompt you for root permissions to install dependencies and system configs.
+There is an install.sh script in the root of the repository. This script will symlink all files in the repository to their respective config files, therefore replacing other config files in the system. It will also install packages and create useful directories. The script will prompt you for root permissions to install packages and system configs.
 
-I wouldn't advise you to blindly install these. Although there is no malware in the config files, I can't promise I won't upstream a change that might break something in your system, or that the configs will work just fine in all systems out of the box. I will however strive to make the configs easily installable, for myself, and so you can try them in a virtual environment, which is what I recommend. This way you can see what features you like and freely copy or take inspiration from the source code in this repository.
+# Packages
 
-# Dependencies
+In the directory `packages/` there are two text files (one for AUR and another for main repo) which list all the dependencies necessary for the configs and other extra packages.
 
-In the directory `dependencies/` there are two text files (one for AUR and another for main repo) which list all the dependencies necessary for the configs.
+TODO: a list will all the packages and their purpose.
 
-TODO: a list will all the dependencies and their purpose.
+# Usage
 
-# Extra stuff
-
-I have an [extraconfigs](https://github.com/Hugo-loio/extraconfigs) repo which complements the configs in this repo. 
-
-I have made the separation because over at [extraconfigs](https://github.com/Hugo-loio/extraconfigs) is where I place more personal configs, scripts, and packages. Still, a couple of things there might be of use to some people so feel free to check it out.
-
+TODO
