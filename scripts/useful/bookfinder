@@ -3,7 +3,7 @@
 booksdir="$HOME/Documents/books"
 books_temp=$(find $booksdir -type f ! -name *.tex) 
 books=$(basename -a $books_temp)
-chosen_book=$(echo $books | sed 's/pdf\ /pdf\n/g;s/djvu\ /djvu\n/g' | dmenu -i -p "Choose a book")
+chosen_book=$(echo $books | sed 's/pdf\ /pdf\n/g;s/djvu\ /djvu\n/g' | rofi -dmenu -i -p "Choose a book")
 [ -z "$chosen_book" ] && exit
 
 temp=$(find $booksdir -type f -name "$chosen_book")

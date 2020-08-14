@@ -40,8 +40,8 @@ desktop_node_control() {
 	  create_desktop $2 $other_monitors 
 	  monitor="$other_monitors"
 	else
-	  #If two or more other monitors are available send monitor choice to dmenu (NEVER BEEN TESTED) 
-	  monitor=$(echo $other_monitors | dmenu -i -p "Choose monitor")
+	  #If two or more other monitors are available send monitor choice to rofi (NEVER BEEN TESTED) 
+	  monitor=$(echo $other_monitors | rofi -dmenu -i -p "Choose monitor")
 	  [ -z "$monitor" ] && exit
 	  create_desktop $2 $monitor 
 	fi
@@ -64,7 +64,7 @@ case "$1" in
     desktop_node_control "same_monitor" $2 "desktop"
     ;;
   --cdm)
-    #change to desktop in diferent monitor (if more than one option open dmenu) 
+    #change to desktop in diferent monitor (if more than one option open rofi) 
     desktop_node_control "other_monitor" $2 "desktop"
     ;;
   --mn)
@@ -72,7 +72,7 @@ case "$1" in
     desktop_node_control "same_monitor" $2 "node"
     ;;
   --mnm)
-    #move focused node to desktop in diferent monitor (if more than one option open dmenu)
+    #move focused node to desktop in diferent monitor (if more than one option open rofi)
     desktop_node_control "other_monitor" $2 "node"
     ;;
 esac

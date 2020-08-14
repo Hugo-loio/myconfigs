@@ -1,7 +1,8 @@
 #!/bin/sh
 
 prompt="Choose Wallpaper"
-option=$(ls $HOME/Pictures/wallpapers | sed 's/ /\n/' | dmenu -p "Choose Wallpaper")
+option=$(ls $HOME/Pictures/wallpapers | sed 's/ /\n/' | rofi -dmenu -p "Choose Wallpaper")
+[ -z "$option" ] && exit
 feh --no-fehbg --bg-scale $HOME/Pictures/wallpapers/$option 
 betterlockscreen -u $HOME/Pictures/wallpapers/$option
 

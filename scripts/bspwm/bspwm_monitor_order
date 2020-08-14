@@ -10,7 +10,7 @@ else
   options=$(xrandr | grep connected | cut -d" " -f1)
   while [ ! -z "$options" ]
   do
-    choice=$(echo "$options" | dmenu -i -p "Choose monitor order from left to right")
+    choice=$(echo "$options" | rofi -dmenu -i -p "Choose monitor order from left to right")
     [ -z "$choice" ] && rm $file_temp && exit
     options=$(echo "$options" | grep -v $choice)
     echo $choice >> $file_temp

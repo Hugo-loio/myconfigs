@@ -10,7 +10,7 @@ tools="Calculator\nGimp"
 
 entertainment="Spotify\nNetflix"
 
-choice1=$(echo $menu_items | rofi -dmenu)
+choice1=$(echo $menu_items | rofi -dmenu -i -p "Choose option")
 
 case $choice1 in
   "Settings")
