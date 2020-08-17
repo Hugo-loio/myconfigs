@@ -101,9 +101,18 @@ yay -S --needed $(cat $repo/packages/aur_packages.txt)
 
 echo "\nCreating cache folder..."
 
-if [ ! -d $HOME/.local/share/hugoconf ] ; then
-  mkdir -p $HOME/.local/share/hugoconf
+export CACHE="$HOME/.local/share/hugoconf"
+if [ ! -d $CACHE ] ; then
+  mkdir -p $CACHE
 fi
+
+echo "\nInstalling themes..."
+
+[ -d $CACHE/rofi_themes ] || mkdir $CACHE/rofi_themes
+
+for theme in $(ls $repo/rofi/themes) ; do
+  create_symlic $CACHE/rofi_themes/$theme $repo/rofi/themes/$theme
+done
 
 echo "\nCreating other usefull folders..."
 folders="Documents/books Pictures/wallpapers Desktop Movies Downloads"
