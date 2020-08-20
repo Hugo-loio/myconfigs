@@ -13,7 +13,7 @@ config_folder="dunst/dunstrc bspwm/bspwmrc \
   fontconfig/fonts.conf picom/picom.conf polybar/config polybar/launch.sh \
   ranger/commands.py ranger/commands_full.py ranger/rc.conf ranger/rifle.conf \
   ranger/scope.sh sxhkd/sxhkdrc kitty/kitty.conf mpv/input.conf mpv/mpv.conf \
-  rofi/config rofi/theme.rasi gtk-3.0/settings.ini"
+  rofi/config gtk-3.0/settings.ini"
 
 #List of files for .config directory with no subdirectory
 config_folder_no_subdir="betterlockscreen/betterlockscreenrc"

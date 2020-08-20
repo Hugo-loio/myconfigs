@@ -1,10 +1,10 @@
 /* global settings and color variables */
 * {
-	color0: #263238CC; /*Background*/
-	color1: #546E7A; /*Backgroud 2*/
+	color0: #000000CC; /*Background*/
+	color1: #737373; /*Backgroud 2*/
 	color2: #FFFFFF; /*Foreground*/
 	color3: #C3E88D; /*Active*/
-	color4: #82AAFF; /*Accent*/
+	color4: #FFFFFF; /*Accent*/
 	color5: #FF5370; /*Urgent*/
 
 	spacing: 0;
@@ -92,7 +92,7 @@ element normal {
 }
 
 element selected {
-	background-color: @color4;
+	background-color: @color1;
 }
 
 element alternate {

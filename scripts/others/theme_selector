@@ -1,8 +1,22 @@
 #!/bin/sh
 
-if [ $1 = "default" ] ; then
-  choice="Green" #Default theme
-else
+restart=1
+choice=""
+
+while [ ! -z "$1" ] ; do
+  case $1 in
+    -t | --theme) #Pick a theme without rofi
+      shift
+      choice=$1
+      ;;
+    -nr) #Do not restart bspwm in the end
+      restart=0
+      ;;
+  esac
+  shift
+done
+
+if [ -z "$choice" ] ; then
   themes="Blue\nGreen\nOrange\nPink\nRed\nWhite\nYellow"
   choice=$(echo $themes | rofi -dmenu -i -p "Choose theme")
 fi
@@ -10,30 +24,46 @@ fi
 case $choice in 
   "Blue")
     cp $CACHE/rofi_themes/blue.rasi $CACHE/rofi_themes/theme.rasi
-    echo "theme=blue" > $CACHE/theme.txt
+    echo "rofi_theme=blue" > $CACHE/theme.txt
+    echo "bspwm_color=#3065ba" >> $CACHE/theme.txt
+    echo "polybar_theme=blue" >> $CACHE/theme.txt
     ;;
   "Green")
     cp $CACHE/rofi_themes/green.rasi $CACHE/rofi_themes/theme.rasi
-    echo "theme=green" > $CACHE/theme.txt
+    echo "rofi_theme=green" > $CACHE/theme.txt
+    echo "bspwm_color=#14ed00" >> $CACHE/theme.txt
+    echo "polybar_theme=green" >> $CACHE/theme.txt
     ;;
   "Orange")
     cp $CACHE/rofi_themes/orange.rasi $CACHE/rofi_themes/theme.rasi
-    echo "theme=orange" > $CACHE/theme.txt
+    echo "rofi_theme=orange" > $CACHE/theme.txt
+    echo "bspwm_color=#f5982f" >> $CACHE/theme.txt
+    echo "polybar_theme=orange" >> $CACHE/theme.txt
     ;;
   "Pink")
     cp $CACHE/rofi_themes/pink.rasi $CACHE/rofi_themes/theme.rasi
-    echo "theme=pink" > $CACHE/theme.txt
+    echo "rofi_theme=pink" > $CACHE/theme.txt
+    echo "bspwm_color=#ff5eb9" >> $CACHE/theme.txt
+    echo "polybar_theme=pink" >> $CACHE/theme.txt
     ;;
   "Red")
     cp $CACHE/rofi_themes/red.rasi $CACHE/rofi_themes/theme.rasi
-    echo "theme=red" > $CACHE/theme.txt
+    echo "rofi_theme=red" > $CACHE/theme.txt
+    echo "bspwm_color=#ff0000" >> $CACHE/theme.txt
+    echo "polybar_theme=red" >> $CACHE/theme.txt
     ;;
   "White")
     cp $CACHE/rofi_themes/white.rasi $CACHE/rofi_themes/theme.rasi
-    echo "theme=white" > $CACHE/theme.txt
+    echo "rofi_theme=white" > $CACHE/theme.txt
+    echo "bspwm_color=#ffffff" >> $CACHE/theme.txt
+    echo "polybar_theme=white" >> $CACHE/theme.txt
     ;;
   "Yellow")
     cp $CACHE/rofi_themes/yellow.rasi $CACHE/rofi_themes/theme.rasi
-    echo "theme=yellow" > $CACHE/theme.txt
+    echo "rofi_theme=yellow" > $CACHE/theme.txt
+    echo "bspwm_color=#ffe53d" >> $CACHE/theme.txt
+    echo "polybar_theme=yellow" >> $CACHE/theme.txt
     ;;
 esac
+
+[ $restart = 1 ] && bspwmctl restart
