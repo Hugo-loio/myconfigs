@@ -17,10 +17,15 @@ if [ -z "$(find $CACHE/monitor_order.txt 2>/dev/null)" ] ; then
   mode="default" bspwm_monitor_order
 fi
 
-# Initializes desktops in all conected monitors
+# Checks if theme as been previously defined 
+if [ -z "$(find $CACHE/theme.txt 2>/dev/null)" ] ; then
+  theme_selector default
+fi
+
+# Initializes desktops in all connected monitors
 bspwm_monitor_conf
 
-# Lauch polybar
+# Launch polybar
 $HOME/.config/polybar/launch.sh
 
 # Start network manager applet
@@ -29,7 +34,7 @@ nm-applet &
 # Start udiskie for automatically mounting drives (no notifications for now)
 udiskie --tray &
 
-# Daemon that removes empty desktops and reorders they names apropriatly 
+# Daemon that removes empty desktops and reorders they names appropriately 
 bspwm_rm_empty_desktops &
 
 bspc config border_width        3
@@ -40,7 +45,7 @@ bspc config window_gap          10
 bspc config focused_border_color "#14ed00" #GREEN
 #bspc config focused_border_color "#f5982f" #ORANGE
 #bspc config focused_border_color "#f5982f" #ORANGE
-#bspc config focused_border_color "#3065ba" #BlUE
+#bspc config focused_border_color "#3065ba" #BLUE
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
