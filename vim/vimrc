@@ -83,6 +83,11 @@ augroup END
 "Default .tex filetype to latex
 let g:tex_flavor = "latex"
 
+"Start colorizer automatically
+augroup auto_color
+  autocmd BufNewFile,BufRead *.* :ColorToggle
+augroup END
+
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
 
 "Displays line number in left margin
