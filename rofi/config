@@ -3,15 +3,15 @@ rofi.lines:                          15
 rofi.columns:                        3
 rofi.font:                           mono 12
 !Border width
-!rofi.bw:                             10
+!rofi.bw:                            10
 rofi.location:                       0
-!rofi.padding:                        5
+!rofi.padding:                       5
 rofi.fixed-num-lines:                true
 rofi.show-icons:                     true
 ! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
 rofi.matching:                       normal
 rofi.sidebar-mode:                   false
-rofi.theme:                          .config/rofi/theme.rasi
+rofi.theme:                          .local/share/hugoconf/rofi_themes/theme.rasi
 
 /* Unbinding keybindings with Super in conflict with bspwm
 rofi.kb-select-1:                    

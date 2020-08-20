@@ -1,0 +1,39 @@
+#!/bin/sh
+
+if [ $1 = "default" ] ; then
+  choice="Green" #Default theme
+else
+  themes="Blue\nGreen\nOrange\nPink\nRed\nWhite\nYellow"
+  choice=$(echo $themes | rofi -dmenu -i -p "Choose theme")
+fi
+
+case $choice in 
+  "Blue")
+    cp $CACHE/rofi_themes/blue.rasi $CACHE/rofi_themes/theme.rasi
+    echo "theme=blue" > $CACHE/theme.txt
+    ;;
+  "Green")
+    cp $CACHE/rofi_themes/green.rasi $CACHE/rofi_themes/theme.rasi
+    echo "theme=green" > $CACHE/theme.txt
+    ;;
+  "Orange")
+    cp $CACHE/rofi_themes/orange.rasi $CACHE/rofi_themes/theme.rasi
+    echo "theme=orange" > $CACHE/theme.txt
+    ;;
+  "Pink")
+    cp $CACHE/rofi_themes/pink.rasi $CACHE/rofi_themes/theme.rasi
+    echo "theme=pink" > $CACHE/theme.txt
+    ;;
+  "Red")
+    cp $CACHE/rofi_themes/red.rasi $CACHE/rofi_themes/theme.rasi
+    echo "theme=red" > $CACHE/theme.txt
+    ;;
+  "White")
+    cp $CACHE/rofi_themes/white.rasi $CACHE/rofi_themes/theme.rasi
+    echo "theme=white" > $CACHE/theme.txt
+    ;;
+  "Yellow")
+    cp $CACHE/rofi_themes/yellow.rasi $CACHE/rofi_themes/theme.rasi
+    echo "theme=yellow" > $CACHE/theme.txt
+    ;;
+esac
