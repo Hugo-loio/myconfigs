@@ -53,7 +53,7 @@ straightback &
 xsetroot -cursor_name left_ptr &
 
 # Random wallpaper
-wpshuffle
+wpshuffle &
 
 case $session in
     bspwm ) exec bspwm        ;;
