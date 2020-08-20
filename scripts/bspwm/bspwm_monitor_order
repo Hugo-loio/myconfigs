@@ -16,5 +16,6 @@ else
     echo $choice >> $file_temp
   done
   cat $file_temp > $file
+  rm $file_temp
   bspwm_monitor_conf
 fi
