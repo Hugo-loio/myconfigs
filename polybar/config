@@ -18,39 +18,27 @@
 
 [colors]
 ;background color
-;green
-;background = #9002a802 
-;black
 background = #90000000
-;blue
-;background = #903065ba
-;orange
-;background = #90f5982f
-
 ;alternative background color (focused desktop)
-;black
-;background-alt = #90000000
-;green
-background-alt = #9002a802 
-;blue
-;background-alt = #3065ba
-
+background-alt = ${env:bg} 
 ;main font color
-foreground = #dfdfdf
+foreground = #ffffff
 ;alternative font color
 foreground-alt = #555
+;focused desktop font color
+foreground-focused = ${env:fg}
+;color of icons
+theme_color = #ffffff
 
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
-theme_color = #dfdfdf
 
 [bar/mybar]
 monitor = ${env:monitor}
 width = 100%
 height = 27
-offset-x = 0%
-offset-y = 0 
+offset-x = 0% offset-y = 0 
 radius = 0.0
 fixed-center = false
 
@@ -127,6 +115,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
+label-focused-foreground = ${colors.foreground-focused}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -167,11 +156,11 @@ label-foreground = ${colors.theme_color}
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = #fff
+bar-indicator-foreground = ${colors.theme_color}
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = ${colors.foreground}
+bar-fill-foreground = ${colors.theme_color}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -221,16 +210,17 @@ label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
 ;format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground}
+format-muted-foreground = ${colors.theme_color}
 label-muted =  
 
 bar-volume-width = 10
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = ${colors.theme_color}
 bar-volume-fill = ─
 bar-volume-fill-font = 2
-bar-volume-fill-foreground = ${colors.foreground}
+bar-volume-fill-foreground = ${colors.theme_color}
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}

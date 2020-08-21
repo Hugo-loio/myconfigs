@@ -11,7 +11,7 @@ rofi.show-icons:                     true
 ! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
 rofi.matching:                       normal
 rofi.sidebar-mode:                   false
-rofi.theme:                          .local/share/hugoconf/rofi_themes/theme.rasi
+rofi.theme:                          ~/.local/share/hugoconf/theme.rasi
 
 /* Unbinding keybindings with Super in conflict with bspwm
 rofi.kb-select-1:                    

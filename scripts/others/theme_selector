@@ -1,5 +1,16 @@
 #!/bin/sh
 
+#Change accent color in rofi theme
+sub_ac(){
+  cp $XDG_CONFIG_HOME/rofi/theme.rasi $CACHE/theme.rasi
+  sed -i "s/color4: #[0-9A-z]*/color4: $1/" $CACHE/theme.rasi
+}
+
+#Change selected foreground color in rofi theme
+sub_selfg(){
+  sed -i "s/color6: #[0-9A-z]*/color6: $1/" $CACHE/theme.rasi
+}
+
 restart=1
 choice=""
 
@@ -17,52 +28,66 @@ while [ ! -z "$1" ] ; do
 done
 
 if [ -z "$choice" ] ; then
-  themes="Blue\nGreen\nOrange\nPink\nRed\nWhite\nYellow"
+  themes="Blue\nGreen\nOrange\nPink\nPurple\nRed\nWhite\nYellow"
   choice=$(echo $themes | rofi -dmenu -i -p "Choose theme")
 fi
 
 case $choice in 
   "Blue")
-    cp $CACHE/rofi_themes/blue.rasi $CACHE/rofi_themes/theme.rasi
-    echo "rofi_theme=blue" > $CACHE/theme.txt
-    echo "bspwm_color=#3065ba" >> $CACHE/theme.txt
-    echo "polybar_theme=blue" >> $CACHE/theme.txt
+    sub_ac "#3065ba"
+    sub_selfg "#000000"
+    echo "bspwm_color=#3065ba" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#903065ba" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#ffffff" >> $CACHE/theme.txt
     ;;
   "Green")
-    cp $CACHE/rofi_themes/green.rasi $CACHE/rofi_themes/theme.rasi
-    echo "rofi_theme=green" > $CACHE/theme.txt
-    echo "bspwm_color=#14ed00" >> $CACHE/theme.txt
-    echo "polybar_theme=green" >> $CACHE/theme.txt
+    sub_ac "#0cc731"
+    sub_selfg "#000000"
+    echo "bspwm_color=#0cc731" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#9002a802" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#ffffff" >> $CACHE/theme.txt
     ;;
   "Orange")
-    cp $CACHE/rofi_themes/orange.rasi $CACHE/rofi_themes/theme.rasi
-    echo "rofi_theme=orange" > $CACHE/theme.txt
-    echo "bspwm_color=#f5982f" >> $CACHE/theme.txt
-    echo "polybar_theme=orange" >> $CACHE/theme.txt
+    sub_ac "#ff910a"
+    sub_selfg "#000000"
+    echo "bspwm_color=#ff910a" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#ff910a" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#000000" >> $CACHE/theme.txt
     ;;
   "Pink")
-    cp $CACHE/rofi_themes/pink.rasi $CACHE/rofi_themes/theme.rasi
-    echo "rofi_theme=pink" > $CACHE/theme.txt
-    echo "bspwm_color=#ff5eb9" >> $CACHE/theme.txt
-    echo "polybar_theme=pink" >> $CACHE/theme.txt
+    sub_ac "#ff5eb9"
+    sub_selfg "#000000"
+    echo "bspwm_color=#ff5eb9" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#ff5eb9" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#000000" >> $CACHE/theme.txt
+    ;;
+  "Purple")
+    sub_ac "#ca10eb"
+    sub_selfg "#000000"
+    echo "bspwm_color=#ca10eb" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#90ca10eb" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#ffffff" >> $CACHE/theme.txt
     ;;
   "Red")
-    cp $CACHE/rofi_themes/red.rasi $CACHE/rofi_themes/theme.rasi
-    echo "rofi_theme=red" > $CACHE/theme.txt
-    echo "bspwm_color=#ff0000" >> $CACHE/theme.txt
-    echo "polybar_theme=red" >> $CACHE/theme.txt
+    sub_ac "#fa2828"
+    sub_selfg "#000000"
+    echo "bspwm_color=#fa2828" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#90ff0000" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#ffffff" >> $CACHE/theme.txt
     ;;
   "White")
-    cp $CACHE/rofi_themes/white.rasi $CACHE/rofi_themes/theme.rasi
-    echo "rofi_theme=white" > $CACHE/theme.txt
-    echo "bspwm_color=#ffffff" >> $CACHE/theme.txt
-    echo "polybar_theme=white" >> $CACHE/theme.txt
+    sub_ac "#ffffff"
+    sub_selfg "#000000"
+    echo "bspwm_color=#ffffff" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#ffffff" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#000000" >> $CACHE/theme.txt
     ;;
   "Yellow")
-    cp $CACHE/rofi_themes/yellow.rasi $CACHE/rofi_themes/theme.rasi
-    echo "rofi_theme=yellow" > $CACHE/theme.txt
-    echo "bspwm_color=#ffe53d" >> $CACHE/theme.txt
-    echo "polybar_theme=yellow" >> $CACHE/theme.txt
+    sub_ac "#ffe53d"
+    sub_selfg "#000000"
+    echo "bspwm_color=#ffe53d" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#ffe53d" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#000000" >> $CACHE/theme.txt
     ;;
 esac
 
