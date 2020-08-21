@@ -1,12 +1,14 @@
 #!/bin/sh
 
-prompt="Choose Wallpaper"
-option=$(find "$HOME/Pictures/wallpapers" -type f | awk -F"/" '{print $NF}' | rofi -dmenu -p "Choose Wallpaper")
-[ -z "$option" ] && exit
+wall_name=$(find "$HOME/Pictures/wallpapers" -type f | awk -F"/" '{print $NF}' | rofi -dmenu -p "Choose Wallpaper")
+[ -z "$wall_name" ] && exit
 
-wall=$(find "$HOME/Pictures/wallpapers" -name "$option")
+wall=$(find "$HOME/Pictures/wallpapers" -name "$wall_name")
 [ ! "$(echo $wall | sed 's/ /\n/g' | wc -l)" = "1" ] && notify-send "Wallpaper" "Two or more wallpapers have the same name" && exit
 
 feh --no-fehbg --bg-scale $wall
-betterlockscreen -u $wall
+betterlockscreen -u $wall &
+
+line=$(grep -w $wall_name $CACHE/wptheme.txt 2>/dev/null)
+[ -z "$line" ] || theme_selector -t $(echo $line | awk -F" " '{print $NF}')
 

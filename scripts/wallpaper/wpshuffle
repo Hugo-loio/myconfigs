@@ -1,4 +1,9 @@
 #!/bin/sh
 WALL=$(find "$HOME/Pictures/wallpapers/" -type f | sort -R | tail -1)
 feh --no-fehbg --bg-scale "$WALL"
-betterlockscreen -u $WALL
+betterlockscreen -u $WALL &
+
+wall_name=$(echo $WALL | awk -F"/" '{print $NF}')
+
+line=$(grep -w $wall_name $CACHE/wptheme.txt 2>/dev/null)
+[ -z "$line" ] || theme_selector -t $(echo $line | awk -F" " '{print $NF}')
