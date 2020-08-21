@@ -1,8 +1,12 @@
 #!/bin/sh
 
 prompt="Choose Wallpaper"
-option=$(ls $HOME/Pictures/wallpapers | sed 's/ /\n/' | rofi -dmenu -p "Choose Wallpaper")
+option=$(find "$HOME/Pictures/wallpapers" -type f | awk -F"/" '{print $NF}' | rofi -dmenu -p "Choose Wallpaper")
 [ -z "$option" ] && exit
-feh --no-fehbg --bg-scale $HOME/Pictures/wallpapers/$option 
-betterlockscreen -u $HOME/Pictures/wallpapers/$option
+
+wall=$(find "$HOME/Pictures/wallpapers" -name "$option")
+[ ! "$(echo $wall | sed 's/ /\n/g' | wc -l)" = "1" ] && notify-send "Wallpaper" "Two or more wallpapers have the same name" && exit
+
+feh --no-fehbg --bg-scale $wall
+betterlockscreen -u $wall
 
