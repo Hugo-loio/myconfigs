@@ -76,6 +76,7 @@ syntax on
 
 "Save and load folds when entering and exiting vim
 augroup remember_folds
+  autocmd!
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* silent loadview 
 augroup END
@@ -85,7 +86,8 @@ let g:tex_flavor = "latex"
 
 "Start colorizer automatically
 augroup auto_color
-  autocmd BufNewFile,BufRead *.* :ColorToggle
+  autocmd!
+  autocmd BufNewFile,BufRead *.* :ColorHighlight
 augroup END
 
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
