@@ -70,6 +70,10 @@ super + m
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+# hide and unhide window
+super + {_,shift + } e
+	{bspc node focused -g hidden,bspwm_unhide}
+
 #
 # focus/swap
 #

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+nodes=""
+
+node_name(){
+  xprop -id $1 WM_NAME | cut -d '"' -f2
+}
+
+node_class(){
+  xprop -id $1 WM_CLASS | cut -d '"' -f2
+}
+
+for hidden_node in $(bspc query -N -n .hidden) ; do
+  if [ -z "$nodes" ] ; then
+    nodes=$(echo "$hidden_node $(node_class $hidden_node) $(node_name $hidden_node)")
+  else
+    nodes=$(echo "$(echo $nodes)<>$hidden_node $(node_class $hidden_node) $(node_name $hidden_node)")
+  fi
+done
+
+unhide=$(echo $nodes | sed 's/<>/\n/g' | cut -d" " -f2,3 | rofi -dmenu -i -p "Choose window to unhide")
+
+[ -z "$unhide" ] && exit
+
+unhide_id=$(echo $nodes | sed 's/<>/\n/g' | grep "$unhide" | cut -d" " -f1)
+echo $unhide_id
+
+for id in $unhide_id ; do
+  bspc node $id -g hidden=off
+done 
