@@ -7,7 +7,7 @@ node_name(){
 }
 
 node_class(){
-  xprop -id $1 WM_CLASS | cut -d '"' -f2
+  xprop -id $1 WM_CLASS | cut -d '"' -f4
 }
 
 for hidden_node in $(bspc query -N -n .hidden) ; do
