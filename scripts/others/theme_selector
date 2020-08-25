@@ -28,7 +28,7 @@ while [ ! -z "$1" ] ; do
 done
 
 if [ -z "$choice" ] ; then
-  themes="Blue\nGreen\nOrange\nPink\nPurple\nRed\nWhite\nYellow"
+  themes="Blue\nGreen\nOrange\nPink\nPurple\nRed\nTurquoise\nWhite\nYellow"
   choice=$(echo $themes | rofi -dmenu -i -p "Choose a theme")
 fi
 [ -z $choice ] && exit
@@ -75,6 +75,13 @@ case $choice in
     echo "bspwm_color=#fa2828" > $CACHE/theme.txt
     echo "polybar_bgcolor=#90ff0000" >> $CACHE/theme.txt
     echo "polybar_fgcolor=#ffffff" >> $CACHE/theme.txt
+    ;;
+  "Turquoise")
+    sub_selfg "#000000"
+    sub_selfg "#40E0D0"
+    echo "bspwm_color=#40E0D0" > $CACHE/theme.txt
+    echo "polybar_bgcolor=#40E0D0" >> $CACHE/theme.txt
+    echo "polybar_fgcolor=#000000" >> $CACHE/theme.txt
     ;;
   "White")
     sub_ac "#ffffff"
