@@ -1,32 +1,107 @@
 #!/bin/sh
 
-menu_items="Settings\nTools\nSound\nGames\nInternet\nTerminal"
+settings(){
+  setting_options="Change wallpaper\nChange theme\nPair wallpaper to theme\nChoose monitor order (multiple monitors)"
+  choice=$(echo $setting_options | rofi -dmenu -i -p "Choose setting")
+  case $choice in
+    "Change wallpaper")
+      wpchoose
+      ;;
+    "Change theme")
+      theme_selector
+      ;;
+    "Pair wallpaper to theme")
+      wptheme
+      ;;
+    "Choose monitor order (multiple monitors)")
+      bspwm_monitor_order
+      ;;
+  esac
+}
 
-settings=""
+games(){
+  game_options="Steam\n"
+  choice=$(echo $game_options | rofi -dmenu -i -p "Choose game/client")
+  case $choice in
+    "Steam")
+      steam
+      ;;
+  esac
+}
 
-games="Steam\n"
+tools(){
+  tool_options="Calculator\nGimp\nDiscord"
+  choice=$(echo $tool_options | rofi -dmenu -i -p "Choose tool")
+  case $choice in
+    "Calculator")
+      calculator
+      ;;
+    "Gimp")
+      gimp
+      ;;
+    "Discord")
+      discord
+      ;;
+ esac
+}
 
-tools="Calculator\nGimp"
+entertainment(){
+  entertainment_options="Spotify\nNetflix"
+  choice=$(echo $entertainment_options | rofi -dmenu -i -p "Choose option")
+  case $choice in
+    "Spotify")
+      spotify
+      ;;
+    "Netflix")
+      netflix_web
+      ;;
+ esac
+}
 
-entertainment="Spotify\nNetflix"
+prompt(){
+  choice=$(echo "Yes\nNo" | rofi -dmenu -i -p "Are you sure you want to "$1"?")
+  if [ -z "$choice" ] || [ "$choice" = "No" ] ; then
+    exit
+  fi 
+}
 
-choice1=$(echo $menu_items | rofi -dmenu -i -p "Choose option")
+menu_items="Settings\nTools\nSound\nGames\nInternet\nEntertainment\nTerminal\nLogout\nShutdown\nReboot"
 
-case $choice1 in
+menu_choice=$(echo $menu_items | rofi -dmenu -i -p "Choose option")
+
+case $menu_choice in
   "Settings")
+    settings
     ;;
   "Tools")
+    tools
     ;;
   "Sound")
     pavucontrol
     ;;
   "Games")
+    games
     ;;
   "Internet")
     $BROWSER
     ;;
+  "Entertainment")
+    entertainment
+    ;;
   "Terminal")
     $TERMINAL
+    ;;
+  "Logout")
+    prompt "logout"
+    bspwmctl quit
+    ;;
+  "Shutdown")
+    prompt "shutdown"
+    shutdown now
+    ;;
+  "Reboot")
+    prompt "reboot"
+    reboot
     ;;
 esac
 

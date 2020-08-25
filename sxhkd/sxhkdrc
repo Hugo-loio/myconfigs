@@ -30,6 +30,11 @@ super + r
 super + b
 	bookfinder
 
+#lauch menu script
+
+super + m
+	menu
+
 #
 # Function keys for my laptop
 #
@@ -58,10 +63,6 @@ super + alt + {q,r}
 super + {_,shift + }BackSpace
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
-
 #
 # state/flags
 #
@@ -73,6 +74,10 @@ super + {t,shift + t,s,f}
 # hide and unhide window
 super + {_,shift + } e
 	{bspc node focused -g hidden,bspwm_unhide}
+
+# alternate between the tiled and monocle layout
+super + shift + f 
+	bspc desktop -l next
 
 #
 # focus/swap
