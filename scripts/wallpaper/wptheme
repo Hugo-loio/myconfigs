@@ -21,3 +21,5 @@ else
   sed -i "s/$wall_name.*/$wall_name $theme/" $file
 fi
 
+wpchoose $wall_name
+

@@ -1,9 +1,15 @@
 #!/bin/sh
+#This script chooses a wallpaper
 
-wall_name=$(find "$HOME/Pictures/wallpapers" -type f | awk -F"/" '{print $NF}' | rofi -dmenu -p "Choose Wallpaper")
-[ -z "$wall_name" ] && exit
+wall_name="$1" #Script might be run with a parsed wallpaper name
+
+if [ -z "$wall_name" ] ; then
+  wall_name=$(find "$HOME/Pictures/wallpapers" -type f | awk -F"/" '{print $NF}' | rofi -dmenu -p "Choose Wallpaper")
+  [ -z "$wall_name" ] && exit
+fi
 
 wall=$(find "$HOME/Pictures/wallpapers" -name "$wall_name")
+[ -z "$wall" ] && notify-send "Wallpaper" "Wallpaper not found" && exit
 [ ! "$(echo $wall | sed 's/ /\n/g' | wc -l)" = "1" ] && notify-send "Wallpaper" "Two or more wallpapers have the same name" && exit
 
 feh --no-fehbg --bg-scale $wall
