@@ -6,7 +6,7 @@ wall_name=$(find "$HOME/Pictures/wallpapers" -type f | awk -F"/" '{print $NF}' |
 wall_path=$(find "$HOME/Pictures/wallpapers" -name "$wall_name")
 [ ! "$(echo $wall | sed 's/ /\n/g' | wc -l)" = "1" ] && notify-send "Wallpaper" "Two or more wallpapers have the same name" && exit
 
-themes="Blue\nGreen\nOrange\nPink\nPurple\nRed\nWhite\nYellow\nNone"
+themes="Blue\nGreen\nOrange\nPink\nPurple\nRed\nTurquoise\nWhite\nYellow\nNone"
 theme=$(echo $themes | rofi -dmenu -i -p "Choose a theme")
 [ -z $theme ] && exit
 
