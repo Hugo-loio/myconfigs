@@ -8,6 +8,7 @@ case "$1" in
     make || make -C obj/ 
     ;;
   *.tex)
+    rm /tmp/latex_vim_compiler.*
     tempfile=$(mktemp /tmp/latex_vim_compiler.XXXXXX)
     pdflatex -output-directory "$dir" "$1" > $tempfile 2>&1 || $TERMINAL -e vim $tempfile & 
     ;;
