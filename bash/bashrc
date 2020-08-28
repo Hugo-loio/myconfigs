@@ -21,6 +21,8 @@ alias gc='git commit -m'
 alias gp='git push'
 alias gst='git status'
 alias gd='git diff'
+# Alias for shared repository between my computers
+alias share='git --git-dir=$HOME/SharedRepo --work-tree=$HOME'
 # checkbashisms alias
 alias cb='checkbashisms'
 # vim keys with info
