@@ -77,8 +77,8 @@ case $choice in
     echo "polybar_fgcolor=#ffffff" >> $CACHE/theme.txt
     ;;
   "Turquoise")
+    sub_ac "#40E0D0"
     sub_selfg "#000000"
-    sub_selfg "#40E0D0"
     echo "bspwm_color=#40E0D0" > $CACHE/theme.txt
     echo "polybar_bgcolor=#40E0D0" >> $CACHE/theme.txt
     echo "polybar_fgcolor=#000000" >> $CACHE/theme.txt
