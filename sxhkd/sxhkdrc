@@ -32,7 +32,7 @@ super + b
 
 #lauch menu script
 
-super + m
+super + shift + m
 	menu
 
 #
@@ -76,7 +76,7 @@ super + {_,shift + } e
 	{bspc node focused -g hidden,bspwm_unhide}
 
 # alternate between the tiled and monocle layout
-super + shift + f 
+super + m
 	bspc desktop -l next
 
 #
