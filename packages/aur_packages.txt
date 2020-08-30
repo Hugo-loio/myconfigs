@@ -1,6 +1,7 @@
 betterlockscreen
 brother-mfc-j5730dw
 dashbinsh
+google-chrome
 polybar
 rofi-dmenu
 simple-mtpfs
