@@ -178,9 +178,9 @@ nnoremap <leader>t :!$TERMINAL -d $(pwd) &<CR><CR>
 
 "Group to automatically comment visual selection
 augroup autocomment
-  autocmd!
-  "Comments in c and cpp
-  autocmd Filetype cpp,c vnoremap <buffer> <leader>c dO/*<ESC>o<ENTER>*/<ESC>==kP
+autocmd!
+"Comments in c and cpp
+autocmd Filetype cpp,c vnoremap <buffer> <leader>vc dO/*<ESC>o<ENTER>*/<ESC>==kP
 augroup END
 
 nnoremap <leader>m :!vim_compiler '%:p'<CR>
