@@ -1,0 +1,5 @@
+#!/bin/sh
+
+node=$(bspc query -N -n focused)
+bspwm_dynamic_desktops --mn 1
+bspc node $node -g hidden 

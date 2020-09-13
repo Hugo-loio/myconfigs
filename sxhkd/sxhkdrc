@@ -71,9 +71,11 @@ super + {_,shift + }BackSpace
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# hide and unhide window
-super + {_,shift + } e
-	{bspc node focused -g hidden,bspwm_unhide}
+# hide/unhide window
+super + {_,shift +} e
+	{bspwm_hide,bspwm_unhide}
+
+
 
 # alternate between the tiled and monocle layout
 super + m

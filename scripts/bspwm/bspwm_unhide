@@ -25,6 +25,7 @@ unhide=$(echo $nodes | sed 's/<>/\n/g' | cut -d" " -f2,3 | rofi -dmenu -i -p "Ch
 unhide_id=$(echo $nodes | sed 's/<>/\n/g' | grep "$unhide" | cut -d" " -f1)
 echo $unhide_id
 
+desktop=$(bspc query -D -d focused)
 for id in $unhide_id ; do
-  bspc node $id -g hidden=off
+  bspc node $id -g hidden=off -d $desktop -f  
 done 
