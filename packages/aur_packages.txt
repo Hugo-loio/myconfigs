@@ -5,6 +5,5 @@ google-chrome
 polybar
 rofi-dmenu
 simple-mtpfs
-spotify
 transset-df
 windscribe-cli
