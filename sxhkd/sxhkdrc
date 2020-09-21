@@ -47,6 +47,9 @@ XF86MonBrightness{Up,Down}
 XF86Audio{RaiseVolume,LowerVolume,Mute}
 	pamixer {-i 5,-d 5,-t}
 
+super + ctrl + {plus,minus,m}
+	pamixer {-i 5,-d 5,-t}
+
 # Toggle touchpad
 XF86TouchpadToggle
 	touchpad_toggle
