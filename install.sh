@@ -3,6 +3,22 @@ repo=$(dirname "$0")
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
+#1st arg: target file ; 2nd arg: source file
+create_symlic(){
+  dir=$(dirname $1)
+  if [ ! -d $dir ] ; then
+    mkdir -p $dir
+  fi
+
+  if [ -f $1 ] || [ -h $1 ] ; then
+    echo "Replaced" $1
+    rm $1
+  else
+    echo "Created" $1
+  fi
+  ln -sr $2 $1
+}
+
 #List of dotfiles for home directory
 home_dotfiles="profile xinit/xinitrc xinit/xserverrc \
   bash/bash_profile bash/bashrc vim/vimrc readline/inputrc \
@@ -22,7 +38,7 @@ config_folder_no_subdir="betterlockscreen/betterlockscreenrc"
 vim_snippets=$(ls $repo/vim/snippets/*.snippets)
 
 #Ask user to replace files
-echo "This script will replace your configs with the ones on this repo. Do you wish to proced?(y/n)"
+echo "This script will replace your configs with the ones on this repo. Do you wish to proceed?(y/n)"
 while [ true ] ; do
   read answer 
   if [ -z $answer ] ; then 
@@ -36,21 +52,20 @@ while [ true ] ; do
   fi
 done
 
-#1st arg: target file ; 2nd arg: source file
-create_symlic(){
-  dir=$(dirname $1)
-  if [ ! -d $dir ] ; then
-    mkdir -p $dir
-  fi
+# Checking if user has root permision and if multilib is enabled
+echo "The script requires root permisions\n" 
+sudo -v 2>/dev/null || ( echo "This user doesn't have root permitions" && exit )
+sudo pacman -Sl multilib >/dev/null 2>&1 || ( echo "Please enable the multilib repository before proceeding" && exit )
 
-  if [ -f $1 ] || [ -h $1 ] ; then
-    echo "Replaced" $1
-    rm $1
-  else
-    echo "Created" $1
-  fi
-  ln -sr $2 $1
-}
+echo "\nInstalling packages..."
+sudo pacman -S --needed $(cat $repo/packages/main_repo_packages.txt)
+if [ -z "$(which yay 2>/dev/null)" ] ; then
+  mkdir $repo/yay
+  git clone https://aur.archlinux.org/yay.git $repo/yay
+  (cd $repo/yay && makepkg -sic)
+  rm -rf $repo/yay
+fi
+yay -S --needed $(cat $repo/packages/aur_packages.txt)
 
 echo "\nInstalling user configs..."
 
@@ -83,24 +98,13 @@ echo "\nInstalling scripts..."
 ./$repo/scripts/make_scripts.sh
 
 echo "\nInstalling system configs..."
-echo "This part will need root permisions\n" 
 
 sudo ./$repo/xorg/make_xorgconf.sh
 sudo ./$repo/vconsole/make_conf.sh
 
-echo "\nInstalling packages..."
-echo "This part will need root permisions\n" 
-sudo pacman -S --needed $(cat $repo/packages/main_repo_packages.txt)
-if [ -z "$(which yay 2>/dev/null)" ] ; then
-  mkdir $repo/yay
-  git clone https://aur.archlinux.org/yay.git $repo/yay
-  (cd $repo/yay && makepkg -sic)
-  rm -rf $repo/yay
-fi
-yay -S --needed $(cat $repo/packages/aur_packages.txt)
+
 
 echo "\nCreating cache folder..."
-
 export CACHE="$HOME/.local/share/hugoconf"
 if [ ! -d $CACHE ] ; then
   mkdir -p $CACHE
