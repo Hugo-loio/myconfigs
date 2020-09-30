@@ -16,3 +16,4 @@ folder=$(dirname "$0")
 
 create_symlink /etc/security/faillock.conf $folder/faillock.conf
 create_symlink /etc/pam.d/system-login $folder/system-login
+create_symlink /etc/login.defs $folder/login.defs

@@ -102,7 +102,7 @@ echo "\nInstalling system configs..."
 
 sudo ./$repo/xorg/make_conf.sh
 sudo ./$repo/vconsole/make_conf.sh
-sudo ./$repo/security/make_conf.sh
+sudo ./$repo/security/login/make_conf.sh
 
 
 
