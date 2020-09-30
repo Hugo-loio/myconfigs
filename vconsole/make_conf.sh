@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #1st arg: target file ; 2nd arg: source file
-create_symlic(){
+create_symlink(){
   if [ -f $1 ] || [ -h $1 ] ; then
     echo "Replaced" $1
     rm $1
@@ -14,4 +14,4 @@ create_symlic(){
 #Folder where scripts are located in repo
 folder=$(dirname "$0")
 
-create_symlic /etc/vconsole.conf $folder/vconsole.conf
+create_symlink /etc/vconsole.conf $folder/vconsole.conf

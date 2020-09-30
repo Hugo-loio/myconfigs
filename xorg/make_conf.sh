@@ -2,7 +2,7 @@
 repo=$(dirname $0)
 
 #1st arg: target file ; 2nd arg: source file
-create_symlic(){
+create_symlink(){
   if [ -f $1 ] || [ -h $1 ] ; then
     echo "Replaced" $1
     rm $1
@@ -13,7 +13,7 @@ create_symlic(){
 }
 
 #Xorg
-create_symlic /etc/X11/xorg.conf.d/70-synaptics.conf $repo/70-synaptics.conf 
+create_symlink /etc/X11/xorg.conf.d/70-synaptics.conf $repo/70-synaptics.conf 
 
 
 

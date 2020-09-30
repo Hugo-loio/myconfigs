@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #1st arg: target file ; 2nd arg: source file
-create_symlic(){
+create_symlink(){
   if [ -f $1 ] || [ -h $1 ] ; then
     echo "Replaced" $1
     rm $1
@@ -23,5 +23,5 @@ fi
 
 for script in $scripts;do
   target=$HOME/.local/bin/$(basename $script)
-  create_symlic $target $script
+  create_symlink $target $script
 done

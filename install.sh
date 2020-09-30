@@ -1,10 +1,11 @@
 #!/bin/sh
+
 repo=$(dirname "$0")
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
 #1st arg: target file ; 2nd arg: source file
-create_symlic(){
+create_symlink(){
   dir=$(dirname $1)
   if [ ! -d $dir ] ; then
     mkdir -p $dir
@@ -53,7 +54,7 @@ while [ true ] ; do
 done
 
 # Checking if user has root permision and if multilib is enabled
-echo "The script requires root permisions\n" 
+echo "\nThe script requires root permisions" 
 sudo -v 2>/dev/null || ( echo "This user doesn't have root permitions" && exit )
 sudo pacman -Sl multilib >/dev/null 2>&1 || ( echo "Please enable the multilib repository before proceeding" && exit )
 
@@ -72,25 +73,25 @@ echo "\nInstalling user configs..."
 for dot in $home_dotfiles;do
   target=$HOME/"."$(basename $dot)
   source_file=$repo/$dot
-  create_symlic $target $source_file
+  create_symlink $target $source_file
 done
 
 for conf in $config_folder;do
   target=$XDG_CONFIG_HOME/$conf
   source_file=$repo/$conf
-  create_symlic $target $source_file
+  create_symlink $target $source_file
 done
 
 for conf in $config_folder_no_subdir;do
   target=$XDG_CONFIG_HOME/$(basename $conf)
   source_file=$repo/$conf
-  create_symlic $target $source_file
+  create_symlink $target $source_file
 done
 
 for snip in $vim_snippets;do
   target=$HOME/.vim/UltiSnips/$(basename $snip)
   source_file=$snip
-  create_symlic $target $source_file
+  create_symlink $target $source_file
 done
 
 echo "\nInstalling scripts..."
@@ -99,8 +100,9 @@ echo "\nInstalling scripts..."
 
 echo "\nInstalling system configs..."
 
-sudo ./$repo/xorg/make_xorgconf.sh
+sudo ./$repo/xorg/make_conf.sh
 sudo ./$repo/vconsole/make_conf.sh
+sudo ./$repo/security/make_conf.sh
 
 
 
