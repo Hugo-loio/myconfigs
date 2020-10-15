@@ -5,6 +5,6 @@ google-chrome
 polybar
 rofi-dmenu
 simple-mtpfs
-simplenote_electron-bin
+simplenote-electron-bin
 transset-df
 windscribe-cli
