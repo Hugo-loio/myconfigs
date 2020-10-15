@@ -100,9 +100,9 @@ echo "\nInstalling scripts..."
 
 echo "\nInstalling system configs..."
 
-sudo ./$repo/xorg/make_conf.sh
-sudo ./$repo/vconsole/make_conf.sh
-sudo ./$repo/security/login/make_conf.sh
+for conf in $(find -path "$repo/*/make_conf.sh");do
+  sudo ./$conf
+done
 
 
 
