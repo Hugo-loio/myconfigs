@@ -4,7 +4,7 @@ dir=$(dirname "$1")
 base="${file%.*}"
 
 case "$1" in
-  *Makefile | *.C | *.cc | *.cpp)
+  *Makefile | *.C | *.cc | *.cpp | *.c | *.h )
     make || make -C obj/ 
     ;;
   *.tex)
