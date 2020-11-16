@@ -36,3 +36,5 @@ set -o vi
 
 # XTerm transparency
 [ -n "$XTERM_VERSION" ] && transset-df -m 0.9 --id "$WINDOWID" >/dev/null
+
+alias anaconda='source /opt/anaconda/bin/activate'

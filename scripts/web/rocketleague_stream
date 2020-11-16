@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sleep $1 && firefox --new-window https://www.twitch.tv/rocketleague
