@@ -1,0 +1,22 @@
+configuration {
+	width: 50;
+	lines: 15;
+	columns: 3;
+	font: "mono 12";
+	location: 0;
+	fixed-num-lines: true;
+	show-icons: true;
+	sidebar-mode: false;
+	matching: "normal";
+	theme: "~/.local/share/hugoconf/theme.rasi";
+	kb-select-1: "";
+	kb-select-2: "";
+	kb-select-3: "";
+	kb-select-4: "";
+	kb-select-5: "";
+	kb-select-6: "";
+	kb-select-7: "";
+	kb-select-8: "";
+	kb-select-9: "";
+	kb-select-10: "";
+}
