@@ -1,0 +1,3 @@
+#!/bin/sh
+
+. /opt/anaconda/bin/activate && anaconda-navigator
