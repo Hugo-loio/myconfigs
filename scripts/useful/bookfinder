@@ -8,4 +8,3 @@ chosen_book=$(echo $books | sed 's/pdf\ /pdf\n/g;s/djvu\ /djvu\n/g' | rofi -dmen
 
 temp=$(find $booksdir -type f -name "$chosen_book")
 evince "$temp"
-
