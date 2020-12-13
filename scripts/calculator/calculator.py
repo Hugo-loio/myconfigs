@@ -1,5 +1,6 @@
 import math
 import numpy as np
+from sympy import *
 
 class ConstList:
     def __init__(self):
@@ -157,5 +158,11 @@ def arccos(x):
 
 def arctan(x):
     return np.arctan(x)
+
+# Pretty printing for sympy
+init_printing()
+
+# x,y,z and t as symbolic sympy variables
+x, y, z, t = symbols('x y z t')
 
 List.print()
