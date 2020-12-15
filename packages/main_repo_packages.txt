@@ -66,6 +66,7 @@ sxhkd
 terminus-font
 texlive-lang
 texlive-most
+tk
 tlp
 transmission-gtk
 trash-cli
