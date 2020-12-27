@@ -116,6 +116,9 @@ List.add(mu0, "mu0", "Vacuum magnetic permeability","N/(A^2)")
 muB = 9.27401007E-24
 List.add(muB, "muB", "Bohr magneton","J/T")
 
+R = 6371000
+List.add(R, "R", "Earth Radius","m")
+
 #Useful functions
 def sc(x): #scientific notation
     print("{:e}".format(x))
