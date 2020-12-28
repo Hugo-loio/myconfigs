@@ -122,8 +122,8 @@ done
 
 echo "\nEnabling services with systemd..."
 #Cups for printing
-sudo systemctl enable org.cups.cupsd.service
-sudo systemctl start org.cups.cupsd.service
+sudo systemctl enable cups.service
+sudo systemctl start cups.service
 
 #Screen saver
 sudo systemctl enable betterlockscreen@USER
