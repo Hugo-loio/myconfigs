@@ -1,5 +1,6 @@
-import math
 import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
 from sympy import *
 
 class ConstList:
@@ -65,7 +66,7 @@ class ConstList:
 List = ConstList()
 
 #Define constants as such
-pi = math.pi
+pi = np.pi
 List.add(pi,"pi","Pi","")
 
 c = 299792458
@@ -124,31 +125,31 @@ def sc(x): #scientific notation
     print("{:e}".format(x))
 
 def sqrt(x):
-    return math.sqrt(x)
+    return np.sqrt(x)
 
 def log(x,b = None):
     if(b == None):
-        return math.log(x)
+        return np.log(x)
     else:
-        return math.log(x,b)
+        return np.log(x,b)
 
 def exp(x):
-    return math.exp(x)
+    return np.exp(x)
 
 def pow(x,y):
-    return math.pow(x,y)
+    return np.pow(x,y)
 
 def sin(x):
-    return math.sin(x)
+    return np.sin(x)
 
 def sen(x):
-    return math.sin(x)
+    return np.sin(x)
 
 def cos(x):
-    return math.cos(x)
+    return np.cos(x)
 
 def tan(x):
-    return math.tan(x)
+    return np.tan(x)
 
 def arcsin(x):
     return np.arcsin(x)
