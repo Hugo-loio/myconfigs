@@ -53,9 +53,9 @@ while [ true ] ; do
   fi
 done
 
-# Checking if user has root permision and if multilib is enabled
-echo "\nThe script requires root permisions" 
-sudo -v 2>/dev/null || ( echo "This user doesn't have root permitions" && exit )
+# Checking if user has root permission and if multilib is enabled
+echo "\nThe script requires root permissions" 
+sudo -v 2>/dev/null || ( echo "This user doesn't have root permissions" && exit )
 sudo pacman -Sl multilib >/dev/null 2>&1 || ( echo "Please enable the multilib repository before proceeding" && exit )
 
 echo "\nInstalling packages..."
@@ -112,7 +112,7 @@ if [ ! -d $CACHE ] ; then
   mkdir -p $CACHE
 fi
 
-echo "\nCreating other usefull folders..."
+echo "\nCreating other useful folders..."
 folders="Documents/books Pictures/wallpapers Desktop Movies Downloads"
 for f in $folders ; do
   if [ ! -d $HOME/$f ] ; then
@@ -128,5 +128,9 @@ sudo systemctl start cups.service
 #Screen saver
 sudo systemctl enable betterlockscreen@USER
 sudo systemctl start betterlockscreen@USER
+
+#Clock synchronization
+sudo systemctl enable ntpd
+sudo systemctl start ntpd
 
 echo "Done"

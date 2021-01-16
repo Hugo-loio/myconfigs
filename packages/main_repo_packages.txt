@@ -46,6 +46,7 @@ networkmanager
 noto-fonts-emoji
 nss-mdns
 ntfs-3g
+ntp
 openssh
 p7zip
 pacman-contrib
