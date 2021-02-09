@@ -120,6 +120,9 @@ List.add(muB, "muB", "Bohr magneton","J/T")
 R = 6371000
 List.add(R, "R", "Earth Radius","m")
 
+Msun = 1.9891E30
+List.add(Msun, "Msun", "Sun mass", "Kg")
+
 #Useful functions
 def sc(x): #scientific notation
     print("{:e}".format(x))
