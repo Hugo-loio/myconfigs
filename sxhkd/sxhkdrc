@@ -35,6 +35,11 @@ super + b
 super + shift + m
 	menu
 
+#random meme lol
+
+super + shift + v
+	random_video
+
 #
 # Function keys for my laptop
 #

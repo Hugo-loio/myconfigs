@@ -1,0 +1,5 @@
+#!/bin/sh
+
+video=$(find "$HOME/Documents/memes" -type f | sort -R | tail -1)
+
+mpv $video
