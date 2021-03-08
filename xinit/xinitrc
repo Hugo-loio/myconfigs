@@ -47,8 +47,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Starting WM/DE chosen
 session=${1:-bspwm}
 
-straightback &
-
 # Make default cursor diferent from x
 xsetroot -cursor_name left_ptr &
 
