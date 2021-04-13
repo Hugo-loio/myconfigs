@@ -90,4 +90,5 @@ xorg-xbacklight
 xorg-xev
 xorg-xinit
 xorg-xsetroot
+xournalpp
 youtube-dl
