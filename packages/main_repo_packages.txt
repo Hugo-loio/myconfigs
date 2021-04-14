@@ -20,7 +20,6 @@ evince
 feh
 ffmpegthumbnailer
 firefox
-flashplugin
 gimp
 gimp
 git
@@ -47,6 +46,7 @@ networkmanager
 noto-fonts-emoji
 nss-mdns
 ntfs-3g
+ntp
 ntp
 openssh
 p7zip

@@ -2,6 +2,7 @@ anaconda
 betterlockscreen
 brother-mfc-j5730dw
 dashbinsh
+flashplugin
 google-chrome
 linux-wifi-hotspot
 polybar
