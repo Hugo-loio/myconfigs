@@ -8,6 +8,8 @@ export TERMINAL="kitty"
 export BROWSER="firefox"
 export FILE="ranger"
 export CACHE="$HOME/.local/share/hugoconf"
+#Fix for mathematica
+export USE_WOLFRAM_LD_LIBRARY_PATH=1
 
 rm $HOME/.vim*.tmp
 if systemctl -q is-active graphical.target && [ ! $DISPLAY ] && [ $XDG_VTNR -eq 1 ]; then
