@@ -38,6 +38,9 @@ config_folder_no_subdir="betterlockscreen/betterlockscreenrc"
 #List of snippets for .vim/UltiSnips directory
 vim_snippets=$(ls $repo/vim/snippets/*.snippets)
 
+#Vim after folder
+vim_after=$(find $repo/vim/after -type f)
+
 #Ask user to replace files
 echo "This script will replace your configs with the ones on this repo. Do you wish to proceed?(y/n)"
 while [ true ] ; do
@@ -91,6 +94,12 @@ done
 for snip in $vim_snippets;do
   target=$HOME/.vim/UltiSnips/$(basename $snip)
   source_file=$snip
+  create_symlink $target $source_file
+done
+
+for after in $vim_after;do
+  target=$(echo "$after" | sed "s|$repo/vim|$HOME/.vim|g")
+  source_file=$after
   create_symlink $target $source_file
 done
 
