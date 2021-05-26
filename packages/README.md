@@ -2,6 +2,6 @@
 
 |Package|Description/Usage|
 |-|-|
-|ghostscript|Toolkit for editing pdf files (ps2pdf, gs...)|
+|ghostscript|Toolkit for editing pdf and ps files (ps2pdf, gs...)|
 
 # AUR packages
