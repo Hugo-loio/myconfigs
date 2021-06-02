@@ -76,7 +76,8 @@ augroup END
 "When editing latex files, rm .aux and .log files on exit
 augroup DeletePdflatexFiles
   autocmd!
-  autocmd VimLeave *.tex :!rm '%:p:h/main.out' '%:p:h/main.aux' '%:p:h/main.log' '%:p:r.out' '%:p:r.aux' '%:p:r.log' /tmp/latex_vim_compiler.*
+  "autocmd VimLeave *.tex :!rm '%:p:h/main.out' '%:p:h/main.aux' '%:p:h/main.log' '%:p:r.out' '%:p:r.aux' '%:p:r.log' /tmp/latex_vim_compiler.*
+  autocmd VimLeave *.tex :!rm /tmp/latex_vim_compiler.*
 augroup END
 
 "Enable syntax highlighting
