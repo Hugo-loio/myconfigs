@@ -23,6 +23,7 @@ firefox
 gimp
 gimp
 git
+ghostscript
 grub
 grub-customizer
 gucharmap
