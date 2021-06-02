@@ -1,6 +1,7 @@
 alsa-utils
 arc-gtk-theme
 arc-icon-theme
+atril
 base
 base-devel
 biber
@@ -20,10 +21,10 @@ evince
 feh
 ffmpegthumbnailer
 firefox
+ghostscript
 gimp
 gimp
 git
-ghostscript
 grub
 grub-customizer
 gucharmap
