@@ -198,7 +198,7 @@ augroup	autoexecute
   "Writes partial command to run executable for c and cpp files
   autocmd Filetype make,cpp,c nnoremap <leader>x :!bin/
   "Open pdf with evince
-  autocmd Filetype tex nnoremap <leader>x :!atril '%:p:r.pdf' &<CR><CR>:redraw!<CR>
+  autocmd Filetype tex nnoremap <leader>x :!evince '%:p:r.pdf' &<CR><CR>:redraw!<CR>
   autocmd Filetype python nnoremap <leader>x :!python '%'<CR>
 augroup End
 
