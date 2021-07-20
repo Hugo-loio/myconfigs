@@ -29,6 +29,7 @@ grub
 grub-customizer
 gucharmap
 gvim
+htop
 inter-font
 kitty
 lib32-llvm
