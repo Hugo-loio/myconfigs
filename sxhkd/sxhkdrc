@@ -67,6 +67,10 @@ XF86TouchpadToggle
 super + alt + {q,r}
 	bspwmctl {quit,restart}
 
+# suspend system
+super + alt + s
+	betterlockscreen -l dim
+
 # close and kill
 super + {_,shift + }BackSpace
 	bspc node -{c,k}
