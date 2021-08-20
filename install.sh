@@ -136,7 +136,7 @@ sudo systemctl start cups.service
 
 #Screen saver
 sudo systemctl enable betterlockscreen@$USER
-sudo systemctl start betterlockscreen@$USER
+sudo systemctl enable betterlockscreen@$USER
 
 #Clock synchronization
 sudo systemctl enable ntpd

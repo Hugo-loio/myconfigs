@@ -9,5 +9,4 @@ polybar
 rofi-dmenu
 simple-mtpfs
 simplenote-electron-bin
-transset-df
 windscribe-cli

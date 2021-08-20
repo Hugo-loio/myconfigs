@@ -64,7 +64,7 @@ font-3 = Font Awesome 5 Free:style=solid:pixelsize=11;2
 
 modules-left = bspwm xwindow
 modules-center = 
-modules-right = memory cpu filesystem xbacklight alsa xkeyboard battery date
+modules-right = memory cpu filesystem xbacklight backlight alsa xkeyboard battery date
 
 tray-position = ${env:tray}
 tray-padding = 0
@@ -170,8 +170,39 @@ ramp-1 = 🌒
 ramp-2 = 🌓
 ramp-3 = 🌔
 ramp-4 = 🌕
-output = eDP1
+output = ${env:monitor}
 enable-scroll = true
+
+[module/backlight]
+type = internal/backlight
+
+card = amdgpu_bl0
+enable-scroll = true
+
+format = <label> <bar>
+
+; Available tokens:
+;   %percentage% (default)
+label =   
+
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = ${colors.theme_color}
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = ${colors.theme_color}
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
 
 [module/cpu]
 type = internal/cpu

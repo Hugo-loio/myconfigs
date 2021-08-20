@@ -44,9 +44,14 @@ super + shift + v
 # Function keys for my laptop
 #
 
-# Increase/Decrease brightness
+# Increase/Decrease brightness 
+# If not working install acpilight
 XF86MonBrightness{Up,Down}
 	xbacklight {-inc 5,-dec 5}
+
+super + ctrl + {9,0}
+	xbacklight {-inc 5,-dec 5}
+
 
 # Increase/Decrease/Mute volume
 XF86Audio{RaiseVolume,LowerVolume,Mute}

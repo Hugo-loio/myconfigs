@@ -38,9 +38,5 @@ PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\e[00m \n$ '
 # Enable vi mode
 set -o vi
 
-# XTerm transparency
-[ -n "$XTERM_VERSION" ] && transset-df -m 0.9 --id "$WINDOWID" >/dev/null
-
 # Anaconda cli env
-
 alias anaconda_cli='. /opt/anaconda/bin/activate'
