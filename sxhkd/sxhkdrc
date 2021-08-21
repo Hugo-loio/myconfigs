@@ -49,7 +49,7 @@ super + shift + v
 XF86MonBrightness{Up,Down}
 	xbacklight {-inc 5,-dec 5}
 
-super + ctrl + {9,0}
+super + ctrl + {0,9}
 	xbacklight {-inc 5,-dec 5}
 
 

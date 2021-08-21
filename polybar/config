@@ -176,13 +176,12 @@ enable-scroll = true
 [module/backlight]
 type = internal/backlight
 
+; TODO: do this with an env variable
 card = amdgpu_bl0
 enable-scroll = true
 
 format = <label> <bar>
 
-; Available tokens:
-;   %percentage% (default)
 label =   
 
 ; Only applies if <ramp> is used

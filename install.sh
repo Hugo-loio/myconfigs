@@ -142,4 +142,8 @@ sudo systemctl enable betterlockscreen@$USER
 sudo systemctl enable ntpd
 sudo systemctl start ntpd
 
+#ACPI events
+sudo systemctl enable acpid
+sudo systemctl start acpid
+
 echo "Done"
