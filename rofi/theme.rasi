@@ -72,6 +72,8 @@ listview {
 	padding: 5 0 0 0;
 	scrollbar: true;
 	margin: 0 10px 0 10px;
+	columns: 3;
+	lines: 15;
 }
 
 scrollbar {
@@ -81,6 +83,11 @@ scrollbar {
 	border: 1 1 1 1;
 	border-color: @color4;
 	margin: 0 0 0 10px;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }
 
 element {
@@ -97,11 +104,11 @@ element selected {
 }
 
 element alternate {
-	background-color: @color0;
+	background-color: transparent;
 }
 
 element normal normal, element alternate normal {
-	text-color: @color2;
+	text-color: @color4;
 }
 
 element selected normal {

@@ -1,11 +1,8 @@
 configuration {
-	width: 50;
-	lines: 15;
-	columns: 3;
 	font: "mono 12";
 	location: 0;
 	fixed-num-lines: true;
-	show-icons: true;
+	show-icons: false;
 	sidebar-mode: false;
 	matching: "normal";
 	theme: "~/.local/share/hugoconf/theme.rasi";
