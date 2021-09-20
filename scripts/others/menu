@@ -1,7 +1,7 @@
 #!/bin/sh
 
 settings(){
-  setting_options="Change wallpaper\nChange theme\nPair wallpaper to theme\nChoose monitor order (multiple monitors)"
+  setting_options="Change wallpaper\nChange theme\nPair wallpaper to theme\nChoose monitor order (multiple monitors)\nSound"
   choice=$(echo $setting_options | rofi -dmenu -i -p "Choose setting")
   case $choice in
     "Change wallpaper")
@@ -15,6 +15,9 @@ settings(){
       ;;
     "Choose monitor order (multiple monitors)")
       bspwm_monitor_order
+      ;;
+    "Sound")
+      pavucontrol
       ;;
   esac
 }
@@ -42,7 +45,7 @@ tools(){
     "Discord")
       discord
       ;;
- esac
+  esac
 }
 
 entertainment(){
@@ -55,7 +58,7 @@ entertainment(){
     "Netflix")
       netflix_web
       ;;
- esac
+  esac
 }
 
 prompt(){
@@ -65,7 +68,7 @@ prompt(){
   fi 
 }
 
-menu_items="Settings\nTools\nSound\nGames\nInternet\nEntertainment\nTerminal\nLogout\nShutdown\nReboot"
+menu_items="Settings\nTools\nGames\nInternet\nEntertainment\nTerminal\nLogout\nShutdown\nReboot"
 
 menu_choice=$(echo $menu_items | rofi -dmenu -i -p "Choose option")
 
@@ -75,9 +78,6 @@ case $menu_choice in
     ;;
   "Tools")
     tools
-    ;;
-  "Sound")
-    pavucontrol
     ;;
   "Games")
     games

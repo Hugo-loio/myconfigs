@@ -32,7 +32,7 @@ super + b
 
 #lauch menu script
 
-super + shift + m
+super + x 
 	menu
 
 #random meme lol

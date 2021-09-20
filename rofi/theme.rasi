@@ -108,7 +108,7 @@ element alternate {
 }
 
 element normal normal, element alternate normal {
-	text-color: @color4;
+	text-color: @color2;
 }
 
 element selected normal {
