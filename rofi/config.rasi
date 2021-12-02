@@ -5,7 +5,6 @@ configuration {
 	show-icons: false;
 	sidebar-mode: false;
 	matching: "normal";
-	theme: "~/.local/share/hugoconf/theme.rasi";
 	kb-select-1: "";
 	kb-select-2: "";
 	kb-select-3: "";
@@ -17,3 +16,5 @@ configuration {
 	kb-select-9: "";
 	kb-select-10: "";
 }
+
+@theme "~/.local/share/hugoconf/theme.rasi"
