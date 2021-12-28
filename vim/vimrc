@@ -99,6 +99,9 @@ augroup auto_color
   autocmd BufNewFile,BufRead *.* :ColorHighlight
 augroup END
 
+"Horizontal scroll one character at a time
+set sidescroll=1
+
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
 
 "Displays line number in left margin
@@ -229,6 +232,9 @@ nnoremap <leader>i :normal mqHmwgg=G \| `wzt`q<CR>
 
 "Toggle color colorized
 nnoremap <leader>c :ColorToggle<CR>
+
+"Toggle wrapping
+nnoremap <leader>w :set wrap!<CR>
 
 """"""""""""""""""""""""""Custom Highlight groups""""""""""""""""""""""""
 
