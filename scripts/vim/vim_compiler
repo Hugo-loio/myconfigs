@@ -9,13 +9,24 @@ case "$1" in
     ;;
   *.tex)
     rm /tmp/latex_vim_compiler.*
-      tempfile=$(mktemp /tmp/latex_vim_compiler.XXXXXX)
+    tempfile=$(mktemp /tmp/latex_vim_compiler.XXXXXX)
     if [ -f "$dir/main.tex" ]; then
+      [ -z "$(grep 'backend=bibtex' $dir/main.tex)" ] || bibtex main
+      [ -z "$(grep 'backend=biber' $dir/main.tex)" ] || biber main
       pdflatex -output-directory "$dir" "$dir/main.tex" > $tempfile 2>&1 || $TERMINAL -e vim $tempfile & 
     else
       pdflatex -output-directory "$dir" "$1" > $tempfile 2>&1 || $TERMINAL -e vim $tempfile & 
     fi
     ;;
+  *.bib)
+    if [ -f "$dir/main.tex" ]; then
+      rm /tmp/latex_vim_compiler.*
+      tempfile=$(mktemp /tmp/latex_vim_compiler.XXXXXX)
+      [ -z "$(grep 'backend=bibtex' $dir/main.tex)" ] || bibtex main
+      [ -z "$(grep 'backend=biber' $dir/main.tex)" ] || biber main
+      pdflatex -output-directory "$dir" "$dir/main.tex" > $tempfile 2>&1 || $TERMINAL -e vim $tempfile & 
+    fi
+    ;;
   *)
-    printf "\nCompiler not found for this type of file!"
+    printf "\nCompiler not found for this type of file!\n"
 esac
