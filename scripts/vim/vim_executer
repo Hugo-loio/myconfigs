@@ -1,0 +1,29 @@
+#!/bin/sh
+
+dir=$(dirname "$1")
+base=${1%.*}
+
+case "$1" in
+  *.tex)
+    if [ -f "$dir/main.tex" ]; then
+      evince "$dir/main.pdf" &
+    else
+      evince "$base.pdf" &
+    fi
+    ;;
+  *.bib)
+    if [ -f "$dir/main.tex" ]; then
+      evince "$dir/main.pdf" &
+      echo
+    fi
+    ;;
+  *.py)
+    if [ -z "$(grep 'from manim import' $1)" ]; then
+      python $1
+    else
+      manim $1
+    fi
+    ;;
+  *)
+    printf "\nNo execution method for this type of file!\n"
+esac
