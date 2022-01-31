@@ -1,0 +1,5 @@
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;
+
+[Default Applications]
+video/mp4=mpv.desktop

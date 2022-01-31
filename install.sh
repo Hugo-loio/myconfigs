@@ -33,7 +33,7 @@ config_folder="dunst/dunstrc bspwm/bspwmrc \
   rofi/config.rasi rofi/theme.rasi gtk-3.0/settings.ini"
 
 #List of files for .config directory with no subdirectory
-config_folder_no_subdir="betterlockscreen/betterlockscreenrc"
+config_folder_no_subdir="betterlockscreen/betterlockscreenrc mime/mimeapps.list"
 
 #List of snippets for .vim/UltiSnips directory
 vim_snippets=$(ls $repo/vim/snippets/*.snippets)
