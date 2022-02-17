@@ -41,6 +41,13 @@ vim_snippets=$(ls $repo/vim/snippets/*.snippets)
 #Vim after folder
 vim_after=$(find $repo/vim/after -type f)
 
+#Vim syntax folder
+#vim_syntax=$(find $repo/vim/syntax -type f)
+
+#Vim files
+vim_files="$vim_after"
+#vim_files="$vim_after $vim_syntax"
+
 #Ask user to replace files
 echo "This script will replace your configs with the ones on this repo. Do you wish to proceed?(y/n)"
 while [ true ] ; do
@@ -97,9 +104,9 @@ for snip in $vim_snippets;do
   create_symlink $target $source_file
 done
 
-for after in $vim_after;do
-  target=$(echo "$after" | sed "s|$repo/vim|$HOME/.vim|g")
-  source_file=$after
+for vf in $vim_files;do
+  target=$(echo "$vf" | sed "s|$repo/vim|$HOME/.vim|g")
+  source_file=$vf
   create_symlink $target $source_file
 done
 

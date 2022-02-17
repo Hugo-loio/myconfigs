@@ -22,6 +22,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'ervandew/supertab'
 Plug 'chrisbra/Colorizer'
 Plug 'simplenote-vim/simplenote.vim'
+Plug 'aklt/plantuml-syntax'
 call plug#end()
 
 "Make YCM compatible with UltiSnips (using supertab)
