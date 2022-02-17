@@ -21,7 +21,7 @@ case "$1" in
     if [ -z "$(grep 'from manim import' $1)" ]; then
       python $1
     else
-      manim $1
+      manim --write_to_movie $1
     fi
     ;;
   *)
