@@ -24,6 +24,9 @@ case "$1" in
       manim --write_to_movie $1
     fi
     ;;
+  *.pu)
+    plantuml $1 && feh "$base.png" &
+    ;;
   *)
     printf "\nNo execution method for this type of file!\n"
 esac
