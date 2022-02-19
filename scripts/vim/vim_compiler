@@ -26,6 +26,9 @@ case "$1" in
       pdflatex -output-directory "$dir" "$dir/main.tex" > $tempfile 2>&1 || $TERMINAL -e vim $tempfile & 
     fi
     ;;
+  *.pu)
+    plantuml $1 
+    ;;
   *)
     printf "\nCompiler not found for this type of file!\n"
 esac
