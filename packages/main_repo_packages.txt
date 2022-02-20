@@ -57,9 +57,11 @@ openssh
 p7zip
 pacman-contrib
 pamixer
+pandoc
 pavucontrol
 pcmanfm
 picom
+plantuml
 pulseaudio-alsa
 pulseaudio-bluetooth
 python-matplotlib
