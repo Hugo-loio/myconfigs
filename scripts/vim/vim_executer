@@ -27,6 +27,9 @@ case "$1" in
   *.pu)
     plantuml $1 && feh "$base.png" &
     ;;
+  *.md)
+    evince "$base.pdf" &
+    ;;
   *)
     printf "\nNo execution method for this type of file!\n"
 esac
