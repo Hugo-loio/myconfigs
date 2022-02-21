@@ -18,7 +18,7 @@ endif
 "List all the plugins be managed by vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py' }
 Plug 'ervandew/supertab'
 Plug 'chrisbra/Colorizer'
 Plug 'simplenote-vim/simplenote.vim'

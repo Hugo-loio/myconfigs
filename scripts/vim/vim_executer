@@ -25,7 +25,8 @@ case "$1" in
     fi
     ;;
   *.pu)
-    plantuml $1 && feh "$base.png" &
+    plantuml $1 
+    feh "$base.png" &
     ;;
   *.md)
     evince "$base.pdf" &
