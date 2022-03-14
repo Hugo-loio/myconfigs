@@ -1,4 +1,5 @@
 acpid
+acpilight
 alsa-utils
 arc-gtk-theme
 arc-icon-theme
@@ -94,7 +95,6 @@ xcursor-simpleandsoft
 xf86-input-synaptics
 xfce4-power-manager
 xorg-server
-xorg-xbacklight
 xorg-xev
 xorg-xinit
 xorg-xsetroot
