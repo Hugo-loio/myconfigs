@@ -71,6 +71,7 @@ python-sympy
 ranger
 rofi
 root
+sshpass
 steam
 subversion
 sxhkd
