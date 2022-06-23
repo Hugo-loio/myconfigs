@@ -133,10 +133,10 @@ set tabstop=8
 set softtabstop=2
 
 "Automatically indents whenever file is saved in cpp,C
-augroup IdentWhenWriting
-  autocmd!
-  autocmd BufWritePre *.c,*.cpp,*.cc,*.C,*.h :normal mqHmwgg=G | `wzt`q
-augroup END
+"augroup IdentWhenWriting
+"  autocmd!
+"  autocmd BufWritePre *.c,*.cpp,*.cc,*.C,*.h :normal mqHmwgg=G | `wzt`q
+"augroup END
 
 """""""""""""""""""""""Window Splitting""""""""""""""""""""""""
 
