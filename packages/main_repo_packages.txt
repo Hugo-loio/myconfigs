@@ -49,6 +49,7 @@ mate-utils
 mpv
 network-manager-applet
 networkmanager
+noto-fonts-cjk
 noto-fonts-emoji
 nss-mdns
 ntfs-3g
