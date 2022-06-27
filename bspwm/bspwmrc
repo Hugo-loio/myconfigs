@@ -31,6 +31,9 @@ $HOME/.config/polybar/launch.sh
 # Start network manager applet
 nm-applet &
 
+# Start blueman applet
+blueman-applet &
+
 # Start udiskie for automatically mounting drives (no notifications for now)
 pkill udiskie
 udiskie --tray &
