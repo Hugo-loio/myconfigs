@@ -74,6 +74,7 @@ ranger
 rofi
 root
 sshpass
+sshpass
 steam
 subversion
 sxhkd
