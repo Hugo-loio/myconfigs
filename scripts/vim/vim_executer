@@ -31,6 +31,9 @@ case "$1" in
   *.md)
     evince "$base.pdf" &
     ;;
+  *.sh)
+    $1
+    ;;
   *)
     printf "\nNo execution method for this type of file!\n"
 esac
