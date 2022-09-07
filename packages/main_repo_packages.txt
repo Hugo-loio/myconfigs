@@ -73,7 +73,7 @@ python-sympy
 ranger
 rofi
 root
-sshpass
+rsync
 sshpass
 steam
 subversion

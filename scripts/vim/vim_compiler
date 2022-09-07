@@ -10,7 +10,9 @@ case "$1" in
   *.tex)
     rm /tmp/latex_vim_compiler.*
     tempfile=$(mktemp /tmp/latex_vim_compiler.XXXXXX)
-    if [ -f "$dir/main.tex" ]; then
+    if [ -f "$dir/Makefile" ]; then
+      make -C $dir
+    elif [ -f "$dir/main.tex" ]; then
       [ -z "$(grep 'backend=bibtex' $dir/main.tex)" ] || bibtex main
       [ -z "$(grep 'backend=biber' $dir/main.tex)" ] || biber main
       pdflatex -output-directory "$dir" "$dir/main.tex" > $tempfile 2>&1 || $TERMINAL -e vim $tempfile & 
@@ -19,7 +21,9 @@ case "$1" in
     fi
     ;;
   *.bib)
-    if [ -f "$dir/main.tex" ]; then
+    if [ -f "$dir/Makefile" ]; then
+      make -C $dir
+    elif [ -f "$dir/main.tex" ]; then
       rm /tmp/latex_vim_compiler.*
       tempfile=$(mktemp /tmp/latex_vim_compiler.XXXXXX)
       [ -z "$(grep 'backend=bibtex' $dir/main.tex)" ] || bibtex main
