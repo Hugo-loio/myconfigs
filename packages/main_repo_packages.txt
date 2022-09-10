@@ -104,3 +104,4 @@ xorg-xinit
 xorg-xsetroot
 xournalpp
 youtube-dl
+zenity

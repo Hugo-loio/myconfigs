@@ -35,5 +35,10 @@ case "$1" in
     $1
     ;;
   *)
-    printf "\nNo execution method for this type of file!\n"
+    if [ ! -z "$(grep '#!/bin/sh' $1)" ]; then
+      $1
+    else
+      printf "\nNo execution method for this type of file!\n"
+    fi
+    ;;
 esac

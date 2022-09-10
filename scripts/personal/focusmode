@@ -1,0 +1,53 @@
+#!/bin/sh
+
+testpass=""
+
+while [ -z "$testpass" ]; do
+  pass=$(zenity --password)
+  # test if user press "ok"
+  if [ "$?" = "1" ] ; then
+    exit 1
+  fi
+  testpass=$(echo $pass | sudo -S echo "pass" 2>/dev/null)
+done
+
+websites="youtube.com twitch.tv netflix.com"
+programs="/usr/bin/steam"
+
+if [ "$(grep '#begin focusmode options' /etc/hosts)" ]; then
+  zenity --question --text="Exit focus mode?" --ok-label="yes" --cancel-label="no"
+  if [ "$?" = "1" ] ; then
+    exit 1
+  else
+    if [ ! -z $(pgrep firefox) ] ; then
+      pkill firefox
+      firefox &
+    fi 
+    bLin=$(grep -n '#begin focusmode options' /etc/hosts | cut -d ':' -f 1)
+    eLin=$(grep -n '#end focusmode options' /etc/hosts | cut -d ':' -f 1)
+    echo $pass | sudo -S sed -i $bLin','$eLin'd' /etc/hosts
+    for prog in $programs ; do
+      echo $pass | sudo -S chmod +x $prog
+    done
+  fi
+else
+  zenity --question --text="Start focus mode?" --ok-label="yes" --cancel-label="no"
+  if [ "$?" = "1" ] ; then
+    exit 1
+  else
+    if [ ! -z $(pgrep firefox) ] ; then
+      pkill firefox
+      firefox &
+    fi 
+    for prog in $programs ; do
+      echo $pass | sudo -S chmod -x $prog
+    done
+    echo $pass | sudo -S sh -c "echo '#begin focusmode options' >> /etc/hosts"
+    for site in $websites ; do
+      echo $pass | sudo -S sh -c "echo '127.0.0.1  '$site >> /etc/hosts"
+      echo $pass | sudo -S sh -c "echo '127.0.0.1  www.'$site >> /etc/hosts"
+    done
+    echo $pass | sudo -S sh -c "echo '#end focusmode options' >> /etc/hosts"
+  fi
+fi
+
