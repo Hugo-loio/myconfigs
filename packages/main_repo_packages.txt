@@ -83,6 +83,7 @@ texlive-lang
 texlive-most
 tk
 tlp
+tmux
 transmission-gtk
 trash-cli
 ttf-font-awesome
