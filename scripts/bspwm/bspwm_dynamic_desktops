@@ -29,7 +29,7 @@ desktop_node_control() {
       ;;
     other_monitor)
       active_monitor="$(bspc query -M -m focused --names)"
-      other_monitors="$(bspc query -M --names | grep -v "$active_monitor")"
+      other_monitors="$(bspc query -M --names | grep -v -w "$active_monitor")"
       monitors_count=$(echo $other_monitors | wc -w)
       #If no other monitor is available do nothing
       if [ $monitors_count -eq 0 ];then
@@ -40,8 +40,8 @@ desktop_node_control() {
 	  create_desktop $2 $other_monitors 
 	  monitor="$other_monitors"
 	else
-	  #If two or more other monitors are available send monitor choice to rofi (NEVER BEEN TESTED) 
-	  monitor=$(echo $other_monitors | rofi -dmenu -i -p "Choose monitor")
+	  #If two or more other monitors are available send monitor choice to rofi (could use more testing) 
+	  monitor=$(echo $other_monitors | sed 's/ /\n/g' | rofi -dmenu -i -p "Choose monitor")
 	  [ -z "$monitor" ] && exit
 	  create_desktop $2 $monitor 
 	fi

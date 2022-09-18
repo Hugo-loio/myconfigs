@@ -1,0 +1,9 @@
+#!/bin/sh
+#Choose a script to start a tmux session
+
+sessiondir="$HOME/.config/tmux/sessions"
+sessions=$(basename -a $(find $sessiondir -maxdepth 1 -type f))
+session=$(echo $sessions | sed 's/ /\n/g' | rofi -dmenu -i -p "Choose session script")
+[ -z "$session" ] && exit
+
+$TERMINAL -e bash $sessiondir/$session 
