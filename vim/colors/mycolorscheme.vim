@@ -63,7 +63,13 @@ hi LineNr guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE 
 hi Special guifg=#f5a549 guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
 hi SpecialChar guifg=#f5a549 guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
 
+"Visual vim not owning - black on white
+hi VisualNOS guifg=#000000 guibg=#FFFFFF guisp=#FFFFFF gui=underline ctermfg=0 ctermbg=15 cterm=underline
 
+"Visual vim owning - black on grey
+hi Visual guifg=#000000 guibg=#C0C0C0 guisp=#C0C0C0 gui=NONE ctermfg=0 ctermbg=7 cterm=NONE
+
+"Not sure what these are yet
 hi IncSearch guifg=#000000 guibg=#dbd146 guisp=#dbd146 gui=NONE ctermfg=0 ctermbg=185 cterm=NONE
 hi WildMenu guifg=NONE guibg=#A1A6A8 guisp=#A1A6A8 gui=NONE ctermfg=NONE ctermbg=248 cterm=NONE
 hi SignColumn guifg=#192224 guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
@@ -91,12 +97,10 @@ hi Number guifg=#eb99ff guibg=NONE guisp=NONE gui=NONE ctermfg=177 ctermbg=NONE 
 hi CursorLine guifg=NONE guibg=#222E30 guisp=#222E30 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 hi TabLineFill guifg=#192224 guibg=#5E6C70 guisp=#5E6C70 gui=bold ctermfg=235 ctermbg=66 cterm=bold
 hi WarningMsg guifg=#A1A6A8 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
-hi VisualNOS guifg=#192224 guibg=#F9F9FF guisp=#F9F9FF gui=underline ctermfg=235 ctermbg=189 cterm=underline
 hi DiffDelete guifg=NONE guibg=#192224 guisp=#192224 gui=NONE ctermfg=NONE ctermbg=235 cterm=NONE
 hi ModeMsg guifg=#F9F9F9 guibg=#192224 guisp=#192224 gui=bold ctermfg=15 ctermbg=235 cterm=bold
 hi CursorColumn guifg=NONE guibg=#222E30 guisp=#222E30 gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 hi FoldColumn guifg=#192224 guibg=#A1A6A8 guisp=#A1A6A8 gui=italic ctermfg=235 ctermbg=248 cterm=NONE
-hi Visual guifg=#192224 guibg=#F9F9FF guisp=#F9F9FF gui=NONE ctermfg=235 ctermbg=189 cterm=NONE
 hi MoreMsg guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold
 hi SpellCap guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
 hi VertSplit guifg=#000000 guibg=#ffffff guisp=#5E6C70 gui=bold ctermfg=0 ctermbg=15 cterm=bold
