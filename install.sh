@@ -41,12 +41,16 @@ vim_snippets=$(ls $repo/vim/snippets/*.snippets)
 #Vim after folder
 vim_after=$(find $repo/vim/after -type f)
 
+#Vim colorschemes
+vim_color=$(find $repo/vim/colors -type f)
+
 #Vim syntax folder
 #vim_syntax=$(find $repo/vim/syntax -type f)
 
 #Vim files
-vim_files="$vim_after"
+vim_files="$vim_after $vim_color"
 #vim_files="$vim_after $vim_syntax"
+
 
 #Ask user to replace files
 echo "This script will replace your configs with the ones on this repo. Do you wish to proceed?(y/n)"

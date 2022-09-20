@@ -23,9 +23,6 @@ Plug 'ervandew/supertab'
 Plug 'chrisbra/Colorizer'
 Plug 'simplenote-vim/simplenote.vim'
 Plug 'aklt/plantuml-syntax'
-Plug 'challenger-deep-theme/vim'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'rakr/vim-colors-rakr'
 call plug#end()
 
 "Make YCM compatible with UltiSnips (using supertab)
@@ -106,12 +103,9 @@ augroup END
 "Horizontal scroll one character at a time
 set sidescroll=1
 
-"Color scheme"
-"set background=dark
-colorscheme purify
+"Color scheme
+colorscheme mycolorscheme
 
-hi Normal ctermbg=NONE
-hi EndOfBuffer ctermbg=NONE
 
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
 
@@ -284,6 +278,7 @@ set statusline+=%#InsertBar#%{(mode()=='i')?'\ \ INSERT\ ':''}
 "Specific color highlight for replace mode
 set statusline+=%#ReplaceBar#%{(mode()=='R')?'\ \ REPLACE\ ':''}
 "Specific color highlight for visual mode
+set statusline+=%#VisualBar#%{(mode()=='V')?'\ \ VISUAL\ ':''}
 set statusline+=%#VisualBar#%{(mode()=='v')?'\ \ VISUAL\ ':''}
 "Changes to dark grey background color
 set statusline+=%#DarkGreyBar#
