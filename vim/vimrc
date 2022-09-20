@@ -105,6 +105,7 @@ set sidescroll=1
 
 "Color scheme
 colorscheme mycolorscheme
+"set term=xterm-kitty
 
 
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
@@ -243,6 +244,7 @@ highlight NormalBar cterm=bold ctermfg=White ctermbg=DarkBlue
 highlight InsertBar cterm=bold ctermfg=White ctermbg=DarkRed
 highlight ReplaceBar cterm=bold ctermfg=White ctermbg=DarkMagenta
 highlight VisualBar cterm=bold ctermfg=White ctermbg=DarkGreen
+highlight CommandBar cterm=bold ctermfg=White ctermbg=208
 highlight DarkGreyBar cterm=NONE ctermfg=White ctermbg=235
 highlight LightGreyBar cterm=NONE ctermfg=White ctermbg=59
 
@@ -280,6 +282,8 @@ set statusline+=%#ReplaceBar#%{(mode()=='R')?'\ \ REPLACE\ ':''}
 "Specific color highlight for visual mode
 set statusline+=%#VisualBar#%{(mode()=='V')?'\ \ VISUAL\ ':''}
 set statusline+=%#VisualBar#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+"Specific color highlight for command mode
+set statusline+=%#CommandBar#%{(mode()=='c')?'\ \ COMMAND\ ':''}
 "Changes to dark grey background color
 set statusline+=%#DarkGreyBar#
 "Inserts number of buffer
