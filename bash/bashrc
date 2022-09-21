@@ -34,6 +34,8 @@ alias tbrowser='root -l -e "TBrowser t"'
 
 alias mpirun='mpirun --oversubscribe --mca opal_warn_on_missing_libcuda 0'
 
+alias simplenote='simplenote --no-sandbox'
+
 #Configures the shell prompt
 PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\e[00m \n$ '
 

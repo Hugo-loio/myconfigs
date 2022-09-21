@@ -69,6 +69,11 @@ hi VisualNOS guifg=#000000 guibg=#FFFFFF guisp=#FFFFFF gui=underline ctermfg=0 c
 "Visual vim owning - black on grey
 hi Visual guifg=#000000 guibg=#C0C0C0 guisp=#C0C0C0 gui=NONE ctermfg=0 ctermbg=7 cterm=NONE
 
+"Vertical split - light grey
+hi VertSplit guifg=#5F5F5F guibg=#5F5F5F guisp=#5E6C70 gui=NONE ctermfg=59 ctermbg=59 cterm=NONE
+hi StatusLine guifg=#5F5F5F guibg=#5F5F5F guisp=#5E6C70 gui=NONE ctermfg=NONE ctermbg=59 cterm=NONE
+hi StatusLineNC guifg=#5F5F5F guibg=#5E6C70 guisp=#5E6C70 gui=NONE ctermfg=NONE ctermbg=59 cterm=NONE
+
 "Not sure what these are yet
 hi IncSearch guifg=#000000 guibg=#dbd146 guisp=#dbd146 gui=NONE ctermfg=0 ctermbg=185 cterm=NONE
 hi WildMenu guifg=NONE guibg=#A1A6A8 guisp=#A1A6A8 gui=NONE ctermfg=NONE ctermbg=248 cterm=NONE
@@ -78,7 +83,6 @@ hi Typedef guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE 
 hi Title guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=bold ctermfg=189 ctermbg=235 cterm=bold
 hi Folded guifg=#192224 guibg=#A1A6A8 guisp=#A1A6A8 gui=italic ctermfg=235 ctermbg=248 cterm=NONE
 hi TabLineSel guifg=#192224 guibg=#BD9800 guisp=#BD9800 gui=bold ctermfg=235 ctermbg=1 cterm=bold
-hi StatusLineNC guifg=#192224 guibg=#5E6C70 guisp=#5E6C70 gui=bold ctermfg=235 ctermbg=66 cterm=bold
 hi NonText guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=66 ctermbg=NONE cterm=NONE
 hi DiffText guifg=NONE guibg=#492224 guisp=#492224 gui=NONE ctermfg=NONE ctermbg=52 cterm=NONE
 hi ErrorMsg guifg=#A1A6A8 guibg=#912C00 guisp=#912C00 gui=NONE ctermfg=248 ctermbg=88 cterm=NONE
@@ -86,7 +90,6 @@ hi Debug guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cte
 hi PMenuSbar guifg=NONE guibg=#848688 guisp=#848688 gui=NONE ctermfg=NONE ctermbg=102 cterm=NONE
 hi Identifier guifg=#9dff96 guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE
 hi Todo guifg=#fefcff guibg=#8c62cc guisp=#8c62cc gui=NONE ctermfg=15 ctermbg=98 cterm=NONE
-hi StatusLine guifg=#192224 guibg=#BD9800 guisp=#BD9800 gui=bold ctermfg=235 ctermbg=1 cterm=bold
 hi Label guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold
 hi PMenuSel guifg=#ffffff guibg=#a979f7 guisp=#a979f7 gui=NONE ctermfg=15 ctermbg=141 cterm=NONE
 hi Search guifg=#000000 guibg=#ebe650 guisp=#ebe650 gui=NONE ctermfg=0 ctermbg=227 cterm=NONE
@@ -103,7 +106,6 @@ hi CursorColumn guifg=NONE guibg=#222E30 guisp=#222E30 gui=NONE ctermfg=NONE cte
 hi FoldColumn guifg=#192224 guibg=#A1A6A8 guisp=#A1A6A8 gui=italic ctermfg=235 ctermbg=248 cterm=NONE
 hi MoreMsg guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold
 hi SpellCap guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
-hi VertSplit guifg=#000000 guibg=#ffffff guisp=#5E6C70 gui=bold ctermfg=0 ctermbg=15 cterm=bold
 hi Keyword guifg=#f5f17d guibg=NONE guisp=NONE gui=bold ctermfg=228 ctermbg=NONE cterm=bold
 hi DiffChange guifg=NONE guibg=#492224 guisp=#492224 gui=NONE ctermfg=NONE ctermbg=52 cterm=NONE
 hi Cursor guifg=#192224 guibg=#F9F9F9 guisp=#F9F9F9 gui=NONE ctermfg=235 ctermbg=15 cterm=NONE

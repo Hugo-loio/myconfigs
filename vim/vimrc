@@ -105,8 +105,6 @@ set sidescroll=1
 
 "Color scheme
 colorscheme mycolorscheme
-"set term=xterm-kitty
-
 
 """"""""""""""""""""""""""""Lines""""""""""""""""""""""""""""""""
 
