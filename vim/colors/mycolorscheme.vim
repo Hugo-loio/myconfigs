@@ -58,6 +58,7 @@ hi Operator guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NON
 hi Exception guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
 hi Conditional guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
 hi LineNr guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
+hi Label guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
 
 "Orange/Sandybrow
 hi Special guifg=#f5a549 guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
@@ -74,8 +75,12 @@ hi VertSplit guifg=#5F5F5F guibg=#5F5F5F guisp=#5E6C70 gui=NONE ctermfg=59 cterm
 hi StatusLine guifg=#5F5F5F guibg=#5F5F5F guisp=#5E6C70 gui=NONE ctermfg=NONE ctermbg=59 cterm=NONE
 hi StatusLineNC guifg=#5F5F5F guibg=#5E6C70 guisp=#5E6C70 gui=NONE ctermfg=NONE ctermbg=59 cterm=NONE
 
+"Search - yellow backgroud
+hi Search guifg=#000000 guibg=#ebe650 guisp=#ebe650 gui=NONE ctermfg=0 ctermbg=227 cterm=NONE
+"Selected to replace - dark gold background
+hi IncSearch guifg=#000000 guibg=#dbd146 guisp=#dbd146 gui=NONE ctermfg=0 ctermbg=178 cterm=NONE
+
 "Not sure what these are yet
-hi IncSearch guifg=#000000 guibg=#dbd146 guisp=#dbd146 gui=NONE ctermfg=0 ctermbg=185 cterm=NONE
 hi WildMenu guifg=NONE guibg=#A1A6A8 guisp=#A1A6A8 gui=NONE ctermfg=NONE ctermbg=248 cterm=NONE
 hi SignColumn guifg=#192224 guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
 hi SpecialComment guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
@@ -90,9 +95,7 @@ hi Debug guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cte
 hi PMenuSbar guifg=NONE guibg=#848688 guisp=#848688 gui=NONE ctermfg=NONE ctermbg=102 cterm=NONE
 hi Identifier guifg=#9dff96 guibg=NONE guisp=NONE gui=NONE ctermfg=120 ctermbg=NONE cterm=NONE
 hi Todo guifg=#fefcff guibg=#8c62cc guisp=#8c62cc gui=NONE ctermfg=15 ctermbg=98 cterm=NONE
-hi Label guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold
 hi PMenuSel guifg=#ffffff guibg=#a979f7 guisp=#a979f7 gui=NONE ctermfg=15 ctermbg=141 cterm=NONE
-hi Search guifg=#000000 guibg=#ebe650 guisp=#ebe650 gui=NONE ctermfg=0 ctermbg=227 cterm=NONE
 hi SpellRare guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
 hi Character guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 hi Float guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
