@@ -44,3 +44,6 @@ set -o vi
 
 # Anaconda cli env
 alias anaconda_cli='. /opt/anaconda/bin/activate'
+
+#Make with all cores
+alias make="make -j$(nproc)"
