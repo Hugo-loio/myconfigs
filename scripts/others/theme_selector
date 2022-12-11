@@ -3,12 +3,12 @@
 #Change accent color in rofi theme
 sub_ac(){
   cp $XDG_CONFIG_HOME/rofi/theme.rasi $CACHE/theme.rasi
-  sed -i "s/color4: #[0-9A-z]*/color4: $1/" $CACHE/theme.rasi
+  sed -i "s/color4: #[0-9a-zA-Z]*/color4: $1/" $CACHE/theme.rasi
 }
 
 #Change selected foreground color in rofi theme
 sub_selfg(){
-  sed -i "s/color6: #[0-9A-z]*/color6: $1/" $CACHE/theme.rasi
+  sed -i "s/color6: #[0-9a-zA-Z]*/color6: $1/" $CACHE/theme.rasi
 }
 
 restart=1
