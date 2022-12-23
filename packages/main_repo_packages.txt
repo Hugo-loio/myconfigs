@@ -91,6 +91,7 @@ ttf-hack
 ttf-linux-libertine
 udiskie
 udisks2
+unzip
 vi
 w3m
 wget
@@ -106,3 +107,4 @@ xorg-xsetroot
 xournalpp
 youtube-dl
 zenity
+zip
