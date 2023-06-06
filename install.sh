@@ -30,7 +30,8 @@ config_folder="dunst/dunstrc bspwm/bspwmrc \
   fontconfig/fonts.conf picom/picom.conf polybar/config.ini polybar/launch.sh \
   ranger/commands.py ranger/commands_full.py ranger/rc.conf ranger/rifle.conf \
   ranger/scope.sh sxhkd/sxhkdrc kitty/kitty.conf mpv/input.conf mpv/mpv.conf \
-  rofi/config.rasi rofi/theme.rasi gtk-3.0/settings.ini tmux/tmux.conf"
+  rofi/config.rasi rofi/theme.rasi gtk-3.0/settings.ini tmux/tmux.conf \
+  zathura/zathurarc "
 
 #List of files for .config directory with no subdirectory
 config_folder_no_subdir="betterlockscreen/betterlockscreenrc mime/mimeapps.list"
