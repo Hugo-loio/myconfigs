@@ -8,6 +8,7 @@ export TERMINAL="kitty"
 export BROWSER="firefox"
 export FILE="ranger"
 export CACHE="$HOME/.local/share/hugoconf"
+export PDF="zathura"
 #Fix for mathematica
 export USE_WOLFRAM_LD_LIBRARY_PATH=1
 

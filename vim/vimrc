@@ -23,6 +23,7 @@ Plug 'ervandew/supertab'
 Plug 'chrisbra/Colorizer'
 Plug 'simplenote-vim/simplenote.vim'
 Plug 'aklt/plantuml-syntax'
+Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 "Make YCM compatible with UltiSnips (using supertab)

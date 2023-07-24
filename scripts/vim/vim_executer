@@ -34,6 +34,9 @@ case "$1" in
   *.sh)
     $1
     ;;
+  *.jl)
+    julia $1
+    ;;
   *)
     if [ ! -z "$(grep '#!/bin/sh' $1)" ]; then
       $1
