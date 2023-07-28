@@ -57,8 +57,11 @@ hi Statement guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NO
 hi Operator guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
 hi Exception guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
 hi Conditional guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
-hi LineNr guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
+"hi LineNr guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
 hi Label guifg=#ffff5f guibg=NONE guisp=NONE gui=NONE ctermfg=227 ctermbg=NONE cterm=NONE
+
+"Grey 
+hi LineNr guifg=#444444 guibg=NONE guisp=NONE gui=NONE ctermfg=238 ctermbg=NONE cterm=NONE
 
 "Orange/Sandybrow
 hi Special guifg=#f5a549 guibg=NONE guisp=NONE gui=NONE ctermfg=215 ctermbg=NONE cterm=NONE
