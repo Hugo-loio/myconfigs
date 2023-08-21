@@ -81,6 +81,7 @@ sxhkd
 terminus-font
 texlive-lang
 texlive-most
+thunderbird
 tk
 tlp
 tmux
