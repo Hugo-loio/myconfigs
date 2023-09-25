@@ -12,15 +12,27 @@ nooption() {
   exit
 }
 
+unmount_error() {
+  echo "Couldn't unmount"
+  notify-send "Android Mount" "Unmount error, device not unmounted"
+  exit
+}
+
+mount_error() {
+  echo "Couldn't mount"
+  notify-send "Android Mount" "Mount error, device not mounted"
+  exit
+}
+
 unmount() {
-  fusermount -u $mountdir/$1
+  fusermount -u $mountdir/$1 || unmount_error
   echo "Unmounted device"
   notify-send "Android Mount" "Device unmounted"
 }
 
 mount() {
+  simple-mtpfs --device $1 $mountdir/$1 || mount_error
   echo "Mounting device "$1""
-  simple-mtpfs --device $1 $mountdir/$1
   notify-send "Android Mount" "Device mounted to $mountdir/$1"
 }
 

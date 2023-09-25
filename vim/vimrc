@@ -24,6 +24,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'simplenote-vim/simplenote.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 "Make YCM compatible with UltiSnips (using supertab)
@@ -48,6 +49,9 @@ let g:SimplenoteFiletype = "markdown"
 if filereadable(expand("~/.config/simplenote/simplenoterc"))
   source $XDG_CONFIG_HOME/simplenote/simplenoterc
 endif
+
+"CtrlP default mapping
+let g:ctrlp_map = '<leader>p'
 
 """"""""""""""""""""""""General""""""""""""""""""""""""
 
