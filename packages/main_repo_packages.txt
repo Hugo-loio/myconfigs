@@ -100,7 +100,6 @@ xarchiver
 xclip
 xcursor-simpleandsoft
 xf86-input-synaptics
-xfce4-power-manager
 xorg-server
 xorg-xev
 xorg-xinit

@@ -10,7 +10,7 @@ sxhkd &
 dunst &
 
 # Start power manager
-xfce4-power-manager &
+#xfce4-power-manager &
 
 # Checks if monitor list exists
 if [ -z "$(find $CACHE/monitor_order.txt 2>/dev/null)" ] ; then

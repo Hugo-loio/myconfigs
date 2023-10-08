@@ -158,4 +158,8 @@ sudo systemctl start ntpd
 sudo systemctl enable acpid
 sudo systemctl start acpid
 
+# Batsignal battery monitor
+sudo systemctl --user enable batsignal.service
+sudo systemctl --user start batsignal.service
+
 echo "Done"
