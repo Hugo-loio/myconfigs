@@ -39,7 +39,7 @@ fi
 setxkbmap pt
 
 # Start with touchpad disabled
-touchpad_toggle
+#touchpad_toggle
 
 # Fix issue where android-studio opens as blank window
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -51,7 +51,7 @@ session=${1:-bspwm}
 xsetroot -cursor_name left_ptr &
 
 # Random wallpaper
-wpshuffle &
+#wpshuffle &
 
 case $session in
     bspwm ) exec bspwm        ;;

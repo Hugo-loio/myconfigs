@@ -17,13 +17,13 @@ if [ -z "$(find $CACHE/monitor_order.txt 2>/dev/null)" ] ; then
   mode="default" bspwm_monitor_order
 fi
 
+# Initializes desktops in all connected monitors
+bspwm_monitor_conf
+
 # Checks if theme as been previously defined 
 if [ -z "$(find $CACHE/theme.txt 2>/dev/null)" ] ; then
   theme_selector -t Green -nr
 fi
-
-# Initializes desktops in all connected monitors
-bspwm_monitor_conf
 
 # Launch polybar
 $HOME/.config/polybar/launch.sh
@@ -37,6 +37,9 @@ nm-applet &
 # Start udiskie for automatically mounting drives (no notifications for now)
 pkill udiskie
 udiskie --tray &
+
+# Random wallpaper
+wpshuffle &
 
 # Daemon that removes empty desktops and reorders they names appropriately 
 bspwm_rm_empty_desktops &

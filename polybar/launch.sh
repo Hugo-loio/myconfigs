@@ -16,16 +16,14 @@ bl_card=$(ls /sys/class/backlight || echo "")
 if type "xrandr"; then
   for m in $(xrandr --query | grep -w "connected" | cut -d " " -f 1); do
     notify-send "Monitor $m" "Making polybar"
-    t=""
     if [ -z $(xrandr | grep "$m" | grep "primary") ] ; then
-      t=""
+      monitor=$m bg=$bgcolor fg=$fgcolor card=$bl_card polybar secondary &
     else
-      t="right"
+      monitor=$m bg=$bgcolor fg=$fgcolor card=$bl_card polybar main &
     fi
-    monitor=$m tray=$t bg=$bgcolor fg=$fgcolor card=$bl_card polybar mybar &
   done
 else
-  polybar mybar &
+  polybar main &
 fi
 
 echo "Polybar launched..."
