@@ -14,7 +14,6 @@ wall=$(find "$HOME/Pictures/wallpapers" -name "$wall_name")
 
 feh --no-fehbg --bg-scale $wall
 betterlockscreen -u $wall &
-touch $CACHE/wpchosen
 
 line=$(grep -w $wall_name $CACHE/wptheme.txt 2>/dev/null)
 [ -z "$line" ] || theme_selector -t $(echo $line | awk -F" " '{print $NF}')

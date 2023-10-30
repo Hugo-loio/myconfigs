@@ -21,10 +21,9 @@ fi
 bspwm_monitor_conf
 
 # Random wallpaper
-if [ -f $CACHE/wpchosen ] ; then
-  rm $CACHE/wpchosen
-else
+if [ -f $CACHE/bspwm_set_wallpaper ] ; then
   wpshuffle -nr &
+  rm $CACHE/bspwm_set_wallpaper
 fi
 
 # Checks if theme as been previously defined 

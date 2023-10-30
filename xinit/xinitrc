@@ -51,7 +51,7 @@ session=${1:-bspwm}
 xsetroot -cursor_name left_ptr &
 
 # Random wallpaper
-#wpshuffle &
+touch $CACHE/bspwm_set_wallpaper
 
 case $session in
     bspwm ) exec bspwm        ;;
