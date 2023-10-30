@@ -5,5 +5,17 @@ betterlockscreen -u $WALL &
 
 wall_name=$(echo $WALL | awk -F"/" '{print $NF}')
 
+restart=""
+
+while [ ! -z "$1" ] ; do
+  case $1 in
+    -nr) #Do not restart bspwm in the end
+      restart="-nr"
+      ;;
+  esac
+  shift
+done
+
+
 line=$(grep -w $wall_name $CACHE/wptheme.txt 2>/dev/null)
-[ -z "$line" ] || theme_selector -t $(echo $line | awk -F" " '{print $NF}')
+[ -z "$line" ] || theme_selector -t $(echo $line | awk -F" " '{print $NF}') $restart

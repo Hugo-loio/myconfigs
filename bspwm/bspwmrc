@@ -20,6 +20,13 @@ fi
 # Initializes desktops in all connected monitors
 bspwm_monitor_conf
 
+# Random wallpaper
+if [ -f $CACHE/wpchosen ] ; then
+  rm $CACHE/wpchosen
+else
+  wpshuffle -nr &
+fi
+
 # Checks if theme as been previously defined 
 if [ -z "$(find $CACHE/theme.txt 2>/dev/null)" ] ; then
   theme_selector -t Green -nr
@@ -37,9 +44,6 @@ nm-applet &
 # Start udiskie for automatically mounting drives (no notifications for now)
 pkill udiskie
 udiskie --tray &
-
-# Random wallpaper
-wpshuffle &
 
 # Daemon that removes empty desktops and reorders they names appropriately 
 bspwm_rm_empty_desktops &
