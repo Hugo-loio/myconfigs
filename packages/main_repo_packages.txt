@@ -104,6 +104,7 @@ xorg-server
 xorg-xev
 xorg-xinit
 xorg-xsetroot
+xorg-xwininfo
 xournalpp
 youtube-dl
 zenity
