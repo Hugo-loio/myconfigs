@@ -56,6 +56,9 @@ touch $CACHE/bspwm_set_wallpaper
 # Turn bluetooth off so the hackers don't get in 
 bluetoothctl power off
 
+# Set default pdf reader for the first time
+[ ! -f $CACHE/default_pdf.txt ] && default_pdf $PDF
+
 case $session in
     bspwm ) exec bspwm        ;;
     xfce  ) exec startxfce4   ;;

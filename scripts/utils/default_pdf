@@ -1,0 +1,11 @@
+#!/bin/sh
+
+pdf_readers="evince\nzathura"
+file=$CACHE/default_pdf.txt
+
+if [ $# = 1 ]; then
+  [ $(echo $1 | grep -w $1) ] && echo "$1" > $file
+else
+  pdf=$(echo $pdf_readers | rofi -dmenu -i -p "Choose a pdf reader")
+  [ ! -z "$pdf" ] && echo "$pdf" > $file
+fi

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 settings(){
-  setting_options="Change wallpaper\nChange theme\nPair wallpaper to theme\nChoose monitor order (multiple monitors)\nSound"
+  setting_options="Change wallpaper\nChange theme\nChoose default pdf viewer\nChoose monitor order (multiple monitors)\nPair wallpaper to theme\nSound"
   choice=$(echo $setting_options | rofi -dmenu -i -p "Choose setting")
   case $choice in
     "Change wallpaper")
@@ -18,6 +18,9 @@ settings(){
       ;;
     "Sound")
       pavucontrol
+      ;;
+    "Choose default pdf viewer")
+      default_pdf
       ;;
   esac
 }

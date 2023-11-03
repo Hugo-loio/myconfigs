@@ -6,14 +6,14 @@ base=${1%.*}
 case "$1" in
   *.tex)
     if [ -f "$dir/main.tex" ]; then
-      evince "$dir/main.pdf" &
+      $(cat $CACHE/default_pdf.txt) "$dir/main.pdf" &
     else
-      evince "$base.pdf" &
+      $(cat $CACHE/default_pdf.txt) "$base.pdf" &
     fi
     ;;
   *.bib)
     if [ -f "$dir/main.tex" ]; then
-      evince "$dir/main.pdf" &
+      $(cat $CACHE/default_pdf.txt) "$dir/main.pdf" &
       echo
     fi
     ;;
@@ -29,7 +29,7 @@ case "$1" in
     feh "$base.png" &
     ;;
   *.md)
-    evince "$base.pdf" &
+    $(cat $CACHE/default_pdf.txt) "$base.pdf" &
     ;;
   *.sh)
     $1
