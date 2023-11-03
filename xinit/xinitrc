@@ -53,6 +53,9 @@ xsetroot -cursor_name left_ptr &
 # Random wallpaper
 touch $CACHE/bspwm_set_wallpaper
 
+# Turn bluetooth off so the hackers don't get in 
+bluetoothctl power off
+
 case $session in
     bspwm ) exec bspwm        ;;
     xfce  ) exec startxfce4   ;;

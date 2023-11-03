@@ -7,8 +7,10 @@ case $1 in
   toggle)
     if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
     then
+      notify-send "Bluetooth" "Power on"
       bluetoothctl power on
     else
+      notify-send "Bluetooth" "Power off"
       bluetoothctl power off
     fi
     ;;

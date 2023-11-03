@@ -1,16 +1,13 @@
 #! /bin/sh
 
 # Start picom for transparency
-picom --config $XDG_CONFIG_HOME/picom/picom.conf -b
+picom --config $XDG_CONFIG_HOME/picom/picom.conf -b 
 
 # Lauch sxhkd
 sxhkd &
 
 # Start notification server
 dunst &
-
-# Start power manager
-#xfce4-power-manager &
 
 # Checks if monitor list exists
 if [ -z "$(find $CACHE/monitor_order.txt 2>/dev/null)" ] ; then
@@ -22,7 +19,7 @@ bspwm_monitor_conf
 
 # Random wallpaper
 if [ -f $CACHE/bspwm_set_wallpaper ] ; then
-  wpshuffle -nr &
+  wpshuffle -nr
   rm $CACHE/bspwm_set_wallpaper
 fi
 
@@ -37,9 +34,6 @@ $HOME/.config/polybar/launch.sh
 # Start network manager applet
 nm-applet &
 
-# Start blueman applet
-#blueman-applet &
-
 # Start udiskie for automatically mounting drives (no notifications for now)
 pkill udiskie
 udiskie --tray &
@@ -53,9 +47,9 @@ bspc config window_gap          7
 color=$(grep bspwm_color $CACHE/theme.txt | cut -d= -f2)
 bspc config focused_border_color "$color"
 
-bspc config split_ratio          0.50
-bspc config borderless_monocle   false
-bspc config gapless_monocle      false
+bspc config split_ratio             0.50
+bspc config borderless_monocle      false
+bspc config gapless_monocle         false
 bspc config pointer_follows_monitor true
 
 # Rules 
