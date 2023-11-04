@@ -23,15 +23,15 @@ create_symlink(){
 #List of dotfiles for home directory
 home_dotfiles="profile xinit/xinitrc xinit/xserverrc \
   bash/bash_profile bash/bashrc vim/vimrc readline/inputrc \
-  gtk-2.0/gtkrc-2.0" 
+  gtk/gtk-2.0/gtkrc-2.0" 
 
 #List of files for .config directory
 config_folder="dunst/dunstrc bspwm/bspwmrc \
   fontconfig/fonts.conf picom/picom.conf polybar/config.ini polybar/launch.sh \
-  polybar/bluetooth.sh \
+  polybar/bluetooth.sh gtk/gtk-4.0/settings.ini udiskie/config.yml \
   ranger/commands.py ranger/commands_full.py ranger/rc.conf ranger/rifle.conf \
   ranger/scope.sh sxhkd/sxhkdrc kitty/kitty.conf mpv/input.conf mpv/mpv.conf \
-  rofi/config.rasi rofi/theme.rasi gtk-3.0/settings.ini tmux/tmux.conf \
+  rofi/config.rasi rofi/theme.rasi gtk/gtk-3.0/settings.ini tmux/tmux.conf \
   zathura/zathurarc betterlockscreen/betterlockscreenrc"
 
 #List of files for .config directory with no subdirectory
@@ -93,7 +93,7 @@ for dot in $home_dotfiles;do
 done
 
 for conf in $config_folder;do
-  target=$XDG_CONFIG_HOME/$conf
+  target=$XDG_CONFIG_HOME/$(basename $(dirname $conf))/$(basename $conf)
   source_file=$repo/$conf
   create_symlink $target $source_file
 done
@@ -118,7 +118,7 @@ done
 
 echo "\nInstalling scripts..."
 
-./$repo/scripts/make_scripts.sh
+sh $repo/scripts/make_scripts.sh
 
 echo "\nInstalling system configs..."
 

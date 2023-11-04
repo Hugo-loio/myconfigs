@@ -29,6 +29,8 @@ gimp
 git
 grub
 grub-customizer
+gtk3-demos
+gtk4-demos
 gucharmap
 gvim
 htop
