@@ -100,12 +100,13 @@ xarchiver
 xclip
 xcursor-simpleandsoft
 xf86-input-synaptics
+xf86-input-wacom
 xorg-server
 xorg-xev
 xorg-xinit
 xorg-xsetroot
 xorg-xwininfo
 xournalpp
-youtube-dl
+yt-dlp
 zenity
 zip

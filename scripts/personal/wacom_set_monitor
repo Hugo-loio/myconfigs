@@ -1,0 +1,11 @@
+#!/bin/sh
+
+stylus_id=$(xsetwacom --list devices | grep -i stylus | tr -d -c 0-9)
+
+[ -z "$stylus_id" ] && exit
+
+monitors=$(xrandr | grep connected | cut -d " " -f 1)
+monitor=$(echo "$monitors" | rofi -dmenu -i -p "Choose which monitor to map the wacom tablet to")
+[ -z "$monitor" ] && exit
+
+xsetwacom --set "$stylus_id" MapToOutput $monitor

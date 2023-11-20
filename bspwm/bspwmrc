@@ -48,8 +48,8 @@ color=$(grep bspwm_color $CACHE/theme.txt | cut -d= -f2)
 bspc config focused_border_color "$color"
 
 bspc config split_ratio             0.50
-bspc config borderless_monocle      false
-bspc config gapless_monocle         false
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
 bspc config pointer_follows_monitor true
 
 # Rules 
