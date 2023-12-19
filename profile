@@ -18,6 +18,7 @@ if systemctl -q is-active graphical.target && [ ! $DISPLAY ] && [ $XDG_VTNR -eq 
   #  echo "Please select WM/DE (default is bspwm)"
   #  read session
   #  exec startx ~/.xinitrc $session
+  #exec startx >$HOME/Downloads/startx.log 2>&1
   exec startx
 fi
 
