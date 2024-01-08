@@ -1,3 +1,4 @@
+batsignal
 betterlockscreen
 brother-mfc-j5730dw
 dashbinsh

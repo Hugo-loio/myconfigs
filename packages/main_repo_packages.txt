@@ -109,4 +109,5 @@ xorg-xwininfo
 xournalpp
 yt-dlp
 zenity
+zerotier-one
 zip

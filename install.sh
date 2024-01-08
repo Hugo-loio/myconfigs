@@ -160,7 +160,11 @@ sudo systemctl enable acpid
 sudo systemctl start acpid
 
 # Batsignal battery monitor
-sudo systemctl --user enable batsignal.service
-sudo systemctl --user start batsignal.service
+systemctl --user enable batsignal.service
+systemctl --user start batsignal.service
+
+# Zerotier network
+sudo systemctl enable zerotier-one.service
+sudo systemctl start zerotier-one.service
 
 echo "Done"
