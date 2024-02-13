@@ -75,14 +75,15 @@ sudo -v 2>/dev/null || ( echo "This user doesn't have root permissions" && exit 
 sudo pacman -Sl multilib >/dev/null 2>&1 || ( echo "Please enable the multilib repository before proceeding" && exit )
 
 echo "\nInstalling packages..."
-sudo pacman -S --needed $(cat $repo/packages/main_repo_packages.txt)
+sudo pacman -S --needed $(cat $repo/packages/main_repo_packages.txt) || exit
 if [ -z "$(which yay 2>/dev/null)" ] ; then
+  sudo pacman -S --needed git base-devel
   mkdir $repo/yay
   git clone https://aur.archlinux.org/yay.git $repo/yay
   (cd $repo/yay && makepkg -sic)
   rm -rf $repo/yay
 fi
-yay -S --needed $(cat $repo/packages/aur_packages.txt)
+yay -S --needed $(cat $repo/packages/aur_packages.txt) || exit
 
 echo "\nInstalling user configs..."
 

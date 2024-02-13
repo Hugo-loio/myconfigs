@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$#" -eq 1 ] ; then 
+  #DISPLAY=:0 xrandr -s $1
+  x11vnc -display :0 -repeat -geometry $1 & 
+else
+  x11vnc -display :0 -repeat & 
+fi
+
+

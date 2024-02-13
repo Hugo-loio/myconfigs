@@ -80,7 +80,7 @@ subversion
 sxhkd
 terminus-font
 texlive-lang
-texlive-most
+texlive
 thunderbird
 tk
 tlp
@@ -98,7 +98,6 @@ w3m
 wget
 xarchiver
 xclip
-xcursor-simpleandsoft
 xf86-input-synaptics
 xf86-input-wacom
 xorg-server
