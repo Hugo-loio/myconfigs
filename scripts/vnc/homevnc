@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ress=$(xrandr | grep '*+' | cut -d ' ' -f 4)
+
+echo $ress
+
+PS3="Select resolution: "
+select res in $ress
+do
+  if [ ! -z "$res" ]; then
+    echo $res
+    ssh home "./.local/bin/remotevnc $res" &
+    break
+  fi
+done
+
+sleep 5
+
+home_ip=$(ssh -G home | grep -w hostname | cut -d ' ' -f 2)
+vncviewer $home_ip::5900

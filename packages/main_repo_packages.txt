@@ -79,9 +79,10 @@ steam
 subversion
 sxhkd
 terminus-font
-texlive-lang
 texlive
+texlive-lang
 thunderbird
+tigervnc
 tk
 tlp
 tmux

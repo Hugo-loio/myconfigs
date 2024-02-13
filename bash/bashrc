@@ -23,6 +23,7 @@ alias gst='git status'
 alias gd='git diff'
 # Alias for shared repository between my computers
 alias share='git --git-dir=$HOME/SharedRepo --work-tree=$HOME'
+alias shareclone='git clone --bare $USER@home:$HOME/SharedRepo $HOME/SharedRepo'
 alias sharereset='share reset --hard'
 # checkbashisms alias
 alias cb='checkbashisms'
