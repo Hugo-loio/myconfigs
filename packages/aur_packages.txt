@@ -6,7 +6,6 @@ flashplugin
 google-chrome
 linux-wifi-hotspot
 polybar
-rofi-dmenu
 simple-mtpfs
 simplenote-electron-bin
 windscribe-cli
