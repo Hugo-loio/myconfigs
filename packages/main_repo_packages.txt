@@ -48,6 +48,7 @@ man-db
 man-pages
 mate-utils
 mpv
+neofetch
 network-manager-applet
 networkmanager
 noto-fonts-cjk

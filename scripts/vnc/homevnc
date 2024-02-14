@@ -14,7 +14,7 @@ do
   fi
 done
 
-sleep 5
+sleep 10
 
 home_ip=$(ssh -G home | grep -w hostname | cut -d ' ' -f 2)
 vncviewer $home_ip::5900
