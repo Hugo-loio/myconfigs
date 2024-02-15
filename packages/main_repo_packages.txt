@@ -100,7 +100,6 @@ w3m
 wget
 xarchiver
 xclip
-xf86-input-synaptics
 xf86-input-wacom
 xorg-server
 xorg-xev

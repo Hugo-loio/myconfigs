@@ -13,7 +13,7 @@ create_symlink(){
 }
 
 #Xorg
-create_symlink /etc/X11/xorg.conf.d/70-synaptics.conf $repo/70-synaptics.conf 
+create_symlink /etc/X11/xorg.conf.d/30-touchpad.conf $repo/30-touchpad.conf 
 
 
 
