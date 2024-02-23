@@ -36,6 +36,7 @@ fi
 # MY STUFF
 
 # change keyboard layout
+setxkbmap pt
 xmodmap $XDG_CONFIG_HOME/xmodmap/custom_pt
 
 # Start with touchpad disabled
