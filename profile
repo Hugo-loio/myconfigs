@@ -14,7 +14,7 @@ export USE_WOLFRAM_LD_LIBRARY_PATH=1
 
 [ ! -z $(find $HOME -maxdepth 1 -name '.vim*.tmp') ] && rm $HOME/.vim*.tmp
 
-if systemctl -q is-active graphical.target && [ ! $DISPLAY ] && [ $XDG_VTNR -eq 1 ]; then
+if systemctl -q is-enabled graphical.target && [ ! $DISPLAY ] && [ $XDG_VTNR -eq 1 ]; then
   #  echo "Please select WM/DE (default is bspwm)"
   #  read session
   #  exec startx ~/.xinitrc $session
