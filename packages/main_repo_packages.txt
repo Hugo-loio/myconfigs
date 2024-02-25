@@ -108,6 +108,8 @@ xorg-xsetroot
 xorg-xwininfo
 xournalpp
 yt-dlp
+zathura
+zathura-pdf-mupdf
 zenity
 zerotier-one
 zip
