@@ -128,6 +128,11 @@ for conf in $(find -path "$repo/*/make_conf.sh");do
   sudo ./$conf
 done
 
+echo "\nInstalling other user configs..."
+
+for conf in $(find -path "$repo/*/make_user_conf.sh");do
+  ./$conf
+done
 
 
 echo "\nCreating cache folder..."
