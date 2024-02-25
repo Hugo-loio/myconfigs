@@ -1,0 +1,13 @@
+#!/bin/sh
+
+layout_options="pt\nus"
+choice=$(echo $layout_options | rofi -dmenu -i -p "Choose layout")
+case $choice in 
+  "pt")
+    setxkbmap pt
+    xmodmap $XDG_CONFIG_HOME/xmodmap/custom_pt
+    ;;
+  "us")
+    setxkbmap us
+    ;;
+esac
