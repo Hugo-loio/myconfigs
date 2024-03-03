@@ -29,18 +29,18 @@ alias sharereset='share reset --hard'
 alias cb='checkbashisms'
 # vim keys with info
 alias info='info --vi-keys'
-
-alias pampas='ssh -A -Y ist190394@pampas.ncg.ingrid.pt'
+# Cleaning aliases
+alias cleartrash='gio trash --empty'
+alias clearpaccache='paccache -r'
+alias clearyaycache='yay -Sc --aur --noconfirm'
+# Generate grub config
+alias grubconf='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 alias tbrowser='root -l -e "TBrowser t"'
 
 alias mpirun='mpirun --oversubscribe --mca opal_warn_on_missing_libcuda 0'
 
 alias simplenote='simplenote --no-sandbox'
-# Cleaning aliases
-alias cleartrash='gio trash --empty'
-alias clearpaccache='paccache -r'
-alias clearyaycache='yay -Sc --aur --noconfirm'
 
 #Configures the shell prompt
 PS1='\e[1;35m\u@\h \e[33m\w \e[36m\D{%T}\e[00m \n$ '
