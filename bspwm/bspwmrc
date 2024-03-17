@@ -28,6 +28,7 @@ if [ -z "$(find $CACHE/theme.txt 2>/dev/null)" ] ; then
   theme_selector -t Green -nr
 fi
 
+
 # Launch polybar
 $HOME/.config/polybar/launch.sh
 
@@ -56,6 +57,8 @@ bspc config pointer_follows_monitor true
 #bspc rule -a Gimp state=floating 
 bspc rule -a steam state=tiled follow=no
 bspc rule -a Zathura state=tiled
+bspc rule -a zenity state=floating 
+
 #bspc rule -a 'Android Emulator - Nexus_5X_API_29_x86:5554' state=floating
 # bspc rule -a $BROWSER desktop='^2' follow=on
 #bspc rule -a Screenkey manage=off

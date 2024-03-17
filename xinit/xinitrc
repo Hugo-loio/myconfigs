@@ -62,6 +62,8 @@ fi
 # Set default pdf reader for the first time
 [ ! -f $CACHE/default_pdf.txt ] && default_pdf $PDF
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+
 case $session in
   bspwm ) exec bspwm        ;;
   xfce  ) exec startxfce4   ;;

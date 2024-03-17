@@ -109,6 +109,7 @@ xorg-xwininfo
 xournalpp
 yt-dlp
 zathura
+zathura-djvu
 zathura-pdf-mupdf
 zenity
 zerotier-one
