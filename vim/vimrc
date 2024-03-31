@@ -177,6 +177,7 @@ nnoremap <leader>ls :setlocal spell!<CR>
 "Set spelling languages to Portuguese or English
 nnoremap <leader>lp :setlocal spelllang=pt_pt<CR>
 nnoremap <leader>le :setlocal spelllang=en_us<CR>
+nnoremap <leader>lf :setlocal spelllang=fr<CR>
 
 
 """""""""""""""""""""Useful mappings""""""""""""""""""""""""
