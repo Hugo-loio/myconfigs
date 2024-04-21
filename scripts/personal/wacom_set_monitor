@@ -8,4 +8,10 @@ monitors=$(xrandr | grep connected | cut -d " " -f 1)
 monitor=$(echo "$monitors" | rofi -dmenu -i -p "Choose which monitor to map the wacom tablet to")
 [ -z "$monitor" ] && exit
 
-xsetwacom --set "$stylus_id" MapToOutput $monitor
+output=$(xsetwacom --set "$stylus_id" MapToOutput $monitor 2>&1)
+echo $output
+[ -z "$(echo $output | grep "Unable")" ] && exit
+
+number=$(grep -n $monitor $CACHE/monitor_order.txt | cut -d ":" -f 1)
+number=$(expr $number - 1)
+xsetwacom --set "$stylus_id" MapToOutput HEAD-$number
