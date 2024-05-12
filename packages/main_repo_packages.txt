@@ -35,6 +35,7 @@ gucharmap
 gvim
 htop
 inter-font
+kdeconnect
 kitty
 lib32-llvm
 lib32-mesa

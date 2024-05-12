@@ -1,0 +1,15 @@
+#!/bin/sh
+
+device_string=$(kdeconnect-cli -l | grep "paired and reachable" | sed 's/\ *([\ ,a-z]*)\ *//g' | sed 's/\ *-\ *//g')
+
+num_devices=$(echo "$device_string" | wc -l)
+
+if [ $num_devices -gt "1" ]; then
+  device_name=$(echo "$device_string" | cut -d ":" -f 1 | rofi -dmenu -i -p "Choose device")
+  device_string=$(echo "$device_string" | grep "$device_name")
+fi
+
+device_id=$(echo "$device_string" | cut -d ":" -f 2)
+
+kdeconnect-cli -d $device_id --share $1
+

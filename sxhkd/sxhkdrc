@@ -158,6 +158,10 @@ super + {Left,Down,Up,Right}
 super + {_,alt + } {less, greater} 
 	bspc node {@/,@parent} -R {90,-90}
 
+# Same but with o because sometimes less and greater does not work
+super + {_,alt + } {_, shift +}  + o
+	bspc node {@/,@parent} -R {90,-90}
+
 # increase/decrease window gaps
 super + {plus,minus} 
     bspc config window_gap $(( $(bspc config window_gap) {+,-} 2 ))    
