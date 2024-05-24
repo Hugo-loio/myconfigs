@@ -6,7 +6,7 @@
   <property name="pressureMultiplier" value="3"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
-  <property name="lastSavePath" value="/home/hugo/Documents/phd/documents/impots/2024"/>
+  <property name="lastSavePath" value="/home/hugo/Documents/phd/notes/handwritten"/>
   <property name="lastOpenPath" value="/home/hugo/Documents/tecnico/5ano2semestre/tese/cluster/oblivion/form"/>
   <property name="lastImagePath" value="/home/hugo/Pictures/others"/>
   <property name="edgePanSpeed" value="20"/>
@@ -247,7 +247,7 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="000000"/>
+      <attribute name="color" type="hex" value="3333cc"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
