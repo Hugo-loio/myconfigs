@@ -111,7 +111,7 @@ xournalpp
 yt-dlp
 zathura
 zathura-djvu
-zathura-pdf-mupdf
+zathura-pdf-poppler
 zenity
 zerotier-one
 zip
