@@ -7,15 +7,15 @@
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
   <property name="lastSavePath" value="/home/hugo/Documents/phd/notes/handwritten"/>
-  <property name="lastOpenPath" value="/home/hugo/Documents/tecnico/5ano2semestre/tese/cluster/oblivion/form"/>
+  <property name="lastOpenPath" value="/home/hugo/Documents/phd/documents/finanças/morada_ali"/>
   <property name="lastImagePath" value="/home/hugo/Pictures/others"/>
   <property name="edgePanSpeed" value="20"/>
   <property name="edgePanMaxMult" value="5"/>
   <property name="zoomStep" value="10"/>
   <property name="zoomStepScroll" value="2"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="944"/>
-  <property name="mainWndHeight" value="1153"/>
+  <property name="mainWndWidth" value="1920"/>
+  <property name="mainWndHeight" value="1200"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
@@ -133,7 +133,7 @@
   <property name="latexSettings.sourceViewAutoIndent" value="true"/>
   <property name="latexSettings.sourceViewSyntaxHighlight" value="true"/>
   <property name="latexSettings.sourceViewShowLineNumbers" value="false"/>
-  <property name="font" font="Sans" size="12"/>
+  <property name="font" font="Sans" size="10"/>
   <data name="buttonConfig">
     <data name="default">
       <attribute name="color" type="hex" value="ff000000"/>
