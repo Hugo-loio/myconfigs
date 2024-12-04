@@ -14,8 +14,8 @@
   <property name="zoomStep" value="10"/>
   <property name="zoomStepScroll" value="2"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="1920"/>
-  <property name="mainWndHeight" value="1200"/>
+  <property name="mainWndWidth" value="947"/>
+  <property name="mainWndHeight" value="1157"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
@@ -35,7 +35,7 @@
   <property name="numPairsOffset" value="1"/>
   <!--The icon theme, allowed values are "disabled", "onDrawOfLastPage", and "onScrollOfLastPage"-->
   <property name="emptyLastPageAppend" value="disabled"/>
-  <property name="presentationMode" value="false"/>
+  <property name="presentationMode" value="true"/>
   <!--Which GUI elements are shown in default view mode, separated by a colon (,)-->
   <property name="defaultViewModeAttributes" value="showMenubar,showToolbar,showSidebar"/>
   <!--Which GUI elements are shown in fullscreen view mode, separated by a colon (,)-->
@@ -48,12 +48,13 @@
   <property name="eraserVisibility" value="always"/>
   <!--The icon theme, allowed values are "iconsColor", "iconsLucide"-->
   <property name="iconTheme" value="iconsColor"/>
+  <!--Dark/light mode, allowed values are "useSystem", "forceLight", "forceDark"-->
+  <property name="themeVariant" value="useSystem"/>
   <property name="highlightPosition" value="true"/>
   <property name="cursorHighlightColor" value="2164195583"/>
   <property name="cursorHighlightBorderColor" value="2147483903"/>
   <property name="cursorHighlightRadius" value="15"/>
   <property name="cursorHighlightBorderWidth" value="0"/>
-  <property name="darkTheme" value="false"/>
   <property name="useStockIcons" value="false"/>
   <property name="disableScrollbarFadeout" value="false"/>
   <property name="disableAudio" value="false"/>
