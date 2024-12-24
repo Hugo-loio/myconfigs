@@ -6,6 +6,7 @@ if [ "$1" = "restart" ] ; then
   pkill sxhkd
   pkill bspwm_rm*
   pkill picom
+  pkill dunst
   bspc wm -r
 fi
 if [ "$1" = "quit" ] ; then
