@@ -19,8 +19,8 @@
     timeout = 10
 
 [urgency_low]
-    background = "#ffA20090"
-    frame_color = "#ffA200"
+    background = "#9da00090"
+    frame_color = "#fbff00"
     foreground = "#ffffff"
     timeout = 10
 

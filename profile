@@ -11,6 +11,7 @@ export CACHE="$HOME/.local/share/hugoconf"
 export PDF="zathura"
 #Fix for mathematica
 export USE_WOLFRAM_LD_LIBRARY_PATH=1
+export PYTHON_BASIC_REPL=1
 
 [ ! -z "$(find $HOME -maxdepth 1 -name '.vim*.tmp')" ] && rm $HOME/.vim*.tmp
 
