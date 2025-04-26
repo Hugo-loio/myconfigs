@@ -6,7 +6,7 @@
   <property name="pressureMultiplier" value="3"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Portrait"/>
-  <property name="lastSavePath" value="/home/hugo/Documents/phd/numerics/projects/clifford_t_gate/notes"/>
+  <property name="lastSavePath" value="/home/hugo/Documents/phd/notes/handwritten"/>
   <property name="lastOpenPath" value="/home/hugo/Documents/phd/documents/finanças/morada_ali"/>
   <property name="lastImagePath" value="/home/hugo/Pictures/others"/>
   <property name="edgePanSpeed" value="20"/>
@@ -14,8 +14,8 @@
   <property name="zoomStep" value="10"/>
   <property name="zoomStepScroll" value="2"/>
   <property name="displayDpi" value="72"/>
-  <property name="mainWndWidth" value="944"/>
-  <property name="mainWndHeight" value="1153"/>
+  <property name="mainWndWidth" value="941"/>
+  <property name="mainWndHeight" value="1149"/>
   <property name="maximized" value="false"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
