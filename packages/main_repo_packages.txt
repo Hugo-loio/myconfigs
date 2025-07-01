@@ -67,9 +67,10 @@ pandoc
 pavucontrol
 pcmanfm
 picom
+pipewire
+pipewire-alsa
+pipewire-pulse
 plantuml
-pulseaudio-alsa
-pulseaudio-bluetooth
 python-matplotlib
 python-sympy
 ranger

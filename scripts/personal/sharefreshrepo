@@ -1,0 +1,23 @@
+#!/bin/sh
+
+#Ask user to replace files
+echo "This script will delete the shared repo and create a fresh one. Do you wish to proceed?(y/n)"
+echo "Warning! This script has never been used, be cautious at first and delete this warning after"
+while [ true ] ; do
+  read answer 
+  if [ -z $answer ] ; then 
+    continue
+  fi
+  if [ "$answer" = "y" ] || [ "$answer" = "Y" ] ; then
+    break
+  fi
+  if [ "$answer" = "n" ] || [ "$answer" = "N" ] ; then
+    exit
+  fi
+done
+
+cd
+rm -rf SharedRepo
+git init --bare SharedRepo
+share add . -v
+share commit -m "Initial fresh snapshot"
