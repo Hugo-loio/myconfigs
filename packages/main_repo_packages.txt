@@ -1,8 +1,5 @@
 acpid
-acpilight
 alsa-utils
-arc-gtk-theme
-arc-icon-theme
 atril
 base
 base-devel
@@ -28,7 +25,6 @@ ghostscript
 gimp
 git
 grub
-grub-customizer
 gtk3-demos
 gtk4-demos
 gucharmap
@@ -49,7 +45,7 @@ man-db
 man-pages
 mate-utils
 mpv
-neofetch
+fastfetch
 network-manager-applet
 networkmanager
 noto-fonts-cjk

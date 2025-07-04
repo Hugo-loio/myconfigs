@@ -1,3 +1,5 @@
+arc-gtk-theme
+arc-icon-theme
 batsignal
 betterlockscreen
 brother-mfc-j5730dw

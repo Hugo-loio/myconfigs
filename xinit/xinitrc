@@ -32,7 +32,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
   unset f
 fi
 
-
 # MY STUFF
 
 # change keyboard layout
@@ -44,9 +43,6 @@ xmodmap $XDG_CONFIG_HOME/xmodmap/custom_pt
 
 # Fix issue where android-studio opens as blank window
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Starting WM/DE chosen
-session=${1:-bspwm}
 
 # Make default cursor diferent from x
 xsetroot -cursor_name left_ptr &
@@ -63,6 +59,9 @@ fi
 [ ! -f $CACHE/default_pdf.txt ] && default_pdf $PDF
 
 xrandr --setprovideroutputsource modesetting NVIDIA-0
+
+# Starting WM/DE chosen
+session=${1:-bspwm}
 
 case $session in
   bspwm ) exec bspwm        ;;

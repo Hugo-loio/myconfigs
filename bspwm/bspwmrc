@@ -28,7 +28,6 @@ if [ -z "$(find $CACHE/theme.txt 2>/dev/null)" ] ; then
   theme_selector -t Green -nr
 fi
 
-
 # Launch polybar
 $HOME/.config/polybar/launch.sh
 
