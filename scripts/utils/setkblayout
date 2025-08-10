@@ -1,7 +1,7 @@
 #!/bin/sh
 
 layout_options="pt\nus"
-choice=$(echo $layout_options | rofi -dmenu -i -p "Choose layout")
+choice=$(printf $layout_options | rofi -dmenu -i -p "Choose layout")
 case $choice in 
   "pt")
     setxkbmap pt

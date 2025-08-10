@@ -58,6 +58,9 @@ fi
 # Set default pdf reader for the first time
 [ ! -f $CACHE/default_pdf.txt ] && default_pdf $PDF
 
+# Sound fix
+sleep 1 && systemctl --user restart wireplumber && sleep 1
+
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 
 # Starting WM/DE chosen

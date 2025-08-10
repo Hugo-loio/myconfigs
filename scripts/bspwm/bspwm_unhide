@@ -22,7 +22,7 @@ unhide=$(echo $nodes | sed 's/<>/\n/g' | cut -d" " -f2,3 | rofi -dmenu -i -p "Ch
 
 [ -z "$unhide" ] && exit
 
-unhide_id=$(echo $nodes | sed 's/<>/\n/g' | grep "$unhide" | cut -d" " -f1)
+unhide_id=$(echo $nodes | sed 's/<>/\n/g' | grep -F "$unhide" | cut -d" " -f1)
 echo $unhide_id
 
 desktop=$(bspc query -D -d focused)
