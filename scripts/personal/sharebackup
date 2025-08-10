@@ -1,0 +1,47 @@
+#!/bin/sh
+
+nooption() {
+  echo "No option selected"
+  exit
+}
+
+sharefiles(){
+  # -C sets the reference directory 
+  # -c sets the option to handle special characters in paths properly
+  git --git-dir=$HOME/SharedRepo --work-tree=$HOME -C $HOME -c core.quotepath=false  ls-files 
+}
+
+disks=$(lsblk -o NAME,TRAN | grep usb | cut -d " " -f 1)
+mounts=""
+drive_names=""
+
+for disk in $disks; do 
+  mount=$(lsblk -r -o NAME,TYPE,MOUNTPOINT | grep part | grep $disk | cut -d " " -f 3)
+  if [ -z "$mounts" ]; then
+    mounts="$mount"
+    drive_names="$(basename $mount)"
+  else
+    mounts="$mounts\n$mount"
+    drive_names="$drive_names\n$(basename $mount)"
+  fi
+done
+
+if [ -z "$drive_names" ]; then
+  notify-send "sharebackup" "Error: No external drives detected"
+  exit
+fi
+
+drive_name=$(echo $drive_names | rofi -dmenu -i -p "Choose external drive")
+[ -z "$drive_name" ] && nooption
+mount=$(echo $mounts | grep $drive_name)
+
+zenity --question --text="Backup to $drive_name?" --ok-label="yes" --cancel-label="no"
+[ "$?" = "1" ] && exit 1
+
+backupdir="$mount/Backup"
+if [ -z "$(find $mount -maxdepth 1 -iname Backup)" ] ; then
+  echo "Creating backup folder"
+  mkdir $backupdir
+fi
+
+sharefiles | rsync -a --info=progress2 --files-from=- $HOME $backupdir
